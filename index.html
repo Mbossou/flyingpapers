@@ -35,11 +35,21 @@
         <div class=container>
             <div class="row">
                 <form action="">
-                    <input id="villeDepart" type="text" value="Ville de départ">
-                    <input id="villeArrivee" type="text" value="Ville d'arrivée">
-                    <input id="dateDepart" type="text" value="Date de depart">
-                    <input id="dateArrivee" type="text" value="Ajouter un retour">
-                    <button type="submit" id="recherche" class="btn">Rechercher</button>
+                    <input list="villesDepart" name="villeDepart" id="villeDepart" type="text" placeholder="Ville de départ">
+                    <datalist id="villesDepart">
+                        <option value="Paris, France">
+                        <option value="Rome, Italie">
+                        <option value="Londres, Angleterre">
+                    </datalist>
+                    <input list="villesArrivee" name="villeArrivee" id="villeArrivee" type="text" placeholder="Ville d'arrivée">
+                    <datalist id="villesArrivee">
+                        <option value="Paris, France">
+                        <option value="Rome, Italie">
+                        <option value="Londres, Angleterre">
+                    </datalist>
+                    <input list="datesDepart" name="dateDepart" id="dateDepart" type="date" placeholder="Date de départ">
+                    <input list="datesArrivee" name="dateArrivee" id="dateArrivee" type="date" placeholder="Ajouter un retour">
+                    <input type="submit" id="recherche" class="btn" value="Rechercher"></input>
                 </form>
             </div>
         </div>
