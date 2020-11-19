@@ -114,7 +114,14 @@
             <div>
                 <h2>Autres Trajets<span style="color: #f0856b; font-size:1.5em;">.</span></h2>
                 <div class="les-billets">
-                    <img class="carte-trajet" src="img/carte-resultats.png" alt="carte itinéraire du trajet">
+                    <div class="bloc-r">
+                        <div class="flex">
+                            <img class="carte-trajet" src="img/carte-resultats.png" alt="carte itinéraire du trajet">
+                            <!--<a href="http://localhost/flyingpapers/optionsbillets.html" class="bouton-peche">Poursuivre avec ce trajet</a>-->
+                        </div>
+                        
+                    </div>
+                   
                     <?php
                             require 'admin/database.php';
                             $db = Database::connect();
@@ -203,7 +210,7 @@
                 </div>
             </div>
         </section>
-        <section class="footer">
+        <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div id="entreprise" class="bloc">
@@ -229,11 +236,11 @@
                     <div id="nous-suivre">
                         <div class="bloc">
                             <h5>Nous suivre</h5>
-                            <a href="#"><img src="img/icon-facebook.PNG" alt="icone Facebook" /></a>
-                            <a href="#"><img src="img/icon-twitter.PNG" alt="icone Twitter" /></a>
-                            <a href="#"><img src="img/icon-instagram.PNG" alt="icone Instagram" /></a>
-                            <a href="#"><img src="img/icon-youtube.PNG" alt="icone Youtube" /></a>
-                            <a href="#"><img src="img/icon-linkedin.PNG" alt="icone Linkedin" /></a>
+                            <a href="#"><img src="img/icon-facebook.svg" alt="icone Facebook" /></a>
+                            <a href="#"><img src="img/icon-twitter.svg" alt="icone Twitter" /></a>
+                            <a href="#"><img src="img/icon-instagram.svg" alt="icone Instagram" /></a>
+                            <a href="#"><img src="img/icon-youtube.svg" alt="icone Youtube" /></a>
+                            <a href="#"><img src="img/icon-linkedin.svg" alt="icone Linkedin" /></a>
                         </div>
                         <br>
                         <a  href="#"><img src="img/LOGO1.PNG" class="footer-brand" alt="logo Flying Papers" /></a>
@@ -242,6 +249,6 @@
             </div>
             <div style="background:pink;color:#333;position:fixed;right:0;bottom:0;z-index:99999999;font:1em arial;" id="ld"></div><script>setInterval(function(){if($(window).height()>=$(document).height()){$('#ld').text($(document).width()+' px');}else{$('#ld').text($(document).width()+17+' px');}},150);</script>
 
-        </section>
+                </footer>
     </body>
 </html>

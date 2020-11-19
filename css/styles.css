@@ -31,7 +31,7 @@ body {
     margin:0px;
 }
 
-section {
+.resultats-billets,.infos-persos,.porte-a-porte,.confirmation-reservation {
     margin-top: 45px;
 }
 
@@ -103,6 +103,11 @@ p {
     border-radius: 2rem!important;
 }
 
+.nav .bouton-peche:hover {
+    background-color:  #264ABD;
+    color: #ffffff;
+}
+
 .navbar .nav-link {
     text-align: center;
     margin : 0px 10px 0px 10px;
@@ -112,9 +117,7 @@ p {
 .navbar .nav-link-style {
     color: #264ABD!important;
 }
-.navbar .nav-link:hover{
-    color:pink !important;
-}
+
 
 .navbar-toggler{
     color: #fff !important;
@@ -176,6 +179,11 @@ h1 {
     padding-right: 5px!important;
     border-radius: 1.5rem!important;
     margin-top: 1rem;
+}
+
+.recaps-trajet .bouton-peche:hover {
+    background-color:  #264ABD;
+    color: #ffffff;
 }
 
 .recap {
@@ -297,9 +305,13 @@ h1 {
 }
 
 /*RESULTATS*/ 
-#resultats-billets {
+
+/*#resultats-billets {
     margin-top: 40px;
-}
+    display: grid;
+    gri
+}*/
+
 #resultats-billets h2 {
     font-family: "Avenir Black",Arial, Sans-serif;
     font-size: 2em;
@@ -307,8 +319,16 @@ h1 {
     margin-left: 50px;
 }
 
-#resultats-billets .carte-trajet {
+#resultats-billets .bloc-r {
     float: right;
+}
+#resultats-billets .flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#resultats-billets .carte-trajet {
+
     max-height: 350px;
     margin-right: 50px;
     margin-top: -100px;
@@ -382,6 +402,10 @@ h1 {
     width: 170px;
 }
 
+.recap-etapes a:hover {
+    text-decoration: none;
+}
+
 .recap-etapes #container-infos .a4-i {
     opacity: 70%;
 }
@@ -403,7 +427,7 @@ h1 {
 
 .recap-etapes .num-e {
     background-color:#ffffff;
-    color:#354372;
+    color:#264ABD;
     padding: 10px 17px 10px 17px;
     font-family: "Avenir Black",Arial, Sans-serif;
     border-radius: 2rem;
@@ -524,6 +548,9 @@ width: 30px;
     padding-top: 5px;
 }
 
+.options-billets .tarifs .row .bloc:hover {
+    background-color:  #F3F3F8;
+}
 
 .options-billets .tarifs .row .bloc p {
     text-align: center;
@@ -749,6 +776,13 @@ width: 30px;
     align-self: end;
 }
 
+
+.options-billets .valider:hover {
+    background-color:  #264ABD;
+    color: #ffffff!important;
+    text-decoration: none;
+}
+
 .porte-a-porte .valider {
     grid-column   : 2/2;
     grid-row      : 5/6;
@@ -761,6 +795,12 @@ width: 30px;
     height        : fit-content;
     align-self: start;
     margin-top: 0px!important;
+}
+
+.porte-a-porte .valider:hover {
+    background-color:  #264ABD;
+    color: #ffffff!important;
+    text-decoration: none;
 }
 
 /* PORTE A PORTE */
@@ -780,6 +820,15 @@ width: 30px;
 
 .porte-a-porte .choix-depart .row-depart a {
     color: #140a0f;
+}
+
+.porte-a-porte .choix-depart .row-depart a:hover .bloc {
+    background-color:  #F3F3F8;
+    text-decoration: none;
+}
+
+.porte-a-porte .choix-depart .row-depart a:hover {
+    text-decoration: none;
 }
 
 .porte-a-porte .choix-depart .row-depart p {
@@ -961,6 +1010,11 @@ width: 30px;
     text-align: center;
 }
 
+.infos-persos .creer-compte .col-r .bouton:hover {
+    background-color:  #f0856b;
+    color: #ffffff!important;
+    text-decoration: none;
+}
 
 .infos-persos .formulaire {
     grid-column     : 1;
@@ -1017,9 +1071,9 @@ width: 30px;
     border-radius: 2em;
     border-width: 1px;
     border-color: #264ABD;
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
 }
 
 .infos-persos .formulaire .cols .col-r {
@@ -1098,6 +1152,7 @@ width: 30px;
     background-position: bottom;
 }
 
+
 .confirmation-bouton-confirmer .bouton {
     height: 280px;
     display: flex;
@@ -1116,6 +1171,10 @@ width: 30px;
     margin-bottom: 55px;
 }
 
+.confirmation-bouton-confirmer .retour-accueil-confirmation:hover {
+    background-color:  #264ABD;
+    text-decoration: none;
+}
 
 .confirmation-reservation .confirmation-grid .left .indicateurs .bloc {
     text-align: center;
@@ -1142,6 +1201,12 @@ height:35px;
     padding-bottom: 7px;
     text-align: center;
     justify-content: center;
+}
+
+.confirmation-reservation .confirmation-grid .right .confirmation-bouton:hover {
+    background-color:  #264ABD;
+    color: #ffffff!important;
+    text-decoration: none;
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton img {
@@ -1177,6 +1242,12 @@ height:35px;
     flex-grow: 1;
 }
 
+/*
+.footer .bloc a:hover {
+    background-color: #264ABD;
+    color: #264ABD;
+}
+*/
 
 .footer .bouton-aide {
     border-style  : solid;
@@ -1187,6 +1258,12 @@ height:35px;
     padding-right : 20px;
     padding-top   : 5px;
     padding-bottom: 5px;
+}
+
+.footer .bouton-aide:hover {
+    background-color:  #264ABD;
+    color: #ffffff!important;
+    text-decoration: none;
 }
 
 .footer h5 {
