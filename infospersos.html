@@ -31,47 +31,78 @@
         </nav>
 
         <div class="recap-etapes col-sm-12">
-            <div class="container">
-                    <a href=# class="a-options"><p class="num-e">1</p><p class="text-recap-e">Sélection des options</p></a>
+            <div class="container" id="container-infos">
+                    <a href="#" class="a1-i"><p class="num-e">1</p><p class="text-recap-e">Sélection des options</p></a>
                     <div class="next"></div>
-                    <a href=#><p class="num-e">2</p><p class="text-recap-e">Porte-à-porte</p></a>
+                    <a href="#" class="a2-i"><p class="num-e">2</p><p class="text-recap-e">Porte-à-porte</p></a>
                     <div class="next"></div>
-                    <a href=#><p class="num-e">3</p><p class="text-recap-e">Informations personnelles</p></a>
+                    <a href="#" class="a3-i"><p class="num-e">3</p><p class="text-recap-e">Informations personnelles</p></a>
                     <div class="next"></div>
-                    <a href=#><p class="num-e">4</p><p class="text-recap-e">Paiement</p></a>
+                    <a href="#" class="a4-i"><p class="num-e">4</p><p class="text-recap-e">Paiement</p></a>
             </div>
         </div>
 
-        <section class="porte-a-porte">
+        <section class="infos-persos">
             <div class="container">
-                <div class="wrapper-pap">
+                <div class="wrapper">
                     <div class="recap-t">
                         <img src="img/trajet.png" alt="recap trajet">
                     </div>
                    
-                    <div class="choix-depart border-fp">
-                        <h5 class="bold bleu-fp">Avez-vous choisi comment rejoindre votre point de départ ?</h5>
-                        <div class="row row-depart">
-                            <a href="#">
-                                <div class="bloc bloc1 border-fp">
-                                    <p>J’ai déjà prévu un moyen de déplacement</p>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="bloc bloc2 border-fp">
-                                    <p>Louer un vélo à déposer devant la gare <br><span class="bold">15 ct / min</span></p>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="bloc bloc3 border-fp">
-                                    <p>Réserver un Taxi Green (Voiture électrique) <br><span class="bold">30 €</span></p>
-                                </div>
-                            </a>
-                            
-                            
-                            
+                    <div class="creer-compte border-fp">
+                        <div class="col-l">
+                            <p class="question bold">Vous n’avez pas de compte ?</p>
+                            <p>Créer votre compte pour remplir automatiquement tous les champs et obtenir des avantages sur vos prochains trajets ! </p>
+                            <div class="row">
+                                <p class="text">Vous avez déjà un compte ? </p><p> </p><a href="#"> Connectez-vous.</a>
+                            </div>
+                        </div>
+                        <div class="col-r">
+                            <a href="#" class="bouton-bleu bouton">Créer mon compte</a>
                         </div>
                     </div>
+
+                    <div class="formulaire border-fp">
+                        <form action="">
+                            <div class="ligne1">
+                                <h5 class="bleu-fp bold">Passager 1</h5>
+                                <p class="bold">Adulte</p>
+                            </div>
+                            <div class="ligne2">
+                                <label for="email">Adresse e-mail</label>
+                                <input type="email" id="email" name="email" value="Votre billet sera envoyé à :" autocomplete="email">
+                            </div>
+                            <div class="cols">
+                                <div class="col-l">
+                                    <div class="ligne">
+                                        <label for="family-name">Nom</label>
+                                        <input type="text" id="family-name" name="family-name" autocomplete="family-name">
+                                    </div>
+                                    <div class="ligne">
+                                        <label for="pays">Pays de résidence</label>
+                                        <input type="text" id="pays" name="pays" autocomplete="country-name">
+                                    </div>
+                                </div>
+                                <div class="col-r">
+                                    <div class="ligne">
+                                        <label for="firstname">Prénom</label>
+                                        <input type="text" id="firstname" name="firstname" autocomplete="given-name">
+                                    </div>
+                                    <div class="ligne">
+                                        <label for="reduction">Carte de réduction (Facultatif)</label>
+                                        <input type="text" id="reduction" name="reduction">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="ligne3">
+                                <input type="checkbox"><label>S’inscrire à notre Newletter pour recevoir tous nos bons plans pour voyager éco-responsable</label>
+                            </div>                            
+                        </form>
+                        
+
+                    </div>
+
                     <div class="impact-ecolo">
                         <div class="conteneur">
                             <h4 class="titre-ecolo bold">Impact Ecologique</h4>
@@ -92,10 +123,10 @@
 
                     <div class="recap-b">
                         <h5 class="bold bleu-fp">Récapitulatif</h5>
-                        <div class="row row1"><p>Billet 1 (1 adulte)</p><p>22,00€</p></div>
-                        <div class="row row2"><p class="text-tranquille">Classe Tranquilité</p><p>+8,00€</p></div>
-                        <div class="row row3"><p>Billet 2 (1 adulte)</p><p>70,00€</p></div>
-                        <div class="row row4"><p><span class="bold">Total </span>(TTC)</p><p class="bold">100,00€</p></div>
+                        <div class="row row1"><p class="small-p">Billet 1 (1 adulte)</p><p class="small-p">22,00€</p></div>
+                        <div class="row row2"><p class="small-p text-tranquille">Classe Tranquilité</p><p class="small-p">+8,00€</p></div>
+                        <div class="row row3"><p class="small-p">Billet 2 (1 adulte)</p><p class="small-p">70,00€</p></div>
+                        <div class="row row4"><p class="small-p"><span class="bold">Total </span>(TTC)</p><p class="small-p bold">100,00€</p></div>
                     </div>
                     <div class="modalités">
                     <h5 class="bold bleu-fp">Modalités</h5>
@@ -104,7 +135,7 @@
                     <p class="bold billet2">Billet 2</p>
                     <p>Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable. </p>
                     </div>
-                    <a class="valider validerpap bouton-peche" href="#">Valider</a>
+                    <a class="valider bouton-peche" href="http://localhost/flyingpapers/confirmation-paiement.html">Confirmer</a>
 
                     
                 </div>
