@@ -68,8 +68,11 @@ p {
   margin-left: 50px;
 }
 
-.resultats-billets,.infos-persos,.porte-a-porte,.confirmation-reservation {
-    margin-top: 45px;
+.resultats-billets,
+.infos-persos,
+.porte-a-porte,
+.confirmation-reservation {
+  margin-top: 45px;
 }
 
 .bouton-peche {
@@ -79,15 +82,9 @@ p {
 }
 
 .bouton-bleu {
-<<<<<<< HEAD
   background-color: #264abd;
   color: #ffffff !important;
   border-radius: 2rem;
-=======
-    background-color: #264ABD;
-    color: #ffffff!important;
-    border-radius: 2rem;
->>>>>>> main
 }
 
 .bleu-fp {
@@ -131,20 +128,15 @@ p {
   top: 1px;
 }
 
-<<<<<<< HEAD
 .border-fp {
   border-style: solid;
   border-radius: 20px;
   border-color: #264abd;
   border-width: 1px;
-=======
-p {
-    font-size: 1em;
 }
 
 .small-p {
-    font-size: 0.9em;
->>>>>>> main
+  font-size: 0.9em;
 }
 
 .bold {
@@ -157,13 +149,6 @@ p {
 }
 
 /*MENU*/
-<<<<<<< HEAD
-.navbar {
-  font-size: 1em;
-}
-
-=======
->>>>>>> main
 .navbar .navbar-brand {
   max-width: 180px;
 }
@@ -177,14 +162,7 @@ p {
 @media (max-width: 1024px) {
   .navbar li {
     min-width: fit-content;
-<<<<<<< HEAD
   }
-  .navbar-expand-md .navbar-nav .nav-link {
-    font-size: 1em;
-  }
-=======
-}
->>>>>>> main
 }
 
 .nav .bouton-peche {
@@ -194,8 +172,8 @@ p {
 }
 
 .nav .bouton-peche:hover {
-    background-color:  #264ABD;
-    color: #ffffff;
+  background-color: #264abd;
+  color: #ffffff;
 }
 
 .navbar .nav-link {
@@ -206,13 +184,6 @@ p {
 .navbar .nav-link-style {
   color: #264abd !important;
 }
-<<<<<<< HEAD
-.navbar .nav-link:hover {
-  color: pink !important;
-}
-=======
-
->>>>>>> main
 
 .navbar-toggler {
   color: #fff !important;
@@ -288,8 +259,8 @@ h4 {
 }
 
 .recaps-trajet .bouton-peche:hover {
-    background-color:  #264ABD;
-    color: #ffffff;
+  background-color: #264abd;
+  color: #ffffff;
 }
 
 .recap {
@@ -381,14 +352,8 @@ h4 {
 
 /*FILTRES */
 #mode-transport .mode-transport {
-<<<<<<< HEAD
   font-family: "Avenir Black", Arial, Sans-serif;
-  font-size: 1rem;
   color: #f0856b;
-=======
-    font-family: "Avenir Black",Arial, Sans-serif;
-    color: #f0856b;
->>>>>>> main
 }
 
 #filtresTransport {
@@ -415,25 +380,7 @@ h4 {
   flex-wrap: nowrap;
 }
 
-<<<<<<< HEAD
 /*RESULTATS*/
-#resultats-billets {
-  margin-top: 40px;
-}
-#resultats-billets h2 {
-  font-family: "Avenir Black", Arial, Sans-serif;
-  font-size: 2rem;
-  color: #264abd;
-  margin-left: 50px;
-}
-
-#resultats-billets .carte-trajet {
-  float: right;
-  max-height: 350px;
-  margin-right: 50px;
-  margin-top: -100px;
-=======
-/*RESULTATS*/ 
 
 /*#resultats-billets {
     margin-top: 40px;
@@ -442,27 +389,24 @@ h4 {
 }*/
 
 #resultats-billets h2 {
-    font-family: "Avenir Black",Arial, Sans-serif;
-    font-size: 2em;
-    color: #264ABD;
-    margin-left: 50px;
+  font-family: "Avenir Black", Arial, Sans-serif;
+  font-size: 2em;
+  color: #264abd;
+  margin-left: 50px;
 }
 
 #resultats-billets .bloc-r {
-    float: right;
+  float: right;
 }
 #resultats-billets .flex {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #resultats-billets .carte-trajet {
-
-    max-height: 350px;
-    margin-right: 50px;
-    margin-top: -100px;
-
->>>>>>> main
+  max-height: 350px;
+  margin-right: 50px;
+  margin-top: -100px;
 }
 
 .les-billets {
@@ -516,84 +460,54 @@ h4 {
 }
 
 .recap-etapes .container {
-<<<<<<< HEAD
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   justify-content: space-between;
-=======
-    display: flex;
-    padding-top: 13px;
-    padding-bottom: 13px;
-    justify-content: space-between;
->>>>>>> main
 }
 
 .recap-etapes a {
-<<<<<<< HEAD
   max-height: 68px;
   display: inline-flex;
   flex-wrap: nowrap;
   width: 170px;
-=======
-    max-height:68px;
-    display: inline-flex;
-    flex-wrap: nowrap;
-    width: 170px;
->>>>>>> main
 }
 
 .recap-etapes a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .recap-etapes #container-infos .a4-i {
-    opacity: 70%;
+  opacity: 70%;
 }
 
-.recap-etapes #container-pap .a3-p,.a4-p {
-    opacity: 70%;
+.recap-etapes #container-pap .a3-p,
+.a4-p {
+  opacity: 70%;
 }
 
-.recap-etapes #container-options .a2-o,.a3-o,.a4-o {
-    opacity: 70%;
+.recap-etapes #container-options .a2-o,
+.a3-o,
+.a4-o {
+  opacity: 70%;
 }
 
 .text-recap-e {
-<<<<<<< HEAD
   color: #ffffff;
   margin: auto 0px auto 0px;
-  font-size: 1em;
   text-align: center;
   width: fit-content;
 }
 
 .recap-etapes .num-e {
   background-color: #ffffff;
-  color: #354372;
+  color: #264abd;
   padding: 10px 17px 10px 17px;
   font-family: "Avenir Black", Arial, Sans-serif;
   border-radius: 2rem;
   max-height: 44px;
   max-width: 44px;
   margin: auto 15px auto 0px;
-=======
-    color:#ffffff;
-    margin: auto 0px auto 0px;
-    text-align: center;
-    width: fit-content;
-}
-
-.recap-etapes .num-e {
-    background-color:#ffffff;
-    color:#264ABD;
-    padding: 10px 17px 10px 17px;
-    font-family: "Avenir Black",Arial, Sans-serif;
-    border-radius: 2rem;
-    max-height: 44px;
-    max-width: 44px;
-    margin:  auto 15px auto 0px;
->>>>>>> main
 }
 
 .recap-etapes .next {
@@ -615,11 +529,10 @@ h4 {
                     <a class="valider"></a>*/
 
 .options-billets .wrapper {
-<<<<<<< HEAD
   display: grid;
   width: 100%;
   grid-template-columns: 75% 25%;
-  grid-gap: 20px;
+  grid-gap: 40px 70px;
   grid-auto-rows: minmax(100px, auto);
   margin-top: 30px;
 }
@@ -627,25 +540,9 @@ h4 {
 .porte-a-porte .wrapper-pap {
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-gap: 20px;
+  grid-gap: 40px 70px;
   grid-auto-rows: minmax(100px, auto);
   margin-top: 30px;
-=======
-    display: grid;
-    width: 100%;
-    grid-template-columns:  75% 25%;
-    grid-gap: 40px 70px;
-    grid-auto-rows: minmax(100px, auto);
-    margin-top: 30px;
-}
-
-.porte-a-porte .wrapper-pap {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-gap: 40px 70px;
-    grid-auto-rows: minmax(100px, auto);
-    margin-top: 30px;
->>>>>>> main
 }
 
 .porte-a-porte .recap-t {
@@ -658,21 +555,13 @@ h4 {
 }
 
 .options-billets .recap-t img {
-<<<<<<< HEAD
   width: 100%;
-=======
-    width: 100%;
-    height: 100%;
->>>>>>> main
+  height: 100%;
 }
 
 .porte-a-porte .recap-t img {
-<<<<<<< HEAD
   width: 100%;
-=======
-    width: 100%;
-    height: 100%;
->>>>>>> main
+  height: 100%;
 }
 
 .options-billets .billet1 {
@@ -693,19 +582,11 @@ h4 {
 }
 
 .options-billets .tarifs .place {
-<<<<<<< HEAD
   margin-top: 0px;
   margin-bottom: 0px;
   padding-left: 20px;
   color: #398aff;
-  font-size: 0.8rem;
-=======
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 20px;
-    color: #398AFF;
-    font-size: 0.8em;
->>>>>>> main
+  font-size: 0.8em;
 }
 
 .options-billets .tarifs .row {
@@ -732,12 +613,6 @@ h4 {
   width: 30px;
 }
 
-<<<<<<< HEAD
-.options-billets .tarifs .row1 .row .Eurostar {
-}
-
-=======
->>>>>>> main
 .options-billets .tarifs .row .bloc {
   border-style: solid;
   border-radius: 20px;
@@ -746,13 +621,10 @@ h4 {
   padding-top: 5px;
 }
 
-<<<<<<< HEAD
-=======
 .options-billets .tarifs .row .bloc:hover {
-    background-color:  #F3F3F8;
+  background-color: #f3f3f8;
 }
 
->>>>>>> main
 .options-billets .tarifs .row .bloc p {
   text-align: center;
   padding-left: 40px;
@@ -822,11 +694,7 @@ h4 {
   margin-bottom: 0px;
 }
 .options-billets .impact-ecolo .row-ecolo .text {
-<<<<<<< HEAD
-  font-size: 0.8rem;
-=======
-    font-size: 0.8em;
->>>>>>> main
+  font-size: 0.8em;
 }
 
 .options-billets .impact-ecolo .separateur {
@@ -849,11 +717,7 @@ h4 {
   margin-bottom: 0px;
 }
 .porte-a-porte .impact-ecolo .row-ecolo .text {
-<<<<<<< HEAD
-  font-size: 0.8rem;
-=======
-    font-size: 0.8em;
->>>>>>> main
+  font-size: 0.8em;
 }
 
 .porte-a-porte .impact-ecolo .separateur {
@@ -863,26 +727,19 @@ h4 {
 }
 
 .options-billets .billet2 {
-<<<<<<< HEAD
   grid-column: 1;
   grid-row: 4/7;
-  margin-top: 40px;
   margin-bottom: 40px;
-=======
-    grid-column  : 1;
-    grid-row     : 4/7;
-    margin-bottom: 40px;
->>>>>>> main
 }
 
 .options-billets .recap-b {
-<<<<<<< HEAD
   grid-column: 2/2;
   grid-row: 2/3;
   padding: 20px;
   border-radius: 20px;
   border-style: solid;
   border-width: 1px;
+  border-color: #13090f;
   height: fit-content;
 }
 
@@ -893,28 +750,8 @@ h4 {
   border-radius: 20px;
   border-style: solid;
   border-width: 1px;
+  border-color: #13090f;
   height: fit-content;
-=======
-    grid-column  : 2/2;
-    grid-row     : 2/3;
-    padding      : 20px;
-    border-radius: 20px;
-    border-style : solid;
-    border-width : 1px;
-    border-color: #13090f;
-    height       : fit-content;
-}
-
-.porte-a-porte .recap-b {
-    grid-column  : 2/2;
-    grid-row     : 2/3;
-    padding      : 20px;
-    border-radius: 20px;
-    border-style : solid;
-    border-width : 1px;
-    border-color: #13090f;
-    height       : fit-content;
->>>>>>> main
 }
 .options-billets .recap-b h5 {
   margin-bottom: 20px;
@@ -925,11 +762,7 @@ h4 {
 }
 
 .options-billets .recap-b p {
-<<<<<<< HEAD
-  font-size: 0.9rem;
-=======
-    font-size: 0.9em;
->>>>>>> main
+  font-size: 0.9em;
 }
 
 .options-billets .recap-b .row1 p {
@@ -937,7 +770,7 @@ h4 {
 }
 
 .recap-b .row4 p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .options-billets .recap-b .row .text-tranquille {
@@ -952,11 +785,7 @@ h4 {
 }
 
 .porte-a-porte .recap-b p {
-<<<<<<< HEAD
-  font-size: 0.9rem;
-=======
-    font-size: 0.9em;
->>>>>>> main
+  font-size: 0.9em;
 }
 
 .porte-a-porte .recap-b .row1 p {
@@ -986,25 +815,14 @@ h4 {
 }
 
 .options-billets .modalités p {
-<<<<<<< HEAD
   color: #264abd;
   margin-bottom: 0px;
-  font-size: 0.9rem;
+  font-size: 0.9em;
 }
 .porte-a-porte .modalités p {
   color: #264abd;
   margin-bottom: 0px;
-  font-size: 0.9rem;
-=======
-    color        : #264ABD;
-    margin-bottom: 0px;
-    font-size    : 0.9em;
-}
-.porte-a-porte .modalités p {
-    color        : #264ABD;
-    margin-bottom: 0px;
-    font-size    : 0.9em;
->>>>>>> main
+  font-size: 0.9em;
 }
 
 .options-billets .modalités .billet2 {
@@ -1012,8 +830,8 @@ h4 {
 }
 
 .porte-a-porte .modalités .billet2 {
-    margin-top: 15px;
-} 
+  margin-top: 15px;
+}
 
 .options-billets .valider {
   grid-column: 2/2;
@@ -1029,15 +847,13 @@ h4 {
   align-self: end;
 }
 
-
 .options-billets .valider:hover {
-    background-color:  #264ABD;
-    color: #ffffff!important;
-    text-decoration: none;
+  background-color: #264abd;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .porte-a-porte .valider {
-<<<<<<< HEAD
   grid-column: 2/2;
   grid-row: 5/6;
   padding-left: 40px;
@@ -1048,29 +864,13 @@ h4 {
   text-align: center;
   height: fit-content;
   align-self: start;
-}
-
-.porte-a-porte .valider {
   margin-top: 0px !important;
-=======
-    grid-column   : 2/2;
-    grid-row      : 5/6;
-    padding-left  : 40px;
-    padding-right : 40px;
-    padding-top   : 10px;
-    padding-bottom: 10px;
-    border-radius : 2rem;
-    text-align    : center;
-    height        : fit-content;
-    align-self: start;
-    margin-top: 0px!important;
 }
 
 .porte-a-porte .valider:hover {
-    background-color:  #264ABD;
-    color: #ffffff!important;
-    text-decoration: none;
->>>>>>> main
+  background-color: #264abd;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 /* PORTE A PORTE */
@@ -1092,40 +892,25 @@ h4 {
 }
 
 .porte-a-porte .choix-depart .row-depart a:hover .bloc {
-    background-color:  #F3F3F8;
-    text-decoration: none;
+  background-color: #f3f3f8;
+  text-decoration: none;
 }
 
 .porte-a-porte .choix-depart .row-depart a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .porte-a-porte .choix-depart .row-depart p {
-<<<<<<< HEAD
   font-size: 0.9em;
   padding: 15px;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
-  height: 6rem;
-  box-sizing: border-box;
+  margin: auto 0px auto 0px;
 }
 
 .porte-a-porte .choix-depart .row-depart .bloc {
   margin-bottom: 20px;
-  height: 110px;
-=======
-    font-size: 0.9em;
-    padding: 15px;
-    text-align: center;
-    margin: auto 0px  auto 0px;
-}
-
-.porte-a-porte .choix-depart .row-depart .bloc {
-    margin-bottom: 20px;
-    height: 100%;
-    display: flex;
->>>>>>> main
+  height: 100%;
+  display: flex;
 }
 
 .porte-a-porte .choix-depart .row-depart .bloc1 {
@@ -1135,271 +920,261 @@ h4 {
   margin-right: 10px;
 }
 
-<<<<<<< HEAD
-/* CONFIRMATION RESERVATION */
-=======
 /* INFOS PERSOS */
 
-
-
 .infos-persos .wrapper {
-    display: grid;
-    grid-template-columns: 70% 30%;
-    grid-gap: 40px 70px;
-    grid-auto-rows: minmax(50px, auto);
-    margin-top: 30px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 40px 70px;
+  grid-auto-rows: minmax(50px, auto);
+  margin-top: 30px;
 }
 
 .infos-persos .recap-t {
-    grid-column: 1;
-    grid-row: 1/2;
+  grid-column: 1;
+  grid-row: 1/2;
 }
 
 .infos-persos .recap-t img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .infos-persos .impact-ecolo {
-    grid-column: 2/2;
-    grid-row: 1;
+  grid-column: 2/2;
+  grid-row: 1;
 }
 
 .infos-persos .impact-ecolo .conteneur {
-    background-color: #26e8bd;
-    height: fit-content;
-    padding: 20px;
-    border-radius: 20px;
+  background-color: #26e8bd;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
 }
 .infos-persos .impact-ecolo .conteneur {
-    background-color: #26e8bd;
-    height: fit-content;
-    padding: 20px;
-    border-radius: 20px;
+  background-color: #26e8bd;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
 }
 .infos-persos .impact-ecolo .row-ecolo {
-    flex-wrap: nowrap;
-    text-align: center;
-    margin-top: 25px;
+  flex-wrap: nowrap;
+  text-align: center;
+  margin-top: 25px;
 }
 
 .infos-persos .impact-ecolo .row-ecolo .bloc1 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .infos-persos .impact-ecolo .row-ecolo .bold {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 .infos-persos .impact-ecolo .row-ecolo .text {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 .infos-persos .impact-ecolo .separateur {
-    height: 1px;
-    background-color: #264ABD;
-    margin-top: 20px;
+  height: 1px;
+  background-color: #264abd;
+  margin-top: 20px;
 }
 
 .infos-persos .recap-b {
-    grid-column  : 2/2;
-    grid-row     : 2/3;
-    padding      : 20px;
-    border-radius: 20px;
-    border-style : solid;
-    border-color: #13090f;
-    border-width : 1px;
-    height       : fit-content;
+  grid-column: 2/2;
+  grid-row: 2/3;
+  padding: 20px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #13090f;
+  border-width: 1px;
+  height: fit-content;
 }
 
 .infos-persos .recap-b h5 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .infos-persos .recap-b .row {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .porte-a-porte .recap-b p {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
 .infos-persos .recap-b .row1 p {
-    margin-bottom: 0px; 
+  margin-bottom: 0px;
 }
 
 .infos-persos .recap-b .row .text-tranquille {
-    margin-left:15px;
+  margin-left: 15px;
 }
 
 .infos-persos .modalités {
-    grid-column     : 2/3;
-    grid-row        : 3/5;
-    padding         : 20px;
-    background-color: #f3f3f8;
-    border-radius   : 20px;
-    height          : fit-content;
+  grid-column: 2/3;
+  grid-row: 3/5;
+  padding: 20px;
+  background-color: #f3f3f8;
+  border-radius: 20px;
+  height: fit-content;
 }
 
-
 .infos-persos .modalités p {
-    color        : #264ABD;
-    margin-bottom: 0px;
-    font-size    : 0.9em;
+  color: #264abd;
+  margin-bottom: 0px;
+  font-size: 0.9em;
 }
 
 .infos-persos .modalités .billet2 {
-    margin-top: 15px;
-} 
-
-.infos-persos .valider {
-    grid-column   : 2/2;
-    grid-row      : 4/5;
-    padding-left  : 20px;
-    padding-right : 20px;
-    padding-top   : 10px;
-    padding-bottom: 10px;
-    border-radius : 2rem;
-
-    text-align    : center;
-    height        : fit-content;
-    margin-top: -25px;
+  margin-top: 15px;
 }
 
+.infos-persos .valider {
+  grid-column: 2/2;
+  grid-row: 4/5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2rem;
 
+  text-align: center;
+  height: fit-content;
+  margin-top: -25px;
+}
 
 .infos-persos .creer-compte {
-    grid-column     : 1;
-    grid-row        : 2/3;
-    padding         : 20px;
-    border-radius   : 20px;
-    display: flex;
+  grid-column: 1;
+  grid-row: 2/3;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
 }
 
 .infos-persos .creer-compte .col-l {
-    margin-right: 10px;
-    width: 75%;
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-right: 10px;
+  width: 75%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .infos-persos .creer-compte .col-l .text {
-    margin-right: 5px;
-    margin-bottom: 0px;
+  margin-right: 5px;
+  margin-bottom: 0px;
 }
 
 .infos-persos .creer-compte .col-r {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .infos-persos .creer-compte .col-r .bouton {
-    padding: 10px 15px 10px 15px;
-    text-align: center;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
 }
 
 .infos-persos .creer-compte .col-r .bouton:hover {
-    background-color:  #f0856b;
-    color: #ffffff!important;
-    text-decoration: none;
+  background-color: #f0856b;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .infos-persos .formulaire {
-    grid-column     : 1;
-    grid-row        : 3/4;
-    padding         : 20px;
-    border-radius   : 20px;
-    display: flex;
+  grid-column: 1;
+  grid-row: 3/4;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
 }
 
 .infos-persos .formulaire .ligne1 {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .infos-persos .formulaire .ligne2 {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .infos-persos .formulaire .ligne2 p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .infos-persos .formulaire .ligne2 input {
-    width: 100%;
-    border-radius: 2em;
-    border-width: 1px;
-    border-color: #264ABD;
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:15px;
-    color:#B1B1B1;
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  color: #b1b1b1;
 }
 
 .infos-persos .formulaire .cols {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .infos-persos .formulaire .cols .ligne {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .infos-persos .formulaire .cols .col-l {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
 }
 
 .infos-persos .formulaire .col-l input {
-    width: 100%;
-    border-radius: 2em;
-    border-width: 1px;
-    border-color: #264ABD;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
 
 .infos-persos .formulaire .cols .col-r {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .infos-persos .formulaire .col-r input {
-    width: 100%;
-    border-radius: 2em;
-    border-width: 1px;
-    border-color: #264ABD;
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:15px;
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
 }
 
 .infos-persos .formulaire .ligne3 {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-top: 20px;
-    justify-content: flex-start;
-    
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 20px;
+  justify-content: flex-start;
 }
 
 .infos-persos .formulaire .ligne3 input {
-    border-radius: 200px;
-    border-width: 1px;
-    border-color: #264ABD;
-    margin-right:15px;
-    margin-top: auto;
-    margin-bottom: auto;
+  border-radius: 200px;
+  border-width: 1px;
+  border-color: #264abd;
+  margin-right: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .infos-persos .formulaire .ligne3 label {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
-/* CONFIRMATION RESERVATION */ 
->>>>>>> main
+/* CONFIRMATION RESERVATION */
 
 .confirmation-reservation .main {
   text-align: center;
@@ -1438,7 +1213,6 @@ h4 {
   background-position: bottom;
 }
 
-
 .confirmation-bouton-confirmer .bouton {
   height: 280px;
   display: flex;
@@ -1457,14 +1231,11 @@ h4 {
   margin-bottom: 55px;
 }
 
-<<<<<<< HEAD
-=======
 .confirmation-bouton-confirmer .retour-accueil-confirmation:hover {
-    background-color:  #264ABD;
-    text-decoration: none;
+  background-color: #264abd;
+  text-decoration: none;
 }
 
->>>>>>> main
 .confirmation-reservation .confirmation-grid .left .indicateurs .bloc {
   text-align: center;
 }
@@ -1497,9 +1268,9 @@ h4 {
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton:hover {
-    background-color:  #264ABD;
-    color: #ffffff!important;
-    text-decoration: none;
+  background-color: #264abd;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton img {
@@ -1535,8 +1306,6 @@ h4 {
   flex-grow: 1;
 }
 
-<<<<<<< HEAD
-=======
 /*
 .footer .bloc a:hover {
     background-color: #264ABD;
@@ -1544,7 +1313,6 @@ h4 {
 }
 */
 
->>>>>>> main
 .footer .bouton-aide {
   border-style: solid;
   border-color: #264abd;
@@ -1557,9 +1325,9 @@ h4 {
 }
 
 .footer .bouton-aide:hover {
-    background-color:  #264ABD;
-    color: #ffffff!important;
-    text-decoration: none;
+  background-color: #264abd;
+  color: #ffffff !important;
+  text-decoration: none;
 }
 
 .footer h5 {

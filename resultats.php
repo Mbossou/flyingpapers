@@ -117,7 +117,7 @@
                     <div class="bloc-r">
                         <div class="flex">
                             <img class="carte-trajet" src="img/carte-resultats.png" alt="carte itinéraire du trajet">
-                            <!--<a href="http://localhost/flyingpapers/optionsbillets.html" class="bouton-peche">Poursuivre avec ce trajet</a>-->
+                            <a href="/flyingpapers/optionsbillets.html" class="bouton-peche">Poursuivre avec ce trajet</a>
                         </div>
                         
                     </div>
