@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/script.js"></script>
         
-        <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
+        <title>
+        Flying Papers | Comparez plusieurs billets de transport et voyagez léger
+    </title>
         
     </head>
     <body>
@@ -211,7 +213,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
+        <section class="footer">
             <div class="container">
                 <div class="row">
                     <div id="entreprise" class="bloc">
@@ -248,8 +250,6 @@
                     </div>
                 </div>      
             </div>
-            <div style="background:pink;color:#333;position:fixed;right:0;bottom:0;z-index:99999999;font:1em arial;" id="ld"></div><script>setInterval(function(){if($(window).height()>=$(document).height()){$('#ld').text($(document).width()+' px');}else{$('#ld').text($(document).width()+17+' px');}},150);</script>
-
-                </footer>
+        </section>
     </body>
 </html>

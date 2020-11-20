@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
     
-    <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
+    <title>
+        Flying Papers | Comparez plusieurs billets de transport et voyagez léger
+    </title>
      
 </head>
 <body>
@@ -108,19 +110,17 @@
                     <div id="nous-suivre">
                         <div class="bloc">
                             <h5>Nous suivre</h5>
-                            <a href="#"><img src="img/icon-facebook.PNG" alt="icone Facebook" /></a>
-                            <a href="#"><img src="img/icon-twitter.PNG" alt="icone Twitter" /></a>
-                            <a href="#"><img src="img/icon-instagram.PNG" alt="icone Instagram" /></a>
-                            <a href="#"><img src="img/icon-youtube.PNG" alt="icone Youtube" /></a>
-                            <a href="#"><img src="img/icon-linkedin.PNG" alt="icone Linkedin" /></a>
+                            <a href="#"><img src="img/icon-facebook.svg" alt="icone Facebook" /></a>
+                            <a href="#"><img src="img/icon-twitter.svg" alt="icone Twitter" /></a>
+                            <a href="#"><img src="img/icon-instagram.svg" alt="icone Instagram" /></a>
+                            <a href="#"><img src="img/icon-youtube.svg" alt="icone Youtube" /></a>
+                            <a href="#"><img src="img/icon-linkedin.svg" alt="icone Linkedin" /></a>
                         </div>
                         <br>
                         <a  href="#"><img src="img/LOGO1.PNG" class="footer-brand" alt="logo Flying Papers" /></a>
                     </div>
                 </div>      
             </div>
-            <div style="background:pink;color:#333;position:fixed;right:0;bottom:0;z-index:99999999;font:1em arial;" id="ld"></div><script>setInterval(function(){if($(window).height()>=$(document).height()){$('#ld').text($(document).width()+' px');}else{$('#ld').text($(document).width()+17+' px');}},150);</script>
-
         </section>
 </body>
 </html>
