@@ -117,7 +117,6 @@
                     <div class="bloc-r">
                         <div class="flex">
                             <img class="carte-trajet" src="img/carte-resultats.png" alt="carte itinéraire du trajet">
-                            <a href="/flyingpapers/optionsbillets.html" class="bouton-peche">Poursuivre avec ce trajet</a>
                         </div>
                         
                     </div>
@@ -134,6 +133,7 @@
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
                                 //echo print_r($billet);
+                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html">';
                                 echo '<div class="billet" id="billet1">';
                                 echo '<div class="horaires rub">';
                                 echo '<p class="p">'. $billet['lieu_depart'] . '</p>';
@@ -156,6 +156,7 @@
                                 echo '<p class="p p10">Plus de détails</p>';
                                 echo '</div>';
                                 echo '</div>';
+                                echo '</a>';
                                 //echo '<p> Ville de départ sélectionnée :'. $_GET['villeDepart'] . '___ </p>';
                                 //echo '<p> Ville d\'arrivée sélectionnée :'. $_GET['villeArrivee'] . '</p>';
                             }
