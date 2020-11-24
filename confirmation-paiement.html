@@ -1,124 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/script.js"></script>
-        
-        <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
-        
-    </head>
-    <body>
-        
-        <a href="#"></a>
-        <!-- Choix des langues en haut à droite -->
-        <!-- Menu : "Vos réservations" ; "S'inscrire" ; "Se connecter" en haut à droite -->
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <a  href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
-        
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav nav-pills navbar-nav">
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#langue">FR</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#reservations">Vos réservations</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#inscription">S'inscrire</a></li>
-                    <li class="nav-item"><a class="nav-link bouton-peche" href="#connexion">Se connecter</a></li>
-                </ul>
-            </div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js"></script>
 
-        <section class="confirmation-reservation col-sm-12">
-            <div class="container">
-                <div class="main">
-                    <img src="img/ico_check.png" class="check" alt="Coche de validation" />
-                    <h5 class="bleu-fp bold">Votre commande est enregistrée.</h5>
-                    <p class="peche-fp">La confirmation de paiement ainsi que vos billets vous ont été envoyés sur votre adresse e-mail. </p>
-                </div>
-                <div class="confirmation-grid">
-                    <div class="left">
-                        <p class="bleu-fp bold">Par rapport à un voyage en avion vous avez économisé :</p>
-                        <div class="indicateurs">
-                            <div class="bloc">
-                                <div class="indic">
-                                    <img src="img/CO2.png" class="indicateurs-ic" alt="Icone CO2" />
-                                    <p class="bold bleu-fp">128 KG</p>
-                                </div>
-                                <div>
-                                    <p>CO2 émis / pers. pour un aller</p>
-                                </div>
-                            </div>
-                            <div class="bloc">
-                                <div class="indic">
-                                    <img src="img/Jauge.png" class="indicateurs-ic" alt="Icone thermomètre" />
-                                    <p class="bold bleu-fp">20%</p>
-                                </div>
-                                <div>
-                                    <p>Du quota annuel pour limiter le réchauffement </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <p class="bleu-fp bold">Vous pouvez télécharger vos billets <br>
-                        en cliquant ici :</p>
-                        <a href="#" class="confirmation-bouton bouton-peche">
-                            <img src="img/DDL.png" class="confirm-bouton" alt="Icone CO2" />
-                            <p>Votre e-billet</p>
-                        </a>
-                    </div>                    
-                </div>
-                
-            </div>
-        </section>
-        <section class="confirmation-bouton-confirmer">
-            <div class="bouton col-sm-12">
-                <a href="#" class="retour-accueil-confirmation bouton-peche">Retour à l'accueil</a>
-            </div>
-        </section>
+    <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
+  </head>
+  <body>
+    <a href="#"></a>
+    <!-- Choix des langues en haut à droite -->
+    <!-- Menu : "Vos réservations" ; "S'inscrire" ; "Se connecter" en haut à droite -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
 
-        <section class="footer">
-            <div class="container">
-                <div class="row">
-                    <div id="entreprise" class="bloc">
-                        <h5>L'entreprise</h5>
-                        <a href="#"><p>Conditions d'utilisation</p></a>
-                        <a href="#"><p>Nos valeurs écologiques</p></a>
-                        <a href="#"><p>Devenez partenaire</p></a>
-                        <a href="#"><p>Mentions légales</p></a>
-                        <a href="#"><p>CGU/CGV</p></a>
-                        <a href="#"><p>Contact</p></a>
-                    </div>
-                    <div id="voyage" class="bloc">
-                        <h5>Votre voyage</h5>  
-                        <a href="#"><p>Vos réservations</p></a>
-                        <a href="#"><p>Créer un compte</p></a>
-                        <a href="#"><p>Foire aux questions</p></a>
-                        <a href="#"><p>Avis de nos clients</p></a>
-                    </div>
-                    <div id="aide" class="bloc">
-                        <h5>Besoin d'aide</h5>
-                        <a href="#" class="bouton-aide bold bleu-fp">Centre d'aide</a>
-                    </div>
-                    <div id="nous-suivre">
-                        <div class="bloc">
-                            <h5>Nous suivre</h5>
-                            <a href="#"><img src="img/icon-facebook.PNG" alt="icone Facebook" /></a>
-                            <a href="#"><img src="img/icon-twitter.PNG" alt="icone Twitter" /></a>
-                            <a href="#"><img src="img/icon-instagram.PNG" alt="icone Instagram" /></a>
-                            <a href="#"><img src="img/icon-youtube.PNG" alt="icone Youtube" /></a>
-                            <a href="#"><img src="img/icon-linkedin.PNG" alt="icone Linkedin" /></a>
-                        </div>
-                        <br>
-                        <a  href="#"><img src="img/LOGO1.PNG" class="footer-brand" alt="logo Flying Papers" /></a>
-                    </div>
-                </div>
-                            
-            </div>
-            <div style="background:pink;color:#333;position:fixed;right:0;bottom:0;z-index:99999999;font:1em arial;" id="ld"></div><script>setInterval(function(){if($(window).height()>=$(document).height()){$('#ld').text($(document).width()+' px');}else{$('#ld').text($(document).width()+17+' px');}},150);</script>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav nav-pills navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#langue">FR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        </section>
-    </body>
+    <section class="confirmation-reservation col-sm-12">
+      <div class="container">
+        <div class="main">
+          <img src="img/ico_check.png" class="check" alt="Coche de validation" />
+          <h5 class="bleu-fp bold">Votre commande est enregistrée.</h5>
+          <p class="peche-fp">La confirmation de paiement ainsi que vos billets vous ont été envoyés sur votre adresse e-mail.</p>
+        </div>
+        <div class="confirmation-grid">
+          <div class="left">
+            <p class="bleu-fp bold">Par rapport à un voyage en avion vous avez économisé :</p>
+            <div class="indicateurs">
+              <div class="bloc">
+                <div class="indic">
+                  <img src="img/CO2.png" class="indicateurs-ic" alt="Icone CO2" />
+                  <p class="bold bleu-fp">128 KG</p>
+                </div>
+                <div>
+                  <p>CO2 émis / pers. pour un aller</p>
+                </div>
+              </div>
+              <div class="bloc">
+                <div class="indic">
+                  <img src="img/Jauge.png" class="indicateurs-ic" alt="Icone thermomètre" />
+                  <p class="bold bleu-fp">20%</p>
+                </div>
+                <div>
+                  <p>Du quota annuel pour limiter le réchauffement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <p class="bleu-fp bold">
+              Vous pouvez télécharger vos billets <br />
+              en cliquant ici :
+            </p>
+            <a href="#" class="confirmation-bouton bouton-peche">
+              <img src="img/DDL.png" class="confirm-bouton" alt="Icone CO2" />
+              <p>Votre e-billet</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="confirmation-bouton-confirmer">
+      <div class="bouton col-sm-12">
+        <a href="#" class="retour-accueil-confirmation bouton-peche">Retour à l'accueil</a>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="container">
+        <div class="row">
+          <div id="entreprise" class="bloc">
+            <h5>L'entreprise</h5>
+            <a href="#"><p>Conditions d'utilisation</p></a>
+            <a href="#"><p>Nos valeurs écologiques</p></a>
+            <a href="#"><p>Devenez partenaire</p></a>
+            <a href="#"><p>Mentions légales</p></a>
+            <a href="#"><p>CGU/CGV</p></a>
+            <a href="#"><p>Contact</p></a>
+          </div>
+          <div id="voyage" class="bloc">
+            <h5>Votre voyage</h5>
+            <a href="#"><p>Vos réservations</p></a>
+            <a href="#"><p>Créer un compte</p></a>
+            <a href="#"><p>Foire aux questions</p></a>
+            <a href="#"><p>Avis de nos clients</p></a>
+          </div>
+          <div id="aide" class="bloc">
+            <h5>Besoin d'aide</h5>
+            <a href="#" class="bouton-aide bold bleu-fp">Centre d'aide</a>
+          </div>
+          <div id="nous-suivre">
+            <div class="bloc">
+              <h5>Nous suivre</h5>
+              <a href="#"><img src="img/icon-facebook.svg" alt="icone Facebook" /></a>
+              <a href="#"><img src="img/icon-twitter.svg" alt="icone Twitter" /></a>
+              <a href="#"><img src="img/icon-instagram.svg" alt="icone Instagram" /></a>
+              <a href="#"><img src="img/icon-youtube.svg" alt="icone Youtube" /></a>
+              <a href="#"><img src="img/icon-linkedin.svg" alt="icone Linkedin" /></a>
+            </div>
+            <br />
+            <a href="#"><img src="img/LOGO1.PNG" class="footer-brand" alt="logo Flying Papers" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

@@ -9,7 +9,9 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/script.js"></script>
         
-        <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
+        <title>
+        Flying Papers | Comparez plusieurs billets de transport et voyagez léger
+    </title>
         
     </head>
     <body>
@@ -134,6 +136,7 @@
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
                                 //echo print_r($billet);
+                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html">';
                                 echo '<div class="billet" id="billet1">';
                                 echo '<div class="horaires rub">';
                                 echo '<p class="p">'. $billet['lieu_depart'] . '</p>';
@@ -156,6 +159,7 @@
                                 echo '<p class="p p10">Plus de détails</p>';
                                 echo '</div>';
                                 echo '</div>';
+                                echo '</a>';
                                 //echo '<p> Ville de départ sélectionnée :'. $_GET['villeDepart'] . '___ </p>';
                                 //echo '<p> Ville d\'arrivée sélectionnée :'. $_GET['villeArrivee'] . '</p>';
                             }
@@ -210,7 +214,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
+        <section class="footer">
             <div class="container">
                 <div class="row">
                     <div id="entreprise" class="bloc">
@@ -247,8 +251,6 @@
                     </div>
                 </div>      
             </div>
-            <div style="background:pink;color:#333;position:fixed;right:0;bottom:0;z-index:99999999;font:1em arial;" id="ld"></div><script>setInterval(function(){if($(window).height()>=$(document).height()){$('#ld').text($(document).width()+' px');}else{$('#ld').text($(document).width()+17+' px');}},150);</script>
-
-                </footer>
+        </section>
     </body>
 </html>
