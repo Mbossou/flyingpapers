@@ -306,11 +306,9 @@ h1 {
 
 /*RESULTATS*/ 
 
-/*#resultats-billets {
+#resultats-billets {
     margin-top: 40px;
-    display: grid;
-    gri
-}*/
+}
 
 #resultats-billets h2 {
     font-family: "Avenir Black",Arial, Sans-serif;
@@ -318,36 +316,54 @@ h1 {
     color: #264ABD;
     margin-left: 50px;
 }
+#resultats-billets .les-billets {
+    display: grid;
+    grid-template-columns:  65% 35%;
+    grid-gap: 10px 70px;
+    grid-auto-rows: minmax(50px, auto);
+    margin-top: 60px;
+    align-items: flex-end;
+}
 
 #resultats-billets .bloc-r {
-    float: right;
+    grid-column: 2/2;
+    width: 80%;
+    grid-row: 1/2;
 }
+
 #resultats-billets .flex {
     display: flex;
     flex-wrap: wrap;
 }
 
+#resultats-billets .flex a {
+    padding: 10px 15px 10px 15px;
+    text-align: center;
+    margin: 15px auto 0px auto;
+}
+
+#resultats-billets .flex a:hover {
+    background-color: #264ABD;
+    text-decoration: none;
+}
+
 #resultats-billets .carte-trajet {
 
     max-height: 350px;
-    margin-right: 50px;
+    max-width: 100%;
     margin-top: -100px;
 
 }
 
-.les-billets{
-    margin-top: 60px;
-}
-
 .billet {
     display:flex;
-    width:950px;
+    width:100%;
     background-color: white;
     border: 0.5px solid #264ABD;
-    margin-bottom: 40px;
     margin-left: 50px;
-    max-width: 60%;
+    margin-bottom: 30px;
     border-radius: 15px;
+    grid-column: 1;
 }
 
 .rub {
