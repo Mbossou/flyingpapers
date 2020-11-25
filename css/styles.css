@@ -685,6 +685,9 @@ h4 {
   grid-row: 1;
 }
 
+.impact-ecolo h4 {
+  color: #13090f;
+}
 .options-billets .impact-ecolo .conteneur {
   background-color: #26e8bd;
   height: fit-content;
