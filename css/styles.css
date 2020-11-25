@@ -383,7 +383,7 @@ h4 {
 /*RESULTATS*/
 
 #resultats-billets {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 #resultats-billets h2 {
@@ -393,18 +393,18 @@ h4 {
   margin-left: 50px;
 }
 #resultats-billets .les-billets {
-    display: grid;
-    grid-template-columns:  65% 35%;
-    grid-gap: 10px 70px;
-    grid-auto-rows: minmax(50px, auto);
-    margin-top: 60px;
-    align-items: flex-end;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-gap: 10px 70px;
+  grid-auto-rows: minmax(50px, auto);
+  margin-top: 60px;
+  align-items: flex-end;
 }
 
 #resultats-billets .bloc-r {
-    grid-column: 2/2;
-    width: 80%;
-    grid-row: 1/2;
+  grid-column: 2/2;
+  width: 80%;
+  grid-row: 1/2;
 }
 
 #resultats-billets .flex {
@@ -413,33 +413,31 @@ h4 {
 }
 
 #resultats-billets .flex a {
-    padding: 10px 15px 10px 15px;
-    text-align: center;
-    margin: 15px auto 0px auto;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  margin: 15px auto 0px auto;
 }
 
 #resultats-billets .flex a:hover {
-    background-color: #264ABD;
-    text-decoration: none;
+  background-color: #264abd;
+  text-decoration: none;
 }
 
 #resultats-billets .carte-trajet {
-
-    max-height: 350px;
-    max-width: 100%;
-    margin-top: -100px;
-
+  max-height: 350px;
+  max-width: 100%;
+  margin-top: -100px;
 }
 
 .billet {
-    display:flex;
-    width:100%;
-    background-color: white;
-    border: 0.5px solid #264ABD;
-    margin-left: 50px;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    grid-column: 1;
+  display: flex;
+  width: 100%;
+  background-color: white;
+  border: 0.5px solid #264abd;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  grid-column: 1;
 }
 
 .rub {
@@ -1261,11 +1259,7 @@ h4 {
   text-align: center;
 }
 
-.confirmation-reservation
-  .confirmation-grid
-  .left
-  .indicateurs
-  .indicateurs-ic {
+.confirmation-reservation .confirmation-grid .left .indicateurs .indicateurs-ic {
   height: 35px;
 }
 
@@ -1326,13 +1320,18 @@ h4 {
   flex-wrap: nowrap;
   flex-grow: 1;
 }
-
-/*
-.footer .bloc a:hover {
-    background-color: #264ABD;
-    color: #264ABD;
+.footer .bloc a {
+  text-decoration: none;
 }
-*/
+
+.footer .bloc svg {
+  height: 2em;
+  fill: var(--color-peche);
+}
+
+.footer .bloc svg:hover {
+  fill: var(--color-bleu);
+}
 
 .footer .bouton-aide {
   border-style: solid;
