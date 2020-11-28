@@ -84,25 +84,25 @@
                    
                     <ul id="filtresTransport">
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Velo'); ?>" class="mode-transport">Vélo</a>    
+                            <a href="<?php switchURL('modeTransport','1'); ?>" class="mode-transport">Vélo</a>    
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Voile'); ?>" class="mode-transport">Voile</a>
+                            <a href="<?php switchURL('modeTransport','2'); ?>" class="mode-transport">Voile</a>
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Train'); ?>" class="mode-transport">Trains</a>
+                            <a href="<?php switchURL('modeTransport','3'); ?>" class="mode-transport">Trains</a>
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','VoitureElectrique'); ?>" class="mode-transport">Voiture électrique</a>
+                            <a href="<?php switchURL('modeTransport','4'); ?>" class="mode-transport">Voiture électrique</a>
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Bus'); ?>" class="mode-transport">Bus</a>
+                            <a href="<?php switchURL('modeTransport','5'); ?>" class="mode-transport">Bus</a>
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Covoiturage'); ?>" class="mode-transport">Covoiturage</a>
+                            <a href="<?php switchURL('modeTransport','6'); ?>" class="mode-transport">Covoiturage</a>
                         </li>
                         <li class="filtre-transport">
-                            <a href="<?php switchURL('modeTransport','Avion'); ?>" class="mode-transport">Vols</a>
+                            <a href="<?php switchURL('modeTransport','7'); ?>" class="mode-transport">Vols</a>
                         </li>
                     </ul>
                 </div>
@@ -135,8 +135,8 @@
                     <?php
                             require 'admin/database.php';
                             $db = Database::connect();
-                            $statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix, billets.ld_recherche FROM billets 
-                            WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"
+                            $statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix, billets.ld_recherche, billets.mode_transport FROM billets 
+                            WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"AND mode_transport = "' . $_GET['modeTransport'] . '"
                             ORDER BY billets.id ASC');
                             //$statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix FROM billets WHERE ld_recherche = \'Paris, France\' ORDER BY billets.id ASC'); --> test
                             //WHERE lieu depart et lieu arrivee = variables des champs sélectionnés pour la recherche + mode_transport = filtre.mode_transport --> test

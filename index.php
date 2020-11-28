@@ -65,7 +65,7 @@
                         //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
                     echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
                     echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
-                    echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="Train">';
+                    echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
                     echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
                 echo '</form>';
                 ?>
@@ -115,38 +115,60 @@
                 <p>Nous vous proposons les meilleures solutions de transports sur le marché. En se basant sur vos attentes et sur le respect de l’environnement, nous comparons les offres de plus de 250 sociétés partenaires.</p>
                 <p>Voyager l’esprit léger, Flying Papers s’occupe de tout, que ce soit pour la préparation de vos trajets ou pour la préservation de notre environnement !</p>
             </div>
-            <div class="jauge">
+            <div class="jauges jauges-peche">
                 <h3>Paris – Moscou en avion</h3>
                 <h6>par personne*</h6>
-                <table>
+                <table class="jauges-table">
                     <tbody>
                         <tr>
                             <td>
-                                
+                                <img src="img/co2-peche.svg" alt="CO2" class="co2">
                             </td>
                             <td>
-                                
+                                <img src="img/jauge-pleine.svg" alt="Jauge pleine" class="jauge">
                             </td>
                         </tr>
                         <tr>
-                            <td>1800 KG</td>
-                            <td>90%</td>
+                            <td><span class="jauges-label">1800 </span><span class="jauges-label-kgpourcent">KG</span></td>
+                            <td><span class="jauges-label">90 </span><span class="jauges-label-kgpourcent">%</span></td>
                         </tr>
                         <tr>
-                            <td>CO2 émis pour un trajet aller retour</td>
-                            <td>Du quota annuel pour limiter le réchauffement</td>
+                            <td class="jauges-text">CO2 émis pour un trajet aller retour</td>
+                            <td class="jauges-text">Du quota annuel pour limiter le réchauffement</td>
                         </tr>
                     </tbody>
                 </table>
-                <p>*Source : calculs sur données de l’ADEME, base carbone. Effet de trainée inclus.<p>
+                <p class="jauges-source">*Source : calculs sur données de l’ADEME, base carbone. Effet de trainée inclus.<p>
             </div>
-            <div class="jauge">
+            <div class="jauges jauges-bleu">
                 <h3>Paris – Marseille en TGV</h3>
+                <h6>par personne*</h6>
+                <table class="jauges-table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="img/co2-bleu.svg" alt="CO2" class="co2">
+                            </td>
+                            <td>
+                                <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="jauges-label">3 </span><span class="jauges-label-kgpourcent">KG</span></td>
+                            <td><span class="jauges-label">0.1 </span><span class="jauges-label-kgpourcent">%</span></td>
+                        </tr>
+                        <tr>
+                            <td class="jauges-text">CO2 émis pour un trajet aller retour</td>
+                            <td class="jauges-text">Du quota annuel pour limiter le réchauffement</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="jauges-source">*Source : SNCF<p>
             </div>
         </div>
     </div>
 
-    <div class="home-rect rect-home-w">
+    <div class="home-rect home-rect-w">
         <h2>Nos partenaires<span class="dot">.</span></span></h2>
         <div class="home-rect-flex">
             <div class="home-rect-txt">
@@ -154,14 +176,43 @@
                 <p>Embarquez vers votre prochaine destination en bus, en train, en bateau ou parmi nos autres modalités de transports disponibles grâce à notre important réseau de partenaires.</p>
                 <p>Réservez vos billets directement sur notre site tout en bénéficiant de prix et d’avantages exclusifs.</p>
             </div>
-            <div class="jauge">
+            <div class="partenaires">
                 <h3>Ils nous font confiance pour vendre leurs billets</h3>
+                <div class="partenaires-pic">
+                    <img src="img/partenaire_1.png" alt="Partenaire 1">
+                    <img src="img/partenaire_2.png" alt="Partenaire 1">
+                    <img src="img/partenaire_3.png" alt="Partenaire 1">
+                    <img src="img/partenaire_4.png" alt="Partenaire 1">
+                    <img src="img/partenaire_5.png" alt="Partenaire 1">
+                    <img src="img/partenaire_6.png" alt="Partenaire 1">
+                </div>
             </div>
         </div>
-        <div class="">
+        <div class="join">
             <h5>Vous êtes un•e professionnel•le ?</h5>
-            <a class="btn-blue" id="Join">Rejoignez-nous !</a>
+            <button class="btn-blue" id="Join">Rejoignez-nous !</button>
         </div>
+    </div>
+    <div class="home-rect home-rect-g">
+        <h2>Nos clients en parlent le mieux<span class="dot">.</span></span></h2>
+        <div class="clients">
+            <div class="client">
+                <img src="img/client_1.png" alt="Client 1">
+                <div class="client-txt">
+                    <p><strong>Je recommande Flying Papers</strong></br>Je recommande flyingpapers.com !</br>La demande de réservation pour un trajet est simple, le site est intuitif.</p>
+                </div>
+            </div>
+            <div class="client">
+                <img src="img/client_2.png" alt="Client 2">
+                <div class="client-txt">
+                    <p><strong>Site très claire et facile à utiliser</strong></br>Facile de trouver des billets de transports économiques avec un faible taux d’empreinte carbone.</br>Je recommande fortement !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="home-rect home-rect-w">
+        <h2>Newsletter<span class="dot">.</span></span></h2>
     </div>
 
     <section class="footer">
