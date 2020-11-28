@@ -71,6 +71,7 @@ p {
 .resultats-billets,
 .infos-persos,
 .porte-a-porte,
+.paiement,
 .confirmation-reservation {
   margin-top: 45px;
 }
@@ -970,12 +971,14 @@ h4 {
   padding: 20px;
   border-radius: 20px;
 }
+
 .infos-persos .impact-ecolo .conteneur {
   background-color: #26e8bd;
   height: fit-content;
   padding: 20px;
   border-radius: 20px;
 }
+
 .infos-persos .impact-ecolo .row-ecolo {
   flex-wrap: nowrap;
   text-align: center;
@@ -989,6 +992,7 @@ h4 {
 .infos-persos .impact-ecolo .row-ecolo .bold {
   margin-bottom: 0px;
 }
+
 .infos-persos .impact-ecolo .row-ecolo .text {
   font-size: 0.8em;
 }
@@ -1057,10 +1061,14 @@ h4 {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 2rem;
-
   text-align: center;
   height: fit-content;
   margin-top: -25px;
+}
+
+.infos-persos .valider:hover {
+  background-color: var(--color-bleu);
+  text-decoration: none;
 }
 
 .infos-persos .creer-compte {
@@ -1189,9 +1197,311 @@ h4 {
   margin-top: auto;
   margin-bottom: auto;
 }
+
 .infos-persos .formulaire .ligne3 label {
   margin-bottom: 0px;
 }
+
+/* PAIEMENT */ 
+
+.paiement .wrapper {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 40px 70px;
+  grid-auto-rows: minmax(50px, auto);
+  margin-top: 30px;
+}
+
+.paiement .recap-t {
+  grid-column: 1;
+  grid-row: 1/2;
+}
+
+.paiement .recap-t img {
+  width: 100%;
+  height: 100%;
+}
+
+.paiement .impact-ecolo {
+  grid-column: 2/2;
+  grid-row: 1;
+}
+
+.paiement .impact-ecolo .conteneur {
+  background-color: #26e8bd;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+}
+.paiement .impact-ecolo .conteneur {
+  background-color: #26e8bd;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 20px;
+}
+.paiement .impact-ecolo .row-ecolo {
+  flex-wrap: nowrap;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.paiement .impact-ecolo .row-ecolo .bloc1 {
+  margin-right: 10px;
+}
+
+.paiement .impact-ecolo .row-ecolo .bold {
+  margin-bottom: 0px;
+}
+
+.paiement .impact-ecolo .row-ecolo .text {
+  font-size: 0.8em;
+}
+
+.paiement .impact-ecolo .separateur {
+  height: 1px;
+  background-color: #264abd;
+  margin-top: 20px;
+}
+
+.paiement .recap-b {
+  grid-column: 2/2;
+  grid-row: 2/3;
+  padding: 20px;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #13090f;
+  border-width: 1px;
+  height: fit-content;
+}
+
+.paiement .recap-b h5 {
+  margin-bottom: 20px;
+}
+
+.paiement .recap-b .row {
+  justify-content: space-between;
+}
+
+.paiement .recap-b p {
+  font-size: 0.9em;
+}
+
+.paiement .recap-b .row1 p {
+  margin-bottom: 0px;
+}
+
+.paiement .recap-b .row .text-tranquille {
+  margin-left: 15px;
+}
+
+.paiement .modalités {
+  padding: 20px;
+  background-color: #f3f3f8;
+  border-radius: 20px;
+  height: fit-content;
+}
+
+.paiement .modalités p {
+  color: #264abd;
+  margin-bottom: 0px;
+  font-size: 0.9em;
+}
+
+.paiement .modalités .billet2 {
+  margin-top: 15px;
+}
+
+.paiement .valider {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2rem;
+  text-align: center;
+  height: fit-content;
+  margin-top: 20px;
+}
+
+.paiement .valider:hover {
+  background-color: var(--color-bleu);
+  text-decoration: none;
+}
+.paiement .row3 {
+  grid-column: 2/3;
+  grid-row: 3/5;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.paiement .row2 {
+  grid-column: 1/2;
+  grid-row: 2/7;
+  height: fit-content;
+}
+
+.paiement .code-promo {
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.paiement .code-promo .col-r {
+  justify-self: end;
+}
+
+.paiement .code-promo input {
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  color: #b1b1b1;
+  margin-right: 10px;
+}
+
+.paiement .code-promo .codepromo {
+  padding: 5px 15px 5px 15px;
+  text-align: center;
+  border: none;
+}
+
+.paiement .code-promo .codepromo:hover {
+  background-color: #f0856b;
+  color: #ffffff !important;
+  text-decoration: none;
+  border: none;
+}
+
+.paiement .mode-paiement {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.paiement .mode-paiement .flex1 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.paiement .mode-paiement .flex1 .moyen {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-right:15px; 
+}
+
+.paiement .mode-paiement .flex1 .moyen input {
+  margin-right:10px;
+}
+
+.paiement .mode-paiement .cols {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.paiement .mode-paiement .cols .ligne {
+  margin-top: 20px;
+  width:100%;
+}
+
+.paiement .mode-paiement .cols .col-l {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 15px;
+  width:100%;
+}
+
+.paiement .mode-paiement .cols .col-l input {
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.paiement .mode-paiement .cols .col-r {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paiement .mode-paiement .col-r input {
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.paiement .formulaire2 {
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.paiement .formulaire2 .ligne1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.paiement .formulaire2 .ligne2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.paiement .formulaire2 .ligne2 p {
+  margin-bottom: 0px;
+}
+
+.paiement .formulaire2 input {
+  width: 100%;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #264abd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  color: #b1b1b1;
+}
+
+.paiement .formulaire2 .cols {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.paiement .formulaire2 .cols .col-l {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 30px;
+  flex-grow: 1;
+  margin-top: 20px;
+}
+
+.paiement .formulaire2 .cols .col-l #top {
+  margin-top: 20px;
+}
+
+.paiement .formulaire2 .cols .col-r {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin-top: 20px;
+  height: fit-content;
+}
+
 
 /* CONFIRMATION RESERVATION */
 
