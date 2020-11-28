@@ -32,6 +32,12 @@ html {
   font-family: var(--font-text);
 }
 
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: var(--font-text) !important;
+}
+
 p {
   font-family: var(--font-text);
   line-height: 20px;
@@ -39,6 +45,13 @@ p {
   font-size: 15px;
   font-weight: 100;
   font-style: normal;
+}
+
+.dot {
+  font: var(--font-titre);
+  font-size: 50px;
+  color: var(--color-peche);
+  margin-left: 4px;
 }
 
 .cookies {
@@ -49,17 +62,18 @@ p {
   bottom: 0;
   margin: 0;
   background-color: var(--color-bleu);
-  height: 75px;
+  height: 60px;
 }
 
 .lblcookies {
   color: rgba(255, 255, 255, 1);
-  padding: 10px 20px;
+  padding: 10px 30px;
+  font-size: 12px;
   margin: 0 !important;
 }
 
-.icocookies {
-  padding-right: 30px;
+.cookies svg {
+  margin-right: 30px;
   width: 20px;
   fill: white;
 }
@@ -82,13 +96,13 @@ p {
 }
 
 .bouton-bleu {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff !important;
   border-radius: 2rem;
 }
 
 .bleu-fp {
-  color: #264abd !important;
+  color: var(--color-bleu) !important;
 }
 .peche-fp {
   color: #f0856b;
@@ -112,7 +126,7 @@ p {
 }
 
 .btn-blue {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   border-radius: 30px;
   display: inline-block;
   cursor: pointer;
@@ -131,7 +145,7 @@ p {
 .border-fp {
   border-style: solid;
   border-radius: 20px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   border-width: 1px;
 }
 
@@ -150,8 +164,14 @@ p {
 
 /*MENU*/
 .navbar .navbar-brand {
-  max-width: 180px;
+  max-width: 150px;
 }
+
+.navbar {
+  padding: 20px 10%;
+  background-color: white;
+}
+
 .nav {
   flex-wrap: nowrap;
 }
@@ -172,7 +192,7 @@ p {
 }
 
 .nav .bouton-peche:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff;
 }
 
@@ -182,7 +202,7 @@ p {
 }
 
 .navbar .nav-link-style {
-  color: #264abd !important;
+  color: var(--color-bleu) !important;
 }
 
 .navbar-toggler {
@@ -192,26 +212,42 @@ p {
 
 /*MOTEUR RECHERCHE*/
 #moteur-recherche {
-  min-height: 50vh;
-  padding: 50px;
+  padding: 2em 1em;
+  background-image: url("../img/rect.png") !important;
+  background-position: 40% 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#moteur-recherche h1,
+#moteur-recherche h4 {
+  padding: 0 8%;
+  text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
 h1 {
-  color: #264abd;
+  color: var(--color-bleu);
   font-family: var(--font-titre);
-  font-weight: 0;
+  font-weight: 600;
 }
+
+h2 {
+  color: var(--color-bleu);
+  font-family: var(--font-titre);
+  font-weight: 600;
+}
+
 h4 {
   color: var(--color-peche);
 }
 
-#moteur-recherche .container {
+.search {
   position: relative;
-  height: 100px;
-  max-width: 100%;
-  margin: 30px 0px;
+  padding: 10px 2%;
+  margin: 50px auto 0 auto;
   border: 1px solid var(--color-bleu);
   border-radius: 30px;
+  background-color: white;
 }
 
 #moteur-recherche .row p {
@@ -237,11 +273,129 @@ h4 {
   padding: 0px 12px 0px 12px !important;
 }
 
+/* Destinations Populaires */
+.destinationsPopulaires {
+  background: linear-gradient(to bottom, var(--color-bleu) 70%, transparent 40%);
+  padding: 1% 8%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.destinationsPopulaires h2 {
+  color: white !important;
+}
+
+.destinationsPopulaires .cards {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1% 0;
+  flex-wrap: wrap;
+}
+
+.destinationsPopulaires .card {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 30px;
+  font-weight: 700 !important;
+  color: white !important;
+  width: 20em;
+  height: 22em;
+  background-size: cover;
+  margin: 10px 10px;
+}
+
+.destinationsPopulaires .card p {
+  line-height: 1.2em;
+}
+
+@media screen and (max-width: 1620px) {
+  .destinationsPopulaires .card {
+    width: 15em;
+    height: 17em;
+    margin: 10px 5px;
+  }
+
+  .destinationsPopulaires .card p {
+    font-size: 12px;
+    line-height: 1.2em;
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .card-img-4 {
+    display: none;
+  }
+}
+
+.destinationsPopulaires .card .card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: inset 0px 0px 0px 200px rgba(0, 0, 0, 0.3);
+}
+
+.destinationsPopulaires .card .card-body h4 {
+  color: white !important;
+  margin-bottom: 0 !important;
+}
+
+.destinationsPopulaires .card-img-1 {
+  background-image: url("../img/destPop_1.png");
+}
+.destinationsPopulaires .card-img-2 {
+  background-image: url("../img/destPop_2.png");
+}
+.destinationsPopulaires .card-img-3 {
+  background-image: url("../img/destPop_3.png");
+}
+.destinationsPopulaires .card-img-4 {
+  background-image: url("../img/destPop_4.png");
+}
+
+/*VALEURS*/
+.home-rect {
+  padding: 2% 8%;
+  position: relative;
+  margin: 0 auto;
+}
+.home-rect-w {
+  background-color: white;
+}
+.home-rect-g {
+  background-color: #f3f3f8;
+}
+.home-rect-flex {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 25px 0;
+}
+.home-rect-flex .home-rect-txt {
+  display: relative;
+  width: 510px;
+}
+.home-rect-flex h3 {
+  color: var(--color-bleu);
+  font-size: 1.3rem;
+}
+
+.jauge {
+  text-align: center;
+}
+.jauge h3 {
+  margin-bottom: 0rem;
+}
+.jauge h6 {
+  font-size: 0.9em;
+}
+
 /*PAGE RESULTATS */
 
 /* RECAP RECHERCHE */
 .recaps-trajet {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
 }
 
 .recaps-trajet .conteneur {
@@ -259,7 +413,7 @@ h4 {
 }
 
 .recaps-trajet .bouton-peche:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff;
 }
 
@@ -389,7 +543,7 @@ h4 {
 #resultats-billets h2 {
   font-family: "Avenir Black", Arial, Sans-serif;
   font-size: 2em;
-  color: #264abd;
+  color: var(--color-bleu);
   margin-left: 50px;
 }
 #resultats-billets .les-billets {
@@ -419,7 +573,7 @@ h4 {
 }
 
 #resultats-billets .flex a:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   text-decoration: none;
 }
 
@@ -433,7 +587,7 @@ h4 {
   display: flex;
   width: 100%;
   background-color: white;
-  border: 0.5px solid #264abd;
+  border: 0.5px solid var(--color-bleu);
   margin-left: 50px;
   margin-bottom: 30px;
   border-radius: 15px;
@@ -447,7 +601,7 @@ h4 {
 }
 
 .rub5 {
-  border-left: 0.5px solid #264abd;
+  border-left: 0.5px solid var(--color-bleu);
 }
 
 .billet .p {
@@ -459,12 +613,12 @@ h4 {
 .billet .p9 {
   font-family: "Avenir Black", Arial, Sans-serif !important;
   font-size: 1.1em;
-  color: #264abd;
+  color: var(--color-bleu);
   text-align: center;
 }
 
 .billet .p10 {
-  border-top: 0.5px solid #264abd;
+  border-top: 0.5px solid var(--color-bleu);
 }
 
 /* PAGE SELECTION BILLETS */
@@ -472,7 +626,7 @@ h4 {
 /* RECAP ETAPES*/
 
 .recap-etapes {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
 }
 
 .recap-etapes .container {
@@ -517,7 +671,7 @@ h4 {
 
 .recap-etapes .num-e {
   background-color: #ffffff;
-  color: #264abd;
+  color: var(--color-bleu);
   padding: 10px 17px 10px 17px;
   font-family: "Avenir Black", Arial, Sans-serif;
   border-radius: 2rem;
@@ -632,7 +786,7 @@ h4 {
 .options-billets .tarifs .row .bloc {
   border-style: solid;
   border-radius: 20px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   border-width: 1px;
   padding-top: 5px;
 }
@@ -715,7 +869,7 @@ h4 {
 
 .options-billets .impact-ecolo .separateur {
   height: 1px;
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   margin-top: 20px;
 }
 
@@ -738,7 +892,7 @@ h4 {
 
 .porte-a-porte .impact-ecolo .separateur {
   height: 1px;
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   margin-top: 20px;
 }
 
@@ -831,12 +985,12 @@ h4 {
 }
 
 .options-billets .modalités p {
-  color: #264abd;
+  color: var(--color-bleu);
   margin-bottom: 0px;
   font-size: 0.9em;
 }
 .porte-a-porte .modalités p {
-  color: #264abd;
+  color: var(--color-bleu);
   margin-bottom: 0px;
   font-size: 0.9em;
 }
@@ -864,7 +1018,7 @@ h4 {
 }
 
 .options-billets .valider:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff !important;
   text-decoration: none;
 }
@@ -884,7 +1038,7 @@ h4 {
 }
 
 .porte-a-porte .valider:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff !important;
   text-decoration: none;
 }
@@ -992,7 +1146,7 @@ h4 {
 
 .infos-persos .impact-ecolo .separateur {
   height: 1px;
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   margin-top: 20px;
 }
 
@@ -1037,7 +1191,7 @@ h4 {
 }
 
 .infos-persos .modalités p {
-  color: #264abd;
+  color: var(--color-bleu);
   margin-bottom: 0px;
   font-size: 0.9em;
 }
@@ -1124,7 +1278,7 @@ h4 {
   width: 100%;
   border-radius: 2em;
   border-width: 1px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -1150,7 +1304,7 @@ h4 {
   width: 100%;
   border-radius: 2em;
   border-width: 1px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -1165,7 +1319,7 @@ h4 {
   width: 100%;
   border-radius: 2em;
   border-width: 1px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
@@ -1181,7 +1335,7 @@ h4 {
 .infos-persos .formulaire .ligne3 input {
   border-radius: 200px;
   border-width: 1px;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   margin-right: 15px;
   margin-top: auto;
   margin-bottom: auto;
@@ -1248,7 +1402,7 @@ h4 {
 }
 
 .confirmation-bouton-confirmer .retour-accueil-confirmation:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   text-decoration: none;
 }
 
@@ -1280,7 +1434,7 @@ h4 {
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff !important;
   text-decoration: none;
 }
@@ -1332,7 +1486,7 @@ h4 {
 
 .footer .bouton-aide {
   border-style: solid;
-  border-color: #264abd;
+  border-color: var(--color-bleu);
   border-width: 1px;
   border-radius: 2rem;
   padding-left: 20px;
@@ -1342,13 +1496,13 @@ h4 {
 }
 
 .footer .bouton-aide:hover {
-  background-color: #264abd;
+  background-color: var(--color-bleu);
   color: #ffffff !important;
   text-decoration: none;
 }
 
 .footer h5 {
-  color: #264abd;
+  color: var(--color-bleu);
   font-family: "Avenir Medium", Arial, Sans-serif;
   margin-bottom: 1rem;
   margin-top: 2rem;
