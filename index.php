@@ -49,21 +49,21 @@
                 $lieu_arrivee2 = "Rome, Italie";
                 $lieu_arrivee3 = "Londres, Angleterre";
                 
-                echo '<form class="form-group" method="get" action="resultats.php">';
-                    echo '<input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ">';
+                echo '<form method="get" action="resultats.php">';
+                    echo '<input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" required>';
                         echo '<datalist id="villesDepart">';                 
                             echo '<option value="'.$lieu_depart1.'">';                   
                             echo '<option value="'.$lieu_depart2.'">';                   
                             echo '<option value="'.$lieu_depart3.'">';                   
                         echo '</datalist>';         
-                    echo '<input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée">';
+                    echo '<input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" required>';
                         echo '<datalist id="villesArrivee">';                   
                             echo '<option value="'.$lieu_arrivee1.'">';                   
                             echo '<option value="'.$lieu_arrivee2.'">';                   
                             echo '<option value="'.$lieu_arrivee3.'">';
                         echo '</datalist>';         
                         //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
-                    echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ">';
+                    echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
                     echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
                     echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="Train">';
                     echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
