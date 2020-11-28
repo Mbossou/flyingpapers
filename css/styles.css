@@ -1,4 +1,27 @@
 /*
+
+
+RESPONSIVE 
+
+FORMATS D'ECRAN A TRAVAILLER : 
+
+1- DESKTOP - à partir de 1024 px ;
+
+2- TABLET - à partir de 768 px;
+
+3- MOBILE - à parir de 320 px;
+
+MAQUETTES POUR MOBILE (doc xd) : 
+
+index.php : OK 
+Resultats.php : OK
+Optionsbillets.html : OK
+Porteaporte.html : OK
+Infospersos.html : OK
+Paiement.html: OK 
+Confirmation.html : OK
+
+
 Couleurs Charte graphique :
 
 Couleurs principales :
@@ -789,6 +812,10 @@ h4 {
   text-decoration: none;
 }
 
+.recap-etapes #container-pay .a4-p {
+  opacity: 1;
+}
+
 .recap-etapes #container-infos .a4-i {
   opacity: 70%;
 }
@@ -1510,11 +1537,187 @@ h4 {
 .paiement .recap-t {
   grid-column: 1;
   grid-row: 1/2;
+  padding: 20px;
 }
 
-.paiement .recap-t img {
-  width: 100%;
-  height: 100%;
+.paiement .recap-t .ligne1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.paiement .recap-t .ligne1 .col-l {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.paiement .recap-t .ligne1 .col-l h5 {
+  margin-right: 10px;
+}
+
+.paiement .recap-t .ligne1 .col-l img {
+  transform: scale(0.8);
+  
+}
+
+.paiement .recap-t .ligne1 .col-r {
+  display: flex;
+}
+
+.paiement .recap-t .ligne1 .col-r p {
+  font-size: 1.3em;
+  margin-bottom: 0px;
+}
+
+.paiement .recap-t .ligne2 {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.paiement .recap-t .ligne2 .bloc1,.bloc3 {
+  flex-grow:2;
+  height: 50px;
+  padding: 5px;
+}
+
+.paiement .recap-t .ligne2 .bloc2 {
+  flex-grow:1;
+  text-align: center;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne2 {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne2 .circle-l {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 1em;
+  border-style: solid;
+  border-color: var(--color-bleu);
+  border-width: 5px;
+  z-index: 2;
+  position: absolute;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne2 .blue-bar {
+  width: 98%;
+  height: 10px;
+  background-color: var(--color-bleu);
+  left:0;
+  position: absolute;
+  z-index: 1;
+  left:3px;
+  margin-top: 3px;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne2 .circle-r {
+  width:20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--color-bleu);
+  border-width: 5px;
+  right:0;
+  position: absolute;
+  z-index: 2;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne3 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne3 .compagnie {
+text-align: center;
+}
+
+.paiement .recap-t .ligne2 .bloc1 .s-ligne3 .compagnie p{
+  margin-bottom: 0px;
+  color: #398AFF;
+}
+
+
+.paiement .recap-t .ligne2 .bloc2 p {
+  margin-bottom: 0px;
+  font-size: 0.8em;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne2 {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne2 .circle-l {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 1em;
+  border-style: solid;
+  border-color: var(--color-bleu);
+  border-width: 5px;
+  z-index: 2;
+  position: absolute;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne2 .blue-bar {
+  width: 98%;
+  height: 10px;
+  background-color: var(--color-bleu);
+  left:0;
+  position: absolute;
+  z-index: 1;
+  left:3px;
+  margin-top: 3px;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne2 .circle-r {
+  width:20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--color-bleu);
+  border-width: 5px;
+  right:0;
+  position: absolute;
+  z-index: 2;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne3 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne3 .compagnie {
+text-align: center;
+}
+
+.paiement .recap-t .ligne2 .bloc3 .s-ligne3 .compagnie p{
+  margin-bottom: 0px;
+  color: #398AFF;
 }
 
 .paiement .impact-ecolo {
