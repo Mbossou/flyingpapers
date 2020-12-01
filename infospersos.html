@@ -20,10 +20,8 @@
 
     <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
   </head>
-  <body>
+  <body class="page-5">
     <a href="#"></a>
-    <!-- Choix des langues en haut à droite -->
-    <!-- Menu : "Vos réservations" ; "S'inscrire" ; "Se connecter" en haut à droite -->
     <nav class="navbar navbar-expand-md navbar-dark">
       <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
 
@@ -47,22 +45,26 @@
 
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-infos">
-        <a href="#" class="a1-i"
+        <a href="#" class="a1-i a"
           ><p class="num-e">1</p>
           <p class="text-recap-e">Sélection des options</p></a
         >
         <div class="next"></div>
-        <a href="#" class="a2-i"
+        <a href="#" class="a2-i a"
           ><p class="num-e">2</p>
           <p class="text-recap-e">Porte-à-porte</p></a
         >
         <div class="next"></div>
-        <a href="#" class="a3-i"
-          ><p class="num-e">3</p>
-          <p class="text-recap-e">Informations personnelles</p></a
-        >
+        <a href="javascript:history.back()" class="previous">
+          <img src="img/left-chevron.svg" alt="étape précédente">
+        </a>
+        <h5 class="titre-r">Informations personnelles</h5>
+        <a href="#" class="a3-i a">
+          <p class="num-e">3</p>
+          <p class="text-recap-e">Informations personnelles</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a4-i"
+        <a href="#" class="a4-i a"
           ><p class="num-e">4</p>
           <p class="text-recap-e">Paiement</p></a
         >
@@ -108,10 +110,10 @@
               </div>
               
               <div class="bloc2">
-                <p class="peche-fp small-p">Changement à Lille</p>
-                <p class="peche-fp">• • •</p>
-                <p class="peche-fp small-p">1 h 04 min</p>
-                <p class="peche-fp small-p">Correspondance <br>à la même localisation</p>
+                <p class="peche-fp small-p p1">Changement à Lille</p>
+                <p class="peche-fp p2">• • •</p>
+                <p class="peche-fp small-p p3">1 h 04 min</p>
+                <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
               </div>
               
               <div class="bloc3">
@@ -160,7 +162,7 @@
               </div>
               <div class="ligne2">
                 <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" value="Votre billet sera envoyé à :" autocomplete="email" />
+                <input type="email" id="email" name="email" placeholder="Votre billet sera envoyé à :" autocomplete="email" />
               </div>
               <div class="cols">
                 <div class="col-l">
@@ -205,7 +207,7 @@
 
             <div class="separateur"></div>
           </div>
-
+<!--
           <div class="recap-b">
             <h5 class="bold bleu-fp">Récapitulatif</h5>
             <div class="row row1">
@@ -234,7 +236,47 @@
               Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
               le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
             </p>
+          </div>-->
+          <div class="modalités modalités-r">
+            <h5 class="bold bleu-fp">Modalités</h5>
+            <p class="bold">Billet 1</p>
+            <p>Billet échangeable sous conditions, non remboursable.</p>
+            <p class="bold billet2-m">Billet 2</p>
+            <p>
+              Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
+              le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
+            </p>
           </div>
+          <div class="recap-b">
+            <h5 class="bold bleu-fp">Récapitulatif</h5>
+            <div class="row row1">
+              <p class="small-p">Billet 1 (1 adulte)</p>
+              <p class="small-p">22,00€</p>
+            </div>
+            <div class="row row2">
+              <p class="text-tranquille small-p">Classe Tranquilité</p>
+              <p>+8,00€</p>
+            </div>
+            <div class="row row3">
+              <p class="small-p">Billet 2 (1 adulte)</p>
+              <p class="small-p">70,00€</p>
+            </div>
+            <div class="row row4">
+              <p class="small-p"><span class="bold">Total </span>(TTC)</p>
+              <p class="small-p bold">100,00€</p>
+            </div>
+          </div>
+          <div class="row3">
+            <div class="modalités">
+              <h5 class="bold bleu-fp">Modalités</h5>
+              <p class="bold">Billet 1</p>
+              <p>Billet échangeable sous conditions, non remboursable.</p>
+              <p class="bold billet2-m">Billet 2</p>
+              <p>
+                Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
+                le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
+              </p>
+            </div>
           <a class="valider bouton-peche" href="/flyingpapers/paiement.html">Confirmer</a>
         </div>
       </div>

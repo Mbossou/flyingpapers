@@ -20,7 +20,7 @@
 
     <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
   </head>
-  <body>
+  <body class="page-6">
     <a href="#"></a>
     <nav class="navbar navbar-expand-md navbar-dark">
       <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
@@ -45,25 +45,28 @@
 
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-pay">
-        <a href="#" class="a1-p"
+        <a href="#" class="a1-p a"
           ><p class="num-e">1</p>
           <p class="text-recap-e">Sélection des options</p></a
         >
         <div class="next"></div>
-        <a href="#" class="a2-p"
+        <a href="#" class="a2-p a"
           ><p class="num-e">2</p>
           <p class="text-recap-e">Porte-à-porte</p></a
         >
         <div class="next"></div>
-        <a href="#" class="a3-p"
+        <a href="#" class="a3-p a"
           ><p class="num-e">3</p>
           <p class="text-recap-e">Informations personnelles</p></a
         >
         <div class="next"></div>
-        <a href="#" class="a4-p"
-          ><p class="num-e">4</p>
-          <p class="text-recap-e">Paiement</p></a
-        >
+        <a href="javascript:history.back()" class="previous">
+          <img src="img/left-chevron.svg" alt="étape précédente">
+        </a>
+        <h5 class="titre-r">Paiement</h5>
+        <a href="#" class="a4-p a">
+          <p class="num-e">4</p>
+          <p class="text-recap-e">Paiement</p></a>
       </div>
     </div>
 
@@ -104,10 +107,10 @@
                 </div>
               </div>
               <div class="bloc2">
-                <p class="peche-fp small-p">Changement à Lille</p>
-                <p class="peche-fp">• • •</p>
-                <p class="peche-fp small-p">1 h 04 min</p>
-                <p class="peche-fp small-p">Correspondance <br>à la même localisation</p>
+                <p class="peche-fp small-p p1">Changement à Lille</p>
+                <p class="peche-fp p2">• • •</p>
+                <p class="peche-fp small-p p3">1 h 04 min</p>
+                <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
               </div>
               <div class="bloc3">
                 <div class="s-ligne1">
@@ -136,8 +139,8 @@
             <div class="code-promo border-fp">
               <h5 class="bold bleu-fp">Code promo ?</h5>
               <div class="col-r">
-                <input type="text" value="Entrez-le ici">
-                <input type="submit" value="Valider" class="codepromo bouton-bleu">
+                <input type="text" placeholder="Entrez-le ici">
+                <input type="submit" placeholder="Valider" class="codepromo bouton-bleu">
               </div>
             </div>
             <div class="mode-paiement border-fp">
@@ -164,21 +167,21 @@
                 <div class="col-l">
                   <div class="ligne">
                     <label for="name">Nom complet</label>
-                    <input type="text" id="name" name="name" autocomplete="cc-name" required />
+                    <input type="text" id="name" name="name" required />
                   </div>
                   <div class="ligne">
                     <label for="number">Numéro de carte</label>
-                    <input type="text" id="number" name="number" autocomplete="cc-number" required />
+                    <input type="text" id="number" name="number" required />
                   </div>
                 </div>
                 <div class="col-r">
                   <div class="ligne">
                     <label for="exp">Date d'expiration</label>
-                    <input type="text" id="exp" name="exp" value="MM / AA" autocomplete="cc-exp" required />
+                    <input type="text" id="exp" name="exp" placeholder="MM / AA" required />
                   </div>
                   <div class="ligne">
                     <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" autocomplete="country-name" required />
+                    <input type="text" id="cvv" name="cvv" required />
                   </div>
                 </div>
               </div>
@@ -191,32 +194,32 @@
                 <div class="cols">
                   <div class="col-l">
                     <label for="name-c">Nom</label>
-                    <input type="text" id="name-c" value="Nom complet" name="name-c" autocomplete="name" required />
+                    <input type="text" id="name-c" placeholder="Nom complet" name="name-c" autocomplete="name" required />
                   </div>
                   <div class="col-r">
                     <label for="family-name">Entreprise</label>
-                    <input type="text" id="family-name" name="family-name" value="Entreprise" autocomplete="organization" />
+                    <input type="text" id="family-name" name="family-name" placeholder="Entreprise" autocomplete="organization" />
                   </div>
                 </div>
   
                 <div class="ligne2">
                   <label for="address">Adresse</label>
-                  <input type="text" id="address" name="address" value="Adresse" autocomplete="address-line1" required />
+                  <input type="text" id="address" name="address" placeholder="Adresse" autocomplete="address-line1" required />
                 </div>
                 <div class="ligne2">
                   <label for="email">Complément d'adresse (Facultatif)</label>
-                  <input type="email" id="email" name="email" value="Complément d'adresse" autocomplete="address-line2" />
+                  <input type="email" id="email" name="email" placeholder="Complément d'adresse" autocomplete="address-line2" />
                 </div>
                 <div class="cols">
                   <div class="col-l">
                     <label for="ville">Ville</label>
-                    <input type="text" id="ville" name="ville" value="Ville" autocomplete="address-level2" required/>
+                    <input type="text" id="ville" name="ville" placeholder="Ville" autocomplete="address-level2" required/>
                     <label for="pays" id="top">Pays</label>
-                    <input type="text" id="pays" value="Pays" name="country-name" required />
+                    <input type="text" id="pays" placeholder="Pays" name="country-name" required />
                   </div>
                   <div class="col-r">
                       <label for="code-postal">Code Postal</label>
-                      <input type="text" id="code-postal" name="code-postal" value="Code Postal" autocomplete="postal-code" required/>
+                      <input type="text" id="code-postal" name="code-postal" placeholder="Code Postal" autocomplete="postal-code" required/>
                   </div>
                 </div>
               </form>

@@ -14,10 +14,8 @@
     </title>
      
 </head>
-<body>
+<body class="page-1">
     <div class="background"></div>
-    <!-- Choix des langues en haut à droite -->
-    <!-- Menu : "Vos réservations" ; "S'inscrire" ; "Se connecter" en haut à droite -->
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="logo Flying Papers" /></a>
     
