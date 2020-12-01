@@ -29,50 +29,98 @@
           </div>
       </nav>
       
-    <section id="moteur-recherche">
+    <section id="banniere">
         <h1>Voyager l'esprit léger<span class="dot">.</span> Tout simplement<span  class="dot">.</span></h1>
         <h4>Flying Papers vous accompagne pour faciliter</br> vos déplacements en France et en Europe tout en restant écolo !</h4>
-        <div class="container search">
-            <div class="row">
-                <p>Aller Simple</p>
-                <p>1 Adulte, Sans carte de réduction</p>
-            </div>
-            <div class="row">
-                
-                <?php
-                $lieu_depart1 = "Paris, France";
-                $lieu_depart2 = "Rome, Italie";
-                $lieu_depart3 = "Londres, Angleterre";
-                $lieu_arrivee1 = "Paris, France";
-                $lieu_arrivee2 = "Rome, Italie";
-                $lieu_arrivee3 = "Londres, Angleterre";
-                
-                echo '<form method="get" action="resultats.php">';
-                    echo '<input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" required>';
-                        echo '<datalist id="villesDepart">';                 
-                            echo '<option value="'.$lieu_depart1.'">';                   
-                            echo '<option value="'.$lieu_depart2.'">';                   
-                            echo '<option value="'.$lieu_depart3.'">';                   
-                        echo '</datalist>';         
-                    echo '<input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" required>';
-                        echo '<datalist id="villesArrivee">';                   
-                            echo '<option value="'.$lieu_arrivee1.'">';                   
-                            echo '<option value="'.$lieu_arrivee2.'">';                   
-                            echo '<option value="'.$lieu_arrivee3.'">';
-                        echo '</datalist>';         
-                        //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
-                    echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
-                    echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
-                    echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
-                    echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
-                echo '</form>';
-                ?>
+        <div id="moteur-recherche">
+            <div class="container search">
+                <div class="row">
+                    <p>Aller Simple</p>
+                    <p>1 Adulte, Sans carte de réduction</p>
+                </div>
+                <div class="row">
+                    
+                    <?php
+                    $lieu_depart1 = "Paris, France";
+                    $lieu_depart2 = "Rome, Italie";
+                    $lieu_depart3 = "Londres, Angleterre";
+                    $lieu_arrivee1 = "Paris, France";
+                    $lieu_arrivee2 = "Rome, Italie";
+                    $lieu_arrivee3 = "Londres, Angleterre";
+                    
+                    echo '<form method="get" action="resultats.php">';
+                        echo '<input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" required>';
+                            echo '<datalist id="villesDepart">';                 
+                                echo '<option value="'.$lieu_depart1.'">';                   
+                                echo '<option value="'.$lieu_depart2.'">';                   
+                                echo '<option value="'.$lieu_depart3.'">';                   
+                            echo '</datalist>';         
+                        echo '<input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" required>';
+                            echo '<datalist id="villesArrivee">';                   
+                                echo '<option value="'.$lieu_arrivee1.'">';                   
+                                echo '<option value="'.$lieu_arrivee2.'">';                   
+                                echo '<option value="'.$lieu_arrivee3.'">';
+                            echo '</datalist>';         
+                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
+                        echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
+                        echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
+                        echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
+                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
+                    echo '</form>';
+                    ?>
+                </div>
             </div>
         </div>
     </section>
 
     <div class="destinationsPopulaires">
         <h2>Nos destinations les plus populaires<span class="dot">.</span></span></h2>
+        <div class="cards-mobile">
+            <div class="card-mobile">
+                <div class="card card-img-1">
+                    <div class="card-body">
+                        <h4>Porto-vecchio</h4>
+                    </div>
+                </div>
+                <div class="card-mob-text">
+                    <h5>en voilier</h5>
+                    <p class="card-text">Au départ de Toulon, Nice et Marseille, direction l’île de beauté tout en profitant de l’air marin.</p>
+                </div>
+            </div>
+            <div class="card-mobile">
+                <div class="card card-img-2">
+                    <div class="card-body">
+                        <h4>Milan</h4>
+                    </div>
+                </div>
+                <div class="card-mob-text">
+                    <h5>en train</h5>
+                    <p class="card-text">Depuis Paris et Montpellier laissez-vous transporter le temps d’une sieste jusqu’au au coeur de l’Italie.</p>
+                </div>
+            </div>
+            <div class="card-mobile">
+                <div class="card card-img-3">
+                    <div class="card-body">
+                        <h4>Bruxelles</h4>
+                    </div>
+                </div>
+                <div class="card-mob-text">
+                    <h5>en bus</h5>
+                    <p class="card-text">Depuis Paris ou Lille partez à la rencontre du mélange de la culture flamande et française.</p>
+                </div>
+            </div>
+            <div class="card-mobile">
+                <div class="card card-img-4">
+                    <div class="card-body">
+                        <h4>Rouen</h4>
+                    </div>
+                </div>
+                <div class="card-mob-text">
+                    <h5>en vélo</h5>
+                    <p class="card-text">Pour les normands les plus téméraires, laissez-vous tenter par une randonnée à vélo jusqu’à Rouen.</p>
+                </div>
+            </div>
+        </div>
         <div class="cards">
             <div class="card card-img-1">
                 <div class="card-body">
@@ -211,6 +259,27 @@
     
     <div class="home-rect home-rect-w">
         <h2>Newsletter<span class="dot">.</span></span></h2>
+        <div class="home-rect-flex responsive-web">
+            <div class="newsletter-left">
+                <input class="input-text" type="text" placeholder="Votre adresse e-mail">
+                <input class="btn-orange" type="submit" value="S'abonner">
+                <p class="newsletter-title">Recevez tous nos bons plans pour voyager éco-responsable</p>
+            </div>
+            <div class="newsletter-right">
+                <p><span class="promo promo-1">-20%</span> <span class="promo promo-2">offert</span></p>
+                <p>sur votre premier trajet ne dépassant pas les 10kg de CO2 émis pour toute inscription à la newsletter</p>
+            </div>
+        </div>
+        <div class="home-rect-flex responsive-mobile">
+            <div class="newsletter-left">
+                <p class="newsletter-title">Recevez tous nos bons plans pour voyager éco-responsable</p>
+                <p><span class="promo promo-1">-20%</span> <span class="promo promo-2">offert</span> sur votre premier trajet ne dépassant pas les 10kg de CO2 émis pour toute inscription à la newsletter</p>
+            </div>
+            <div class="newsletter-right">
+                <input class="input-text" type="text" placeholder="Votre adresse e-mail">
+                <input class="btn-orange" type="submit" value="S'abonner">
+            </div>
+        </div>
     </div>
 
     <section class="footer">
