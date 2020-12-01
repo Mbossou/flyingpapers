@@ -964,7 +964,7 @@ h4 {
 .options-billets .billet1 {
   grid-column: 1;
   grid-row: 2/4;
-  padding:20px;
+  padding: 20px;
 }
 
 .options-billets .tarifs a {
@@ -991,7 +991,6 @@ h4 {
   font-size: 0.8em;
 }
 
-
 .options-billets .tarifs .row1z {
   justify-content: space-around;
 }
@@ -1007,7 +1006,6 @@ h4 {
 }
 
 .options-billets .tarifs .row1 .row .SNCF {
-  height: fit-content;
   width: 30px;
 }
 
@@ -1062,18 +1060,15 @@ h4 {
     transform: scale(0.75);
   }
 
-  .options-billets .billet1 
-  {
-    margin-bottom: 20px!important;
+  .options-billets .billet1 {
+    margin-bottom: 20px !important;
   }
   .options-billets .billet2 {
-    margin-bottom: 20px!important;
+    margin-bottom: 20px !important;
   }
-
 }
 
 /*PORTE A PORTE*/
-
 
 .porte-a-porte .choix-depart {
   grid-column: 1;
@@ -1097,11 +1092,10 @@ h4 {
   text-decoration: none;
 }
 
-
 .porte-a-porte .choix-depart .flex p {
   padding: 5px;
   text-align: center;
-  margin-bottom: 0px!important;
+  margin-bottom: 0px !important;
 }
 
 .porte-a-porte .choix-depart .flex .bloc {
@@ -1110,31 +1104,30 @@ h4 {
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-  
   .porte-a-porte {
-    margin-top: 0px!important;
+    margin-top: 0px !important;
   }
 
   .porte-a-porte .choix-depart {
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .porte-a-porte .valider {
-    border-radius:0px!important;
-    margin-top:0px!important;
+    border-radius: 0px !important;
+    margin-top: 0px !important;
   }
 
   .porte-a-porte .choix-depart .flex p {
     font-size: 0.8em;
   }
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .porte-a-porte .choix-depart {
     margin-right: 25px;
   }
-.porte-a-porte {
-  margin-top: 45px;
-}
+  .porte-a-porte {
+    margin-top: 45px;
+  }
 }
 /* INFOS PERSOS */
 
@@ -1271,23 +1264,23 @@ h4 {
 
 @media (min-width: 0px) and (max-width: 767px) {
   .infos-persos {
-    margin-top: 0px!important;
+    margin-top: 0px !important;
   }
-  
+
   .infos-persos .creer-compte {
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .infos-persos .formulaire {
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
 
   .infos-persos .valider {
-    border-radius:0px!important;
-    margin-top: 0px!important;
+    border-radius: 0px !important;
+    margin-top: 0px !important;
   }
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .infos-persos .creer-compte {
     margin-right: 25px;
   }
@@ -1301,7 +1294,6 @@ h4 {
 .paiement .row2 {
   grid-column: 1/2;
   grid-row: 2/7;
-  height: fit-content;
 }
 
 .paiement .code-promo {
@@ -1462,13 +1454,12 @@ h4 {
   flex-wrap: wrap;
   flex-grow: 1;
   margin-top: 20px;
-  height: fit-content;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
   .paiement .valider {
-    margin-top: 0px!important;
-    border-radius: 0px!important;
+    margin-top: 0px !important;
+    border-radius: 0px !important;
   }
 }
 
@@ -1593,11 +1584,10 @@ h4 {
 
 /*PAGES COMMUNES*/
 @media (min-width: 0px) and (max-width: 767px) {
-  
   .wrapper {
     display: grid;
     width: 100%;
-    grid-template-columns:100%;
+    grid-template-columns: 100%;
     grid-gap: 0px;
     margin-top: 20px;
   }
@@ -1609,7 +1599,7 @@ h4 {
     position: relative;
     margin-bottom: 20px;
   }
-  
+
   .impact-ecolo {
     display: none;
   }
@@ -1617,24 +1607,23 @@ h4 {
   .recap-b {
     grid-column: 1;
     padding: 15px;
-    border-radius: 0px!important;
+    border-radius: 0px !important;
     border-style: solid;
     border-width: 1px;
     border-color: #13090f;
-    height: fit-content;
     position: sticky;
     bottom: 45px;
     background-color: #ffffff;
+    box-shadow: 0 -25px 10px white;
   }
 
   .recap-b p {
-    font-size: 0.8em!important;
-    margin-bottom: 0px!important;
+    font-size: 0.8em !important;
+    margin-bottom: 0px !important;
   }
 
   .row3 {
     grid-column: 1;
-    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1650,7 +1639,7 @@ h4 {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  
+
   .recap-etapes .a {
     display: none;
   }
@@ -1660,18 +1649,18 @@ h4 {
   }
 
   .recap-etapes .num-e {
-    display:none;
+    display: none;
   }
-  
+
   .recap-etapes .next {
-    display:none;
+    display: none;
   }
 
   .recap-etapes .container .previous {
     text-decoration: none;
     margin-right: 20px;
     position: absolute;
-    left:10px;
+    left: 10px;
   }
 
   .recap-etapes .container img:hover {
@@ -1684,12 +1673,12 @@ h4 {
   }
 
   .recap-t .ligne1 {
-    flex-wrap: wrap!important;
-}
+    flex-wrap: wrap !important;
+  }
 
   .recap-t .ligne2 .compagnie p {
     display: none;
-}
+  }
 
   .recap-t .ligne2 .bloc1 .s-ligne3 .compagnie p {
     font-size: 0.75em;
@@ -1703,222 +1692,222 @@ h4 {
   }
 
   .recap-t .ligne1 .col-l img {
-    transform: scale(0.7)!important;
+    transform: scale(0.7) !important;
     margin-right: 10px;
-    margin-bottom: .5rem;
-}
+    margin-bottom: 0.5rem;
+  }
 
   .recap-t .ligne1 .col-r p {
-    font-size: 0.9em!important;
+    font-size: 0.9em !important;
     text-align: center;
   }
 
-  .recap-t .ligne2 .bloc1, .bloc3 {
+  .recap-t .ligne2 .bloc1,
+  .bloc3 {
     width: 100%;
     padding: 5px;
     transform: scale(0.8);
-}
+  }
 
-.recap-t .ligne2 .bloc {
-  margin-bottom: 20px;
-}
+  .recap-t .ligne2 .bloc {
+    margin-bottom: 20px;
+  }
 
-.recap-t .ligne2 .bloc2 {
-  align-self: center;
-  min-width: max-content;
-}
+  .recap-t .ligne2 .bloc2 {
+    align-self: center;
+    min-width: max-content;
+  }
 
-.recap-t .ligne2 .bloc2 .p1,.p4 {
-  display: none;
-}
+  .recap-t .ligne2 .bloc2 .p1,
+  .p4 {
+    display: none;
+  }
 
-.bloc2-r {
-  display: flex;
-  align-items: center;
-}
+  .bloc2-r {
+    display: flex;
+    align-items: center;
+  }
 
-.bloc2-r .ligne3-r p {
-  margin-right: 5px;
-  margin-bottom: 0px;
-  font-size: 0.9em;
-  align-self: flex-end;
-}
+  .bloc2-r .ligne3-r p {
+    margin-right: 5px;
+    margin-bottom: 0px;
+    font-size: 0.9em;
+    align-self: flex-end;
+  }
 
-.bloc2-r .ligne3-r img {
-  transform: scale(0.9);
-}
+  .bloc2-r .ligne3-r img {
+    transform: scale(0.9);
+  }
 
-.bloc2-r .ligne3-r .f1 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
+  .bloc2-r .ligne3-r .f1 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
 
-.bloc2-r .ligne3-r .f2 {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
+  .bloc2-r .ligne3-r .f2 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
 
-.options-billets .tarifs .row1z {
-  justify-content: space-around;
-  display: flex;
-  flex-wrap: nowrap;
-  width: 100%;
-  margin: 0px;
-  transform: scale(0.8);
-}
+  .options-billets .tarifs .row1z {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 0px;
+    transform: scale(0.8);
+  }
 
+  .options-billets .tarifs .flex-nw .standard,
+  .prise {
+    margin-right: 15px;
+  }
 
-.options-billets .tarifs .flex-nw .standard,.prise {
-  margin-right:15px;
-}
+  .options-billets .tarifs .flex-nw .standard,
+  .premiere {
+    margin-right: 15px;
+  }
 
-.options-billets .tarifs .flex-nw .standard,.premiere {
-  margin-right:15px;
-}
-
-.options-billets .tarifs .row .bloc {
-  min-height: 80px;
-  display: flex;
+  .options-billets .tarifs .row .bloc {
+    min-height: 80px;
+    display: flex;
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: center;
+  }
+
+  .options-billets .valider {
+    margin-top: 0px !important;
+    border-radius: 0px !important;
+  }
+
+  .page-3 .footer {
+    display: none;
+  }
+
+  .page-4 .footer {
+    display: none;
+  }
+  .page-5 .footer {
+    display: none;
+  }
+  .page-6 .footer {
+    display: none;
+  }
 }
 
-.options-billets .valider {
-  margin-top: 0px!important;
-  border-radius: 0px!important;
-}
-
-.page-3 .footer {
-  display: none;
-}
-
-.page-4 .footer {
-  display: none;
-}
-.page-5 .footer {
-  display: none;
-}
-.page-6 .footer {
-  display: none;
-}
-
-}
-
-@media (min-width: 768px) and (max-width:1023px) {
-  
+@media (min-width: 768px) and (max-width: 1023px) {
   .container {
     max-width: 768px;
   }
 
   .wrapper {
-    grid-gap:20px 0px!important;
+    grid-gap: 20px 0px !important;
     max-width: 768px;
-    grid-template-columns: 70% 30%!important;
+    grid-template-columns: 70% 30% !important;
   }
 
   .recap-t .ligne1 .col-r p {
-    font-size: 1em!important;
+    font-size: 1em !important;
   }
 
-.recap-t .ligne2 .bloc2 p {
-
-  width: 100%;
-}
+  .recap-t .ligne2 .bloc2 p {
+    width: 100%;
+  }
   .impact-ecolo .row-ecolo {
-    flex-wrap: wrap!important;
-    margin-top: 0px!important; 
-}
+    flex-wrap: wrap !important;
+    margin-top: 0px !important;
+  }
 
-.impact-ecolo .row-ecolo .bloc1,.bloc2 {
-  margin-right: 0px!important;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
+  .impact-ecolo .row-ecolo .bloc1,
+  .bloc2 {
+    margin-right: 0px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
 
-.impact-ecolo .row-ecolo .bloc1 {
-  margin-bottom: 10px;
-}
+  .impact-ecolo .row-ecolo .bloc1 {
+    margin-bottom: 10px;
+  }
 
-.impact-ecolo .row-ecolo .text {
-  margin-bottom: 0px!important;
+  .impact-ecolo .row-ecolo .text {
+    margin-bottom: 0px !important;
+  }
 }
-}
-
 
 @media (min-width: 768px) {
-.wrapper {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 75% 25%;
-  grid-gap: 40px 0px;
-  grid-auto-rows: minmax(100px, auto);
-  margin-top: 40px;
-}
+  .wrapper {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 75% 25%;
+    grid-gap: 40px 0px;
+    grid-auto-rows: minmax(100px, auto);
+    margin-top: 40px;
+  }
 
-.recap-t {
-  grid-column: 1;
-  grid-row: 1/2;
-  padding: 20px;
-  margin-right: 25px;
-}
-
-.impact-ecolo {
-  grid-column: 2/2;
-  grid-row: 1;
-}
-
-.recap-b {
-  grid-column: 2/2;
-  grid-row: 2/3;
-  padding: 20px;
-  border-radius: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #13090f;
-  height: fit-content;
-}
-.modalités-r {
-  display: none;
-}
-
-.options-billets .billet1,.billet2 {
-  margin-right: 25px;
-}
-
-.recap-etapes .container {
-  display: flex;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  justify-content: space-between;
-}
-
-.recap-etapes .titre-r {
-  display: none;
-}
+  .recap-t {
+    grid-column: 1;
+    grid-row: 1/2;
+    padding: 20px;
+    margin-right: 25px;
+  }
 
   .impact-ecolo {
     grid-column: 2/2;
     grid-row: 1;
   }
 
-.bloc2-r {
-  display: none;
-}
+  .recap-b {
+    grid-column: 2/2;
+    grid-row: 2/3;
+    padding: 20px;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #13090f;
+  }
+  .modalités-r {
+    display: none;
+  }
 
-.recap-etapes .previous {
-  display: none;
-}
+  .options-billets .billet1,
+  .billet2 {
+    margin-right: 25px;
+  }
+
+  .recap-etapes .container {
+    display: flex;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    justify-content: space-between;
+  }
+
+  .recap-etapes .titre-r {
+    display: none;
+  }
+
+  .impact-ecolo {
+    grid-column: 2/2;
+    grid-row: 1;
+  }
+
+  .bloc2-r {
+    display: none;
+  }
+
+  .recap-etapes .previous {
+    display: none;
+  }
 }
 
 .recap-t .ligne2 .bloc3 .s-ligne1 .u1 {
   text-align: right;
 }
 .recap-t .ligne2 .bloc3 .s-ligne1 .u2 {
-  text-align: right!important;
+  text-align: right !important;
 }
 
 .recap-t .ligne1 {
@@ -1955,8 +1944,9 @@ h4 {
   flex-wrap: nowrap;
 }
 
-.recap-t .ligne2 .bloc1,.bloc3 {
-  flex-grow:2;
+.recap-t .ligne2 .bloc1,
+.bloc3 {
+  flex-grow: 2;
   padding: 5px;
 }
 
@@ -2104,7 +2094,6 @@ h4 {
 
 .impact-ecolo .conteneur {
   background-color: #26e8bd;
-  height: fit-content;
   padding: 20px;
   border-radius: 20px;
 }
@@ -2157,12 +2146,10 @@ h4 {
   margin-left: 15px;
 }
 
-
 .row3 .modalités {
   padding: 20px;
   background-color: #f3f3f8;
   border-radius: 20px;
-  height: fit-content;
   margin-bottom: 15px;
 }
 
@@ -2170,7 +2157,6 @@ h4 {
   padding: 20px;
   background-color: #f3f3f8;
   border-radius: 20px;
-  height: fit-content;
   margin-bottom: 15px;
 }
 
@@ -2194,18 +2180,18 @@ h4 {
   margin-top: 15px;
 }
 
- .valider {
+.valider {
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  height: fit-content;
   margin-top: 20px;
+  display: block;
 }
 
- .valider:hover {
+.valider:hover {
   background-color: var(--color-bleu);
   text-decoration: none;
 }
