@@ -1,3 +1,6 @@
+<?php 
+            session_start();
+            ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -75,16 +78,21 @@
       <div class="container">
         <div class="wrapper">
           <div class="recap-t border-fp">
+           
             <div class="ligne1">
               <div class="col-l">
                 <h5 class="bold bleu-fp">Aller sélectionné</h5>
                 <img src="img/ico_train.png" alt="icone train">
-              </div>
+              </div> 
               <div class="col-r">
                 <p class="bold">Lun. 28 sept. 2020 • 12:42 - 15:05</p>
               </div>
             </div>
-            
+            <?php 
+            echo '<h3>' . $_SESSION['lieu_depart'] . '</h3>';
+            echo '<h3>' . $_SESSION['billet_depart'] . '</h3>';
+            ?>
+
             <div class="ligne2">
               <div class="bloc1 bloc">
                 <div class="s-ligne1">

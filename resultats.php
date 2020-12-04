@@ -1,3 +1,6 @@
+<?php 
+            session_start();
+            ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -124,23 +127,33 @@
                     <div class="bloc-r">
                         <div class="flex">
                             <img class="carte-trajet" src="img/carte-resultats.png" alt="carte itinéraire du trajet">
-                            <a href="http://localhost/flyingpapers/optionsbillets.html" class="bouton-peche">Poursuivre avec ce trajet</a>
+                            <a href="http://localhost/flyingpapers/optionsbillets.php" class="bouton-peche">Poursuivre avec ce trajet</a>
                         </div>
                         
                     </div>
                    
                     <?php
+
+                    $_SESSION['lieu_depart'] = $_GET["villeDepart"];
+                    $_SESSION['lieu_arrivee'] = $_GET["villeArrivee"];
+                            //$lieu_depart = $_GET["villeDepart"];
+                            //echo '<p>' . $_SESSION['lieu_depart'] . '</p>';
+                            //echo '<p>' . $_SESSION['lieu_arrivee'] . '</p>';
+                            //echo '<br /><a href="http://localhost/flyingpapers/optionsbillets.php"' . SID . '">page options</a>';
                             require 'admin/database.php';
                             $db = Database::connect();
                             $statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix, billets.ld_recherche, billets.mode_transport FROM billets 
                             WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"AND mode_transport = "' . $_GET['modeTransport'] . '"
                             ORDER BY billets.id ASC');
+                           
                             //$statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix FROM billets WHERE ld_recherche = \'Paris, France\' ORDER BY billets.id ASC'); --> test
                             //WHERE lieu depart et lieu arrivee = variables des champs sélectionnés pour la recherche + mode_transport = filtre.mode_transport --> test
                             //echo print_r($statement);
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
-                                //echo print_r($billet);
+                                $_SESSION['billet_depart'] = $billet["lieu_depart"];
+                                //echo print_r($billet); 
+                                //echo '<p>' . $billet['lieu_depart'] .'.</p>';
                                 echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html">';
                                 echo '<div class="billet" id="billet1">';
                                 echo '<div class="horaires rub">';
@@ -165,57 +178,14 @@
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</a>';
-                                //echo '<p> Ville de départ sélectionnée :'. $_GET['villeDepart'] . '___ </p>';
-                                //echo '<p> Ville d\'arrivée sélectionnée :'. $_GET['villeArrivee'] . '</p>';
+                    /*
+                        echo '<form method="get" action="optionsbilets.php">';
+                        
+                        echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
+                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; 
+                    echo '</form>';*/
                             }
                     ?>
-                    <!--
-
-                    <div class="billet" id="billet1">
-                        <div class="horaires rub">
-                            <p class="p">17:37   Paris Gare du Nord</p>
-                            <p class="p">20:38   Londres St Pancras</p>
-                        </div>
-                        <div class="duree rub">
-                            <p class="p">2h17   Direct</p>
-                            <p class="p">Eurostar</p>
-                        </div>
-                        <div class="empreinteC rub">
-                            <p class="p">3 kg</p>
-                            <p class="p">0.1%</p>
-                        </div>
-                        <div class="infos rub">
-                            <p class="p">CO2 émis / personne pour un aller</p>
-                            <p class="p">Du quota annuel pour limiter le réchauffement</p>
-                        </div>
-                        <div class="prix rub5">
-                            <p class="p p9">174€</p>
-                            <p class="p p10">Plus de détails</p>
-                        </div>
-                    </div>
-
-                    <div class="billet" id="billet2">
-                        <div class="horaires rub">
-                            <p class="p">17:37   Paris Gare du Nord</p>
-                            <p class="p">20:38   Londres St Pancras</p>
-                        </div>
-                        <div class="duree rub">
-                            <p class="p">2h07   Direct</p>
-                            <p class="p">Eurostar</p>
-                        </div>
-                        <div class="empreinteC rub">
-                            <p class="p">3 kg</p>
-                            <p class="p">0.1%</p>
-                        </div>
-                        <div class="horaires rub">
-                            <p class="p">CO2 émis / personne pour un aller</p>
-                            <p class="p">Du quota annuel pour limiter le réchauffement</p>
-                        </div>
-                        <div class="prix rub5">
-                            <p class="p p9">184€</p>
-                            <p class="p p10">Plus de détails</p>
-                        </div>
-                    </div>-->
                 </div>
             </div>
         </section>

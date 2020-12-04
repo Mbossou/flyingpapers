@@ -41,6 +41,7 @@
                 <div class="row">
                     
                     <?php
+                    session_start();
                     $lieu_depart1 = "Paris, France";
                     $lieu_depart2 = "Rome, Italie";
                     $lieu_depart3 = "Londres, Angleterre";
@@ -65,7 +66,7 @@
                         echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
                         echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
                         echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
-                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
+                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">';
                     echo '</form>';
                     ?>
                 </div>
