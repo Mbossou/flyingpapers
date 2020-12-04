@@ -51,23 +51,26 @@ body {
   font-family: var(--font-text) !important;
 }
 
-h2 {
-  margin-bottom: 1.8rem;
-}
-
 p {
   font-family: var(--font-text);
   line-height: 20px;
   letter-spacing: 0px;
-  font-size: 15px;
-  font-weight: 100;
-  font-style: normal;
+  font-size     : 1em;
+  font-weight   : 100;
+  font-style    : normal;
 }
 
 .dot {
   font: var(--font-titre);
   font-size: 50px;
   color: var(--color-peche);
+  margin-left: 4px;
+  line-height: 0em;
+}
+.dot1 {
+  font       : var(--font-titre);
+  font-size  : 50px;
+  color      : var(--color-bleu);
   margin-left: 4px;
   line-height: 0em;
 }
@@ -102,14 +105,6 @@ p {
 
 .test {
   margin-left: 50px;
-}
-
-.resultats-billets,
-.infos-persos,
-.porte-a-porte,
-.paiement,
-.confirmation-reservation {
-  margin-top: 45px;
 }
 
 .bouton-peche {
@@ -179,7 +174,7 @@ p {
 }
 
 .small-p {
-  font-size: 0.9em;
+  font-size: 0.8em!important;
 }
 
 .bold {
@@ -345,10 +340,11 @@ h1 {
   font-weight: 600;
 }
 
-h2 {
-  color: var(--color-bleu);
+.page-1 h2 {
+  color      : var(--color-bleu);
   font-family: var(--font-titre);
   font-weight: 600;
+  margin-bottom: 1.8rem;
 }
 
 h4 {
@@ -1172,33 +1168,36 @@ RECAP ETAPES*/
   font-size: 0.8em;
 }
 
-.options-billets .tarifs .row1z {
-  justify-content: space-around;
-}
-
 .options-billets .tarifs .row1 {
-  margin-top: 20px;
   justify-content: space-between;
+  align-items    : center;
 }
 
 .options-billets .tarifs .row1 .row {
-  margin-left: 0px;
-  margin-right: 0px;
+  align-items: baseline;
+}
+
+.options-billets .tarifs .row1 .titre h5 {
+margin-bottom: 0px;
 }
 
 .options-billets .tarifs .row1 .row .SNCF {
-  width: 30px;
+margin-right: 15px;
+}
+
+.options-billets .tarifs .row1 .row p {
+  font-weight: bold;
 }
 
 .options-billets .tarifs .flex-nw .bloc {
   border-style: solid;
   border-radius: 20px;
-  border-color: var(--color-bleu);
-  border-width: 1px;
-  padding: 10px 20px 10px 20px;
-  min-height: max-content;
-  text-align: center;
-  height: 100%;
+  border-color : var(--color-bleu);
+  border-width : 1px;
+  padding      : 10px 20px 10px 20px;
+  text-align   : center;
+  height       : 100%;
+  width        : 100%;
 }
 
 .options-billets .tarifs .row .bloc:hover {
@@ -1237,6 +1236,22 @@ RECAP ETAPES*/
   padding: 20px;
 }
 
+@media (min-width:768px) {
+  .options-billets .tarifs a {
+    flex-grow: 1;
+    margin   : 15px;
+  }
+}
+
+@media (min-width: 768px) and (max-width:1023px) {
+  .bagages .conteneur img {
+    height: 80px;
+}
+  p {
+    font-size: 0.9em!important;
+  }
+}
+
 @media (min-width: 0px) and (max-width: 767px) {
   .bagages img {
     transform: scale(0.75);
@@ -1246,6 +1261,9 @@ RECAP ETAPES*/
   }
   .options-billets .billet2 {
     margin-bottom: 20px !important;
+  }
+  .options-billets .tarifs a {
+    min-width: 95px;
   }
 }
 
@@ -1758,6 +1776,53 @@ RECAP ETAPES*/
   margin-bottom: 0px;
 }
 
+
+/*PAGE 404
+--------------------------------------------------------------------------------------------------------------*/
+.erreur404 {
+  height             : 90vh;
+  width              : 100%;
+}
+
+.erreur404 h2 {
+  margin-bottom: Opx!important;
+  font-family: var(--font-titre);
+  font-weight: 600;
+}
+
+.erreur404 .conteneur {
+  padding-right: 10%;
+  padding-left : 10%;
+  margin-left  : 0px;
+  margin-right : 0px;
+}
+
+.erreur404 .conteneur .contenu {
+  flex-wrap      : wrap;
+  justify-content:  center;
+}
+
+.erreur404 .conteneur .contenu .img404 {
+  margin-top: 50px;
+  max-height: 100px;
+}
+
+.erreur404 .conteneur .contenu p {
+  width     : 100%;
+  text-align: center;
+  margin-top: 40px;
+  font-size : 1.4em!important;
+  color     : var(--color-vert-recap);
+  z-index: 2;
+}
+
+.erreur404 .conteneur .contenu .illu-404 {
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+}
+
+
 /*CLASSES COMMUNES POUR PAGES ETAPES RESERVATION (Options billets, infos persos, etc.) 
 --------------------------------------------------------------------------------------------------------------*/
 .recap-t .ligne2 .bloc3 .s-ligne1 .u1 {
@@ -1793,7 +1858,7 @@ RECAP ETAPES*/
 }
 
 .recap-t .ligne1 .col-r p {
-  font-size: 1.3em;
+  font-size    : 1.1em;
   margin-bottom: 0px;
 }
 
@@ -2059,9 +2124,10 @@ RECAP ETAPES*/
     display: grid;
     width: 100%;
     grid-template-columns: 75% 25%;
-    grid-gap: 40px 0px;
-    grid-auto-rows: minmax(100px, auto);
-    margin-top: 40px;
+    grid-gap             : 40px 0px;
+    grid-auto-rows       : minmax(100px, auto);
+    margin-top           : 40px;
+    margin-bottom           : 40px;
   }
   .recap-t {
     grid-column: 1;
@@ -2081,6 +2147,13 @@ RECAP ETAPES*/
     border-style: solid;
     border-width: 1px;
     border-color: #13090f;
+  }
+  .row3 {
+    grid-column    : 2;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+
   }
   .modalités-r {
     display: none;

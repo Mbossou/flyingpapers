@@ -56,6 +56,7 @@
                 </div>
                 <div class="row">
                     <?php
+                    session_start();
                     $lieu_depart1 = "Paris, France";
                     $lieu_depart2 = "Rome, Italie";
                     $lieu_depart3 = "Londres, Angleterre";
