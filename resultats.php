@@ -15,16 +15,31 @@
         
     </head>
     <body class="page-2">
-        <a href="#"></a>
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <a  href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
-        
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav nav-pills navbar-nav">
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#langue">FR</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#reservations">Vos réservations</a></li>
-                    <li class="nav-item"><a class="nav-link nav-link-style" href="#inscription">S'inscrire</a></li>
-                    <li class="nav-item"><a class="nav-link bouton-peche" href="#connexion">Se connecter</a></li>
+        <nav class="navbar navbar-light navbar-expand-xl bg-faded justify-content-center">
+            <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+                <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        🇫🇷
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                            <a class="dropdown-item" href="#">English 🇬🇧</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-style" href="#">Vos réservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-peche" href="#">Se connecter</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -119,7 +134,7 @@
 
         <section id="resultats-billets">
             <div>
-                <h2>Autres Trajets<span style="color: #f0856b; font-size:1.5em;">.</span></h2>
+                <h2>Trajets proposés<span class="dot">.</span></h2>
                 <div class="les-billets">
                     <div class="bloc-r">
                         <div class="flex">
@@ -141,7 +156,7 @@
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
                                 //echo print_r($billet);
-                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html">';
+                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html?idBillet='. $billet['id'] . '">';
                                 echo '<div class="billet" id="billet1">';
                                 echo '<div class="horaires rub">';
                                 echo '<p class="p">'. $billet['lieu_depart'] . '</p>';

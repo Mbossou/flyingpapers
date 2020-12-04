@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
     
@@ -15,19 +16,34 @@
      
 </head>
 <body class="page-1">
-    <div class="background"></div>
-    <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#"><img src="img/logo.PNG" alt="logo Flying Papers" /></a>
-    
-          <div class="collapse navbar-collapse justify-content-right" id="menu">
-            <ul class="nav nav-pills navbar-nav">
-                <li class="nav-item"><a class="nav-link nav-link-style" href="#langue">🇫🇷</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-style" href="#reservations">Vos réservations</a></li>
-                <li class="nav-item"><a class="nav-link nav-link-style" href="#inscription">S'inscrire</a></li>
-                <li class="nav-item"><a class="nav-link bouton-bleu" href="#connexion">Se connecter</a></li>
+    <nav class="navbar navbar-light navbar-expand-xl bg-faded justify-content-center">
+        <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    🇫🇷
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                        <a class="dropdown-item" href="#">English 🇬🇧</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-style" href="#">Vos réservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-peche" href="#">Se connecter</a>
+                </li>
             </ul>
-          </div>
-      </nav>
+        </div>
+    </nav>
       
     <section id="banniere">
         <h1>Voyager l'esprit léger<span class="dot">.</span> Tout simplement<span  class="dot">.</span></h1>
@@ -39,7 +55,6 @@
                     <p>1 Adulte, Sans carte de réduction</p>
                 </div>
                 <div class="row">
-                    
                     <?php
                     $lieu_depart1 = "Paris, France";
                     $lieu_depart2 = "Rome, Italie";
@@ -48,24 +63,46 @@
                     $lieu_arrivee2 = "Rome, Italie";
                     $lieu_arrivee3 = "Londres, Angleterre";
                     
-                    echo '<form method="get" action="resultats.php">';
-                        echo '<input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" required>';
+                    echo '<form method="get" action="resultats.php" class="form-search">';
+                        echo '
+                        <div class="input-field dep">
+                            <i class="material-icons">gps_not_fixed</i>
+                            <input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" required>
+                        </div>
+                        ';
                             echo '<datalist id="villesDepart">';                 
                                 echo '<option value="'.$lieu_depart1.'">';                   
                                 echo '<option value="'.$lieu_depart2.'">';                   
                                 echo '<option value="'.$lieu_depart3.'">';                   
-                            echo '</datalist>';         
-                        echo '<input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" required>';
+                            echo '</datalist>';
+                        
+                        echo '
+                        <div class="input-field fle">
+                            <img src="img/fleches.svg" alt="double-fleches" class="double-fleches">
+                        </div>
+                        ';
+
+                        echo '
+                        <div class="input-field arr">
+                            <i class="material-icons">location_on</i>
+                            <input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" required>
+                        </div>
+                        ';
                             echo '<datalist id="villesArrivee">';                   
                                 echo '<option value="'.$lieu_arrivee1.'">';                   
                                 echo '<option value="'.$lieu_arrivee2.'">';                   
                                 echo '<option value="'.$lieu_arrivee3.'">';
                             echo '</datalist>';         
                             //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
-                        echo '<input class="input-text" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>';
-                        echo '<input class="input-text" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">';
+                        echo '
+                            <div class="input-field-date dates">
+                                <i class="material-icons">date_range</i>
+                                <input class="input-text-date input-text-datedepart" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" required>|
+                                <input class="input-text-date input-text-datearrivee" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour">
+                            </div>
+                        ';
                         echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
-                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
+                        echo '<input class="btn-peche bouton" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
                     echo '</form>';
                     ?>
                 </div>
@@ -160,6 +197,7 @@
                 <p>Chez Flying Papers, nous souhaitons démocratiser les démarches écologiques de consommation. Notre volonté est de « vivre mieux en consommant mieux ».</p>
                 <p>Nous vous proposons les meilleures solutions de transports sur le marché. En se basant sur vos attentes et sur le respect de l’environnement, nous comparons les offres de plus de 250 sociétés partenaires.</p>
                 <p>Voyager l’esprit léger, Flying Papers s’occupe de tout, que ce soit pour la préparation de vos trajets ou pour la préservation de notre environnement !</p>
+                <button class="btn-bleu ensavoirplus">En savoir plus</button>
             </div>
             <div class="jauges jauges-peche">
                 <h3>Paris – Moscou en avion</h3>
@@ -236,7 +274,7 @@
         </div>
         <div class="join">
             <h5>Vous êtes un•e professionnel•le ?</h5>
-            <button class="btn-blue" id="Join">Rejoignez-nous !</button>
+            <button class="btn-bleu" id="Join">Rejoignez-nous !</button>
         </div>
     </div>
     <div class="home-rect home-rect-g">
@@ -262,7 +300,7 @@
         <div class="home-rect-flex responsive-web">
             <div class="newsletter-left">
                 <input class="input-text" type="text" placeholder="Votre adresse e-mail">
-                <input class="btn-orange" type="submit" value="S'abonner">
+                <input class="btn-peche" type="submit" value="S'abonner">
                 <p class="newsletter-title">Recevez tous nos bons plans pour voyager éco-responsable</p>
             </div>
             <div class="newsletter-right">
@@ -277,7 +315,7 @@
             </div>
             <div class="newsletter-right">
                 <input class="input-text" type="text" placeholder="Votre adresse e-mail">
-                <input class="btn-orange" type="submit" value="S'abonner">
+                <input class="btn-peche" type="submit" value="S'abonner">
             </div>
         </div>
     </div>
