@@ -89,8 +89,8 @@
               </div>
             </div>
             <?php 
-            echo '<h3>' . $_SESSION['lieu_depart'] . '</h3>';
-            echo '<h3>' . $_SESSION['billet_depart'] . '</h3>';
+            //echo '<h3>' . $_SESSION['lieu_depart'] . '</h3>';
+            //echo '<h3>' . $_SESSION['billet_depart'] . '</h3>';
             ?>
 
             <div class="ligne2">
@@ -258,7 +258,7 @@
               </div>
               <div class="row">
                 <img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />
-                <p>Eurostar</p>
+                <p>EUROSTAR</p>
                 <p></p>
               </div>
             </div>
