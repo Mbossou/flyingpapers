@@ -1193,6 +1193,10 @@ RECAP ETAPES*/
   margin-right: 15px;
 }
 
+.options-billets .tarifs .row1 .row .Eurostar {
+margin-right: 15px;
+}
+
 .options-billets .tarifs .row1 .row p {
   font-weight: bold;
 }
@@ -1200,12 +1204,12 @@ RECAP ETAPES*/
 .options-billets .tarifs .flex-nw .bloc {
   border-style: solid;
   border-radius: 20px;
-  border-color: var(--color-bleu);
-  border-width: 1px;
-  padding: 10px 20px 10px 20px;
-  text-align: center;
-  height: 100%;
-  width: 100%;
+  border-color : var(--color-bleu);
+  border-width : 1px;
+  padding      : 10px 10px 10px 10px;
+  text-align   : center;
+  height       : 100%;
+  width        : 100%;
 }
 
 .options-billets .tarifs .row .bloc:hover {
@@ -1273,6 +1277,19 @@ RECAP ETAPES*/
   .options-billets .tarifs a {
     min-width: 95px;
   }
+  .options-billets .tarifs .a-standard {
+    margin-right: 15px;
+  }
+  .options-billets .tarifs .a-prise {
+    margin-right: 15px;
+  }
+  .options-billets .tarifs .standard {
+    margin-right: 15px;
+  }
+  .options-billets .tarifs .a-premiere {
+    margin-right: 15px;
+  }
+
 }
 
 /* PAGE - PORTE A PORTE 
@@ -1545,7 +1562,7 @@ RECAP ETAPES*/
 
 .paiement .mode-paiement .flex1 {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .paiement .mode-paiement .flex1 .moyen {
@@ -2111,13 +2128,12 @@ RECAP ETAPES*/
 
 .valider {
   width: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
   margin-top: 20px;
   display: block;
+  align-self: center;
 }
 
 .valider:hover {
@@ -2130,10 +2146,10 @@ RECAP ETAPES*/
     display: grid;
     width: 100%;
     grid-template-columns: 75% 25%;
-    grid-gap: 40px 0px;
-    grid-auto-rows: minmax(100px, auto);
-    margin-top: 40px;
-    margin-bottom: 40px;
+    grid-gap             : 40px 0px;
+    grid-auto-rows       : minmax(10px, auto);
+    margin-top           : 40px;
+    margin-bottom           : 40px;
   }
   .recap-t {
     grid-column: 1;
