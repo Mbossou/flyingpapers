@@ -24,25 +24,32 @@
     <title>Comparez plusieurs billets de transport et voyagez léger | Flying Papers</title>
   </head>
   <body class="page-5">
-    <a href="#"></a>
-    <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
-
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav nav-pills navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#langue">FR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
+      <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  🇫🇷
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                      <a class="dropdown-item" href="#">English 🇬🇧</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+              </li>
+          </ul>
       </div>
     </nav>
 
@@ -182,7 +189,7 @@
           <div class="creer-compte border-fp">
             <div class="col-l">
               <p class="question bold">Vous n’avez pas de compte ?</p>
-              <p>Créer votre compte pour remplir automatiquement tous les champs et obtenir des avantages sur vos prochains trajets !</p>
+              <p>Créer votre compte pour remplir automatiquement tous les champs et obtenir des avantages sur vos prochains trajets&nbsp;!</p>
               <div class="row">
                 <p class="text">Vous avez déjà un compte ?</p>
                 <p></p>
@@ -202,7 +209,7 @@
               </div>
               <div class="ligne2">
                 <label for="email">Adresse e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Votre billet sera envoyé à :" autocomplete="email" />
+                <input type="email" id="email" name="email" placeholder="Votre billet sera envoyé à&nbsp;:" autocomplete="email" />
               </div>
               <div class="cols">
                 <div class="col-l">

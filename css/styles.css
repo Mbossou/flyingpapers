@@ -55,9 +55,9 @@ p {
   font-family: var(--font-text);
   line-height: 20px;
   letter-spacing: 0px;
-  font-size     : 1em;
-  font-weight   : 100;
-  font-style    : normal;
+  font-size: 1em;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .dot {
@@ -68,11 +68,86 @@ p {
   line-height: 0em;
 }
 .dot1 {
-  font       : var(--font-titre);
-  font-size  : 50px;
-  color      : var(--color-bleu);
+  font: var(--font-titre);
+  font-size: 50px;
+  color: var(--color-bleu);
   margin-left: 4px;
   line-height: 0em;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+  h1 {
+    font-size: 4vw;
+  }
+  h2 {
+    font-size: 3vw;
+    margin-bottom: 2rem !important;
+  }
+  h4 {
+    font-size: 2.4vw;
+  }
+  h5 {
+    font-size: 2vw !important;
+  }
+  p {
+    font-size: 2vw;
+  }
+  .dot {
+    font-size: 45px;
+  }
+  .dot1 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 4.5vw;
+  }
+  h2 {
+    font-size: 4vw;
+    margin-bottom: 1.5rem !important;
+  }
+  h4 {
+    font-size: 3vw;
+  }
+  h5 {
+    font-size: 3vw !important;
+  }
+  p {
+    font-size: 2.5vw;
+  }
+  .dot {
+    font-size: 35px;
+  }
+  .dot1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  h1 {
+    font-size: 5vw;
+  }
+  h2 {
+    font-size: 4.5vw;
+    margin-bottom: 1.5rem !important;
+  }
+  h4 {
+    font-size: 3.4vw;
+  }
+  h5 {
+    font-size: 3.2vw !important;
+  }
+  p {
+    font-size: 3vw;
+  }
+  .dot {
+    font-size: 25px;
+  }
+  .dot1 {
+    font-size: 25px;
+  }
 }
 
 .cookies {
@@ -81,24 +156,29 @@ p {
   justify-content: left;
   align-items: center;
   bottom: 0;
+  right: 0;
+  left: 0;
   margin: 0;
   background-color: var(--color-bleu);
   min-height: 60px;
+  max-width: 2200px;
 }
 
 .lblcookies {
   color: rgba(255, 255, 255, 1);
-  padding: 10px 30px;
-  font-size: 12px;
+  padding: 10px 70px 10px 30px;
+  font-size: 11px;
   margin: 0 !important;
 }
 
 .cookies a {
   cursor: pointer;
+  right: 0;
+  position: absolute;
 }
 
 .cookies svg {
-  margin-right: 30px;
+  margin: 0 30px;
   width: 20px;
   fill: white;
 }
@@ -132,7 +212,7 @@ p {
   display: inline-block;
   cursor: pointer;
   color: #ffffff !important;
-  padding: 10px 40px !important;
+  padding: 10px 40px;
   text-decoration: none;
   border: 0;
 }
@@ -174,7 +254,7 @@ p {
 }
 
 .small-p {
-  font-size: 0.8em!important;
+  font-size: 0.8em !important;
 }
 
 .bold {
@@ -201,7 +281,7 @@ p {
 }
 
 .navbar {
-  padding: 20px 10%;
+  padding: 20px 8%;
   background-color: white;
 }
 
@@ -215,7 +295,7 @@ p {
 
 .navbar .nav-link {
   text-align: left;
-  margin: 12px 0 0 10px;
+  margin: 5px 0 5px 10px;
 }
 
 .navbar .nav-link-style {
@@ -320,6 +400,12 @@ p {
   margin-top: 3em;
 }
 
+@media screen and (max-width: 600px) {
+  #banniere {
+    margin-top: 1em;
+  }
+}
+
 #moteur-recherche {
   margin-top: -8em;
   padding: 12em 0 6em 0;
@@ -327,6 +413,12 @@ p {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  #moteur-recherche {
+    padding: 10em 0 2em 0;
+  }
 }
 
 #banniere h1,
@@ -340,11 +432,14 @@ h1 {
   font-weight: 600;
 }
 
-.page-1 h2 {
-  color      : var(--color-bleu);
+h2 {
   font-family: var(--font-titre);
   font-weight: 600;
-  margin-bottom: 1.8rem;
+}
+
+.home-rect h2 {
+  color: var(--color-bleu);
+  margin-bottom: 3rem;
 }
 
 h4 {
@@ -357,6 +452,7 @@ h4 {
   border: 1px solid var(--color-bleu);
   border-radius: 30px;
   background-color: white;
+  display: table;
 }
 
 #moteur-recherche .row p {
@@ -365,28 +461,15 @@ h4 {
 }
 
 .form-search {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+  grid-template-columns: fit-content(20%) fit-content(5%) fit-content(20%) fit-content(40%) fit-content(15%);
+  /*grid-template-columns: 1fr 0.5fr 1fr 2fr 1.6r;*/
   grid-template-rows: 1fr;
   gap: 15px 15px;
-  grid-template-areas: "dep fle arr depart depart bouton";
+  grid-template-areas: "dep fle arr dates dates bouton";
 }
 
-@media screen and (max-width: 1200px) {
-  .form-search {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 15px 15px;
-    grid-template-areas:
-      "dep fle arr"
-      "depart depart bouton";
-  }
-}
-
-.depart {
-  grid-area: depart;
-}
 .dep {
   grid-area: dep;
 }
@@ -396,8 +479,47 @@ h4 {
 .arr {
   grid-area: arr;
 }
+.dates {
+  grid-area: dates;
+}
 .bouton {
   grid-area: bouton;
+}
+
+@media screen and (min-width: 1200px) {
+  .form-search .input-text {
+    max-width: 225px;
+  }
+  .input-field-date {
+    max-width: 335px;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 1024px) {
+  .form-search .input-text {
+    width: 170px !important;
+  }
+  .input-field-date {
+    width: 335px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .form-search {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: stretch;
+    gap: 15px 15px;
+    grid-template-areas:
+      "dep fle"
+      "arr arr"
+      "dates dates"
+      "bouton bouton";
+  }
+  .input-text-date {
+    width: 48% !important;
+  }
 }
 
 input::placeholder {
@@ -406,7 +528,6 @@ input::placeholder {
 
 .input-field {
   align-self: center;
-  justify-self: center;
 }
 
 .input-field .material-icons {
@@ -416,17 +537,21 @@ input::placeholder {
 }
 
 .input-text {
-  max-width: 225px;
+  width: 100%;
   border: 1px solid var(--color-bleu);
-  padding: 7px 15px 7px 40px;
+  padding: 7px 15px 7px 20px;
   border-radius: 30px;
+}
+
+.form-search .input-text {
+  padding-left: 40px !important;
 }
 
 .input-field-date {
   border: 1px solid var(--color-bleu);
   border-radius: 30px;
   height: 40px;
-  width: 335px;
+  width: 100%;
   color: grey;
 }
 
@@ -456,7 +581,6 @@ input::placeholder {
 }
 
 #moteur-recherche #recherche {
-  width: 175px;
   right: 0;
 }
 
@@ -598,9 +722,20 @@ input::placeholder {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .destinationsPopulaires .card-mobile .card {
+    height: 7em;
+    width: 7em;
+    flex-basis: 7em;
+  }
+  .destinationsPopulaires .card-mobile .card-mob-text {
+    padding: 1em 0.5em 0 1em;
+  }
+}
+
 /* NOS VALEURS */
 .home-rect {
-  padding: 5% 8% 5% 8%;
+  padding: 4% 8% 4% 8%;
   position: relative;
   margin: 0 auto;
 }
@@ -776,7 +911,7 @@ input::placeholder {
 
 .newsletter-title {
   font-weight: 450;
-  padding-bottom: 23px;
+  padding: 10px 0 23px 0;
 }
 
 .newsletter-right {
@@ -825,6 +960,20 @@ input::placeholder {
   }
   .responsive-mobile {
     display: flex !important;
+  }
+  .newsletter-right .input-text {
+    width: 200px;
+  }
+  .newsletter-right {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .newsletter-right {
+    flex-shrink: 1;
   }
 }
 
@@ -1173,7 +1322,7 @@ RECAP ETAPES*/
 
 .options-billets .tarifs .row1 {
   justify-content: space-between;
-  align-items    : center;
+  align-items: center;
 }
 
 .options-billets .tarifs .row1 .row {
@@ -1181,15 +1330,15 @@ RECAP ETAPES*/
 }
 
 .options-billets .tarifs .row1 .titre h5 {
-margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .options-billets .tarifs .row1 .row .SNCF {
-margin-right: 15px;
+  margin-right: 15px;
 }
 
 .options-billets .tarifs .row1 .row .Eurostar {
-margin-right: 15px;
+  margin-right: 15px;
 }
 
 .options-billets .tarifs .row1 .row p {
@@ -1199,12 +1348,12 @@ margin-right: 15px;
 .options-billets .tarifs .flex-nw .bloc {
   border-style: solid;
   border-radius: 20px;
-  border-color : var(--color-bleu);
-  border-width : 1px;
-  padding      : 10px 10px 10px 10px;
-  text-align   : center;
-  height       : 100%;
-  width        : 100%;
+  border-color: var(--color-bleu);
+  border-width: 1px;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .options-billets .tarifs .row .bloc:hover {
@@ -1267,10 +1416,10 @@ margin-right: 15px;
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .options-billets .tarifs a {
     flex-grow: 1;
-    margin   : 15px;
+    margin: 15px;
   }
   .options-billets .bagages .conteneur {
     display: flex;
@@ -1279,7 +1428,7 @@ margin-right: 15px;
 
 @media (min-width: 768px) and (max-width:1023px) {
   p {
-    font-size: 0.9em!important;
+    font-size: 0.9em !important;
   }
 }
 
@@ -1832,30 +1981,29 @@ margin-right: 15px;
   margin-bottom: 0px;
 }
 
-
 /*PAGE 404
 --------------------------------------------------------------------------------------------------------------*/
 .erreur404 {
-  height             : 90vh;
-  width              : 100%;
+  height: 90vh;
+  width: 100%;
 }
 
 .erreur404 h2 {
-  margin-bottom: Opx!important;
+  margin-bottom: Opx !important;
   font-family: var(--font-titre);
   font-weight: 600;
 }
 
 .erreur404 .conteneur {
   padding-right: 10%;
-  padding-left : 10%;
-  margin-left  : 0px;
-  margin-right : 0px;
+  padding-left: 10%;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .erreur404 .conteneur .contenu {
-  flex-wrap      : wrap;
-  justify-content:  center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .erreur404 .conteneur .contenu .img404 {
@@ -1864,11 +2012,11 @@ margin-right: 15px;
 }
 
 .erreur404 .conteneur .contenu p {
-  width     : 100%;
+  width: 100%;
   text-align: center;
   margin-top: 40px;
-  font-size : 1.4em!important;
-  color     : var(--color-vert-recap);
+  font-size: 1.4em !important;
+  color: var(--color-vert-recap);
   z-index: 2;
 }
 
@@ -1877,7 +2025,6 @@ margin-right: 15px;
   bottom: -90px;
   width: 100%;
 }
-
 
 /*CLASSES COMMUNES POUR PAGES ETAPES RESERVATION (Options billets, infos persos, etc.) 
 --------------------------------------------------------------------------------------------------------------*/
@@ -1914,7 +2061,7 @@ margin-right: 15px;
 }
 
 .recap-t .ligne1 .col-r p {
-  font-size    : 1.1em;
+  font-size: 1.1em;
   margin-bottom: 0px;
 }
 
@@ -2179,10 +2326,10 @@ margin-right: 15px;
     display: grid;
     width: 100%;
     grid-template-columns: 75% 25%;
-    grid-gap             : 40px 0px;
-    grid-auto-rows       : minmax(10px, auto);
-    margin-top           : 40px;
-    margin-bottom           : 40px;
+    grid-gap: 40px 0px;
+    grid-auto-rows: minmax(10px, auto);
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   .recap-t {
     grid-column: 1;
@@ -2204,11 +2351,10 @@ margin-right: 15px;
     border-color: #13090f;
   }
   .row3 {
-    grid-column    : 2;
-    display        : flex;
-    flex-wrap      : wrap;
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-
   }
   .modalités-r {
     display: none;

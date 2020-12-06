@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+header("HTTP/1.0 404 Not Found");
+?>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -18,28 +21,35 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/script.js"></script>
 
-    <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
+    <title>Flying Papers | Erreur 404</title>
   </head>
   <body class="page-404">
-    <a href="#"></a>
-    <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
-
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav nav-pills navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#langue">FR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
+      <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  🇫🇷
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                      <a class="dropdown-item" href="#">English 🇬🇧</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+              </li>
+          </ul>
       </div>
     </nav>
 
@@ -47,7 +57,7 @@
       <div class="conteneur">
         <h2 class="peche-fp">Voyager l'esprit léger<span class="dot1">.</span> (Ou presque)<span  class="dot1">.</span></h2>
         <h5 class="bleu-fp bold">Flying Papers n’a pas pu vous accompagner et faciliter <br>
-          votre déplacement au sein de notre site. Mais on reste tout de même écolo !</h5>
+          votre déplacement au sein de notre site. Mais on reste tout de même écolo&nbsp;!</h5>
         <div class="contenu flex">
           <img src="img/404.svg" class="img404" alt="Erreur 404" />
           <p class="bold">ERREUR</p>
