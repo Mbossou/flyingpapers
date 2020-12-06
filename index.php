@@ -39,7 +39,7 @@
                     <a class="nav-link nav-link-style" href="#">S'inscrire</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-peche" style="width:175px;" href="#">Se connecter</a>
+                    <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
                 </li>
             </ul>
         </div>
@@ -47,7 +47,7 @@
       
     <section id="banniere">
         <h1>Voyager l'esprit léger<span class="dot">.</span> Tout simplement<span  class="dot">.</span></h1>
-        <h4>Flying Papers vous accompagne pour faciliter</br> vos déplacements en France et en Europe tout en restant écolo !</h4>
+        <h4>Flying Papers vous accompagne pour faciliter</br> vos déplacements en France et en Europe tout en restant écolo&nbsp;!</h4>
         <div id="moteur-recherche">
             <div class="container search">
                 <div class="row">
@@ -103,7 +103,7 @@
                             </div>
                         ';
                         echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
-                        echo '<input class="btn-peche bouton" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit : redirection vers page resultats.php
+                        echo '<input class="btn-peche bouton" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit&nbsp;: redirection vers page resultats.php
                     echo '</form>';
                     ?>
                 </div>
@@ -195,9 +195,9 @@
         <h2>Nos valeurs écologiques<span class="dot">.</span></span></h2>
         <div class="home-rect-flex">
             <div class="home-rect-txt">
-                <p>Chez Flying Papers, nous souhaitons démocratiser les démarches écologiques de consommation. Notre volonté est de « vivre mieux en consommant mieux ».</p>
+                <p>Chez Flying Papers, nous souhaitons démocratiser les démarches écologiques de consommation. Notre volonté est de «&nbsp;vivre mieux en consommant mieux&nbsp;».</p>
                 <p>Nous vous proposons les meilleures solutions de transports sur le marché. En se basant sur vos attentes et sur le respect de l’environnement, nous comparons les offres de plus de 250 sociétés partenaires.</p>
-                <p>Voyager l’esprit léger, Flying Papers s’occupe de tout, que ce soit pour la préparation de vos trajets ou pour la préservation de notre environnement !</p>
+                <p>Voyager l’esprit léger, Flying Papers s’occupe de tout, que ce soit pour la préparation de vos trajets ou pour la préservation de notre environnement&nbsp;!</p>
                 <button class="btn-bleu ensavoirplus">En savoir plus</button>
             </div>
             <div class="jauges jauges-peche">
@@ -223,7 +223,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="jauges-source">*Source : calculs sur données de l’ADEME, base carbone. Effet de trainée inclus.<p>
+                <p class="jauges-source">*Source&nbsp;: calculs sur données de l’ADEME, base carbone. Effet de trainée inclus.<p>
             </div>
             <div class="jauges jauges-bleu">
                 <h3>Paris – Marseille en TGV</h3>
@@ -248,7 +248,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="jauges-source">*Source : SNCF<p>
+                <p class="jauges-source">*Source&nbsp;: SNCF<p>
             </div>
         </div>
     </div>
@@ -275,7 +275,7 @@
         </div>
         <div class="join">
             <h5>Vous êtes un•e professionnel•le ?</h5>
-            <button class="btn-bleu" id="Join">Rejoignez-nous !</button>
+            <button class="btn-bleu" id="Join">Rejoignez-nous&nbsp;!</button>
         </div>
     </div>
     <div class="home-rect home-rect-g">
@@ -284,13 +284,13 @@
             <div class="client">
                 <img src="img/client_1.png" alt="Client 1">
                 <div class="client-txt">
-                    <p><strong>Je recommande Flying Papers</strong></br>Je recommande flyingpapers.com !</br>La demande de réservation pour un trajet est simple, le site est intuitif.</p>
+                    <p><strong>Je recommande Flying Papers</strong></br>Je recommande flyingpapers.com&nbsp;!</br>La demande de réservation pour un trajet est simple, le site est intuitif.</p>
                 </div>
             </div>
             <div class="client">
                 <img src="img/client_2.png" alt="Client 2">
                 <div class="client-txt">
-                    <p><strong>Site très claire et facile à utiliser</strong></br>Facile de trouver des billets de transports économiques avec un faible taux d’empreinte carbone.</br>Je recommande fortement !</p>
+                    <p><strong>Site très claire et facile à utiliser</strong></br>Facile de trouver des billets de transports économiques avec un faible taux d’empreinte carbone.</br>Je recommande fortement&nbsp;!</p>
                 </div>
             </div>
         </div>

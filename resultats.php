@@ -18,7 +18,7 @@
         
     </head>
     <body class="page-2">
-        <nav class="navbar navbar-light navbar-expand-xl bg-faded justify-content-center">
+        <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
             <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -35,13 +35,13 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-link-style" href="#">Vos réservations</a>
+                        <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-link-style" href="#">S'inscrire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-peche" href="#">Se connecter</a>
+                        <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
                     </li>
                 </ul>
             </div>

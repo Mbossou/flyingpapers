@@ -160,7 +160,7 @@
           <div class="tarifs billet1 border-fp">
             <div class="row row1">
               <div class="titre">
-                <h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>
+                <h5 class="bold bleu-fp">Tarifs&nbsp;: Billet Aller 1</h5>
               </div>
               <div class="row">
                 <img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" />
@@ -190,7 +190,7 @@
               </a>
             </div>
             <div>
-              <p class="services">Services inclus :</p>
+              <p class="services">Services inclus&nbsp;:</p>
               <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
             </div>
 
@@ -254,7 +254,7 @@
           <div class="tarifs billet2 border-fp">
             <div class="row row1">
               <div class="titre">
-                <h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>
+                <h5 class="bold bleu-fp">Tarifs&nbsp;: Billet Aller 2</h5>
               </div>
               <div class="row">
                 <img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />
@@ -284,7 +284,7 @@
               </a>
             </div>
             <div>
-              <p class="services">Services inclus :</p>
+              <p class="services">Services inclus&nbsp;:</p>
               <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
             </div>
 
