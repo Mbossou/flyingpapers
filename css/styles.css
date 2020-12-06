@@ -1097,17 +1097,20 @@ RECAP ETAPES*/
 
 .recap-etapes #container-infos .a4-i {
   opacity: 70%;
+  cursor : default;
 }
 
 .recap-etapes #container-pap .a3-p,
 .a4-p {
   opacity: 70%;
+  cursor : default;
 }
 
 .recap-etapes #container-options .a2-o,
 .a3-o,
 .a4-o {
   opacity: 70%;
+  cursor : default;
 }
 
 .text-recap-e {
@@ -1221,8 +1224,15 @@ margin-right: 15px;
   margin-bottom: 20px;
 }
 
+.options-billets .bagages .conteneur .images-b {
+  display: flex;
+  justify-content: center;
+}
+
 .options-billets .bagages .row2a {
   flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .options-billets .bagages .row3b {
@@ -1234,10 +1244,27 @@ margin-right: 15px;
 }
 
 .options-billets .billet2 {
-  grid-column: 1;
-  grid-row: 4/7;
+  grid-column  : 1;
+  grid-row     : 4/7;
   margin-bottom: 40px;
-  padding: 20px;
+  padding      : 20px;
+}
+
+@media (min-width:1200px) {
+  
+  .bagages .conteneur img {
+    max-width : 200px!important;
+    max-height: 200px!important;
+}
+.options-billets .bagages {
+  margin-top: 70px!important;
+}
+}
+
+@media (min-width: 768px) and (max-width:1199px) {
+  .options-billets .bagages .conteneur {
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width:768px) {
@@ -1245,12 +1272,12 @@ margin-right: 15px;
     flex-grow: 1;
     margin   : 15px;
   }
+  .options-billets .bagages .conteneur {
+    display: flex;
+  }
 }
 
 @media (min-width: 768px) and (max-width:1023px) {
-  .bagages .conteneur img {
-    height: 80px;
-}
   p {
     font-size: 0.9em!important;
   }
@@ -1258,7 +1285,7 @@ margin-right: 15px;
 
 @media (min-width: 0px) and (max-width: 767px) {
   .bagages img {
-    transform: scale(0.75);
+    /*transform: scale(0.75);*/
   }
   .options-billets .billet1 {
     margin-bottom: 20px !important;
@@ -1281,7 +1308,18 @@ margin-right: 15px;
   .options-billets .tarifs .a-premiere {
     margin-right: 15px;
   }
+}
 
+@media (min-width:430px) {
+  .options-billets .bagages .conteneur .images-b {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 430px) {
+  .bagages img {
+    max-width: 120px;
+}
 }
 
 /* PAGE - PORTE A PORTE 
@@ -1663,10 +1701,11 @@ margin-right: 15px;
 }
 
 .paiement .formulaire2 .cols .col-r {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  margin-top: 20px;
+  display      : flex;
+  flex-wrap    : wrap;
+  flex-grow    : 1;
+  margin-top   : 20px;
+  align-content:  first baseline;
 }
 
 @media (min-width: 768px) {
@@ -1696,7 +1735,7 @@ margin-right: 15px;
 }
 
 .confirmation-reservation .main img {
-  max-width: 100px;
+  max-width: 65px;
 }
 
 .confirmation-reservation .main h5 {
@@ -1721,7 +1760,7 @@ margin-right: 15px;
 }
 
 .confirmation-bouton-confirmer {
-  background-image: url(../img/rect.png);
+  background-image: url(../img/illu_voiture.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -2384,8 +2423,7 @@ margin-right: 15px;
   .prise {
     margin-right: 15px;
   }
-  .options-billets .tarifs .flex-nw .standard,
-  .premiere {
+  .options-billets .tarifs .flex-nw .premiere {
     margin-right: 15px;
   }
   .options-billets .tarifs .row .bloc {

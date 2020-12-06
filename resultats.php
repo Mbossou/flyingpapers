@@ -149,15 +149,12 @@
                    
                     <?php
 
-                    $_SESSION['lieu_depart'] = $_GET["villeDepart"];
-                    $_SESSION['lieu_arrivee'] = $_GET["villeArrivee"];
-                            //$lieu_depart = $_GET["villeDepart"];
-                            //echo '<p>' . $_SESSION['lieu_depart'] . '</p>';
-                            //echo '<p>' . $_SESSION['lieu_arrivee'] . '</p>';
-                            //echo '<br /><a href="http://localhost/flyingpapers/optionsbillets.php"' . SID . '">page options</a>';
+                    $_SESSION['ville_depart'] = $_GET["villeDepart"];
+                    $_SESSION['ville_arrivee'] = $_GET["villeArrivee"];
                             require 'admin/database.php';
                             $db = Database::connect();
-                            $statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix, billets.ld_recherche, billets.mode_transport FROM billets 
+                            $statement = $db->query('SELECT billets.id, billets.gare_depart, billets.gare_arrivee, billets.gare_c, billets.duree, billets.duree_c, billets.duree_trajet1, billets.duree_trajet2, billets.heure_depart_g, billets.heure_arrivee_g, billets.heure_depart_c, billets.heure_arrivee_c, billets.ville_c, billets.compagnie1, billets.compagnie2, billets.co2_emis, billets.pourcentage, billets.prix_g, billets.prix_opt1_trajet1, billets.prix_opt2_trajet1, billets.prix_opt3_trajet1, billets.prix_opt1_trajet2, billets.prix_opt2_trajet2, billets.prix_opt3_trajet2,  billets.ld_recherche, billets.mode_transport, billets.num_transport1, billets.num_transport2  
+                            FROM billets 
                             WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"AND mode_transport = "' . $_GET['modeTransport'] . '"
                             ORDER BY billets.id ASC');
                            
@@ -166,18 +163,42 @@
                             //echo print_r($statement);
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
-                                $_SESSION['billet_depart'] = $billet["lieu_depart"];
-                                //echo print_r($billet); 
-                                //echo '<p>' . $billet['lieu_depart'] .'.</p>';
-                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.html">';
+                                $_SESSION['id'. $billet['id'] .''] = $billet["id"];
+                                $_SESSION['gare_depart'. $billet['id'] .''] = $billet["gare_depart"];
+                                $_SESSION['gare_arrivee'. $billet['id'] .''] = $billet["gare_arrivee"];
+                                $_SESSION['gare_c'. $billet['id'] .''] = $billet["gare_c"];
+                                $_SESSION['duree'. $billet['id'] .''] = $billet["duree"];
+                                $_SESSION['duree_c'. $billet['id'] .''] = $billet["duree_c"];
+                                $_SESSION['duree_trajet1'. $billet['id'] .''] = $billet["duree_trajet1"];
+                                $_SESSION['duree_trajet2'. $billet['id'] .''] = $billet["duree_trajet2"];
+                                $_SESSION['heure_depart_g'. $billet['id'] .''] = $billet["heure_depart_g"];
+                                $_SESSION['heure_arrivee_g'. $billet['id'] .''] = $billet["heure_arrivee_g"];
+                                $_SESSION['heure_depart_c'. $billet['id'] .''] = $billet["heure_depart_c"];
+                                $_SESSION['heure_arrivee_c'. $billet['id'] .''] = $billet["heure_arrivee_c"];
+                                $_SESSION['ville_c'. $billet['id'] .''] = $billet["ville_c"];
+                                $_SESSION['compagnie1'. $billet['id'] .''] = $billet["compagnie1"];
+                                $_SESSION['compagnie2'. $billet['id'] .''] = $billet["compagnie2"];
+                                $_SESSION['co2_emis'. $billet['id'] .''] = $billet["co2_emis"];
+                                $_SESSION['pourcentage'. $billet['id'] .''] = $billet["pourcentage"];
+                                $_SESSION['prix_g'. $billet['id'] .''] = $billet["prix_g"];
+                                $_SESSION['prix_opt1_trajet1'. $billet['id'] .''] = $billet["prix_opt1_trajet1"];
+                                $_SESSION['prix_opt2_trajet1'. $billet['id'] .''] = $billet["prix_opt2_trajet1"];
+                                $_SESSION['prix_opt3_trajet1'. $billet['id'] .''] = $billet["prix_opt3_trajet1"];
+                                $_SESSION['prix_opt1_trajet2'. $billet['id'] .''] = $billet["prix_opt1_trajet2"];
+                                $_SESSION['prix_opt2_trajet2'. $billet['id'] .''] = $billet["prix_opt2_trajet2"];
+                                $_SESSION['prix_opt3_trajet2'. $billet['id'] .''] = $billet["prix_opt3_trajet2"];
+                                $_SESSION['num_transport1'. $billet['id'] .''] = $billet["num_transport1"];
+                                $_SESSION['num_transport2'. $billet['id'] .''] = $billet["num_transport2"];
+
+                                echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.php?id_billet='.$billet['id'].'">';
                                 echo '<div class="billet" id="billet1">';
                                 echo '<div class="horaires rub">';
-                                echo '<p class="p">'. $billet['lieu_depart'] . '</p>';
-                                echo '<p class="p">'. $billet['lieu_arrivee'] . '</p>';
+                                echo '<p class="p">'. $billet['gare_depart'] . '</p>';
+                                echo '<p class="p">'. $billet['gare_arrivee'] . '</p>';
                                 echo '</div>';
                                 echo '<div class="duree rub">';
                                 echo '<p class="p">'. $billet['duree'] . '</p>';
-                                echo '<p class="p">'. $billet['compagnie'] . '</p>';
+                                echo '<p class="p">'. $billet['compagnie2'] . '</p>';
                                 echo '</div>';
                                 echo '<div class="empreinteC rub">';
                                 echo '<p class="p">'. $billet['co2_emis'] . ' KG</p>';
@@ -188,7 +209,7 @@
                                 echo '<p class="p">Du quota annuel pour limiter le réchauffement</p>';
                                 echo '</div>';
                                 echo '<div class="prix rub5">';
-                                echo '<p class="p p9">'. $billet['prix'] . '€</p>';
+                                echo '<p class="p p9">'. $billet['prix_g'] . '€</p>';
                                 echo '<p class="p p10">Plus de détails</p>';
                                 echo '</div>';
                                 echo '</div>';

@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -45,20 +48,22 @@
 
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-pay">
-        <a href="#" class="a1-p a"
-          ><p class="num-e">1</p>
-          <p class="text-recap-e">Sélection des options</p></a
-        >
+        <?php
+          echo '<a href="http://localhost/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'" class="a1-p a">';
+        ?>
+          <p class="num-e">1</p>
+          <p class="text-recap-e">Sélection des options</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a2-p a"
-          ><p class="num-e">2</p>
-          <p class="text-recap-e">Porte-à-porte</p></a
-        >
+        <a href="http://localhost/flyingpapers/porteaporte.php" class="a2-p a">
+          <p class="num-e">2</p>
+          <p class="text-recap-e">Porte-à-porte</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a3-p a"
-          ><p class="num-e">3</p>
-          <p class="text-recap-e">Informations personnelles</p></a
-        >
+        <a href="http://localhost/flyingpapers/infospersos.php" class="a3-p a">
+          <p class="num-e">3</p>
+          <p class="text-recap-e">Informations personnelles</p>
+        </a>
         <div class="next"></div>
         <a href="javascript:history.back()" class="previous">
           <img src="img/left-chevron.svg" alt="étape précédente">
@@ -66,7 +71,8 @@
         <h5 class="titre-r">Paiement</h5>
         <a href="#" class="a4-p a">
           <p class="num-e">4</p>
-          <p class="text-recap-e">Paiement</p></a>
+          <p class="text-recap-e">Paiement</p>
+        </a>
       </div>
     </div>
 
@@ -74,66 +80,103 @@
       <div class="container">
         <div class="wrapper">
           
-          <div class="recap-t border-fp">
-            <div class="ligne1">
-              <div class="col-l">
-                <h5 class="bold bleu-fp">Aller sélectionné</h5>
-                <img src="img/ico_train.png" alt="icone train">
-              </div>
-              <div class="col-r">
-                <p class="bold">Lun. 28 sept. 2020 • 12:42 - 15:05</p>
-              </div>
-            </div>
-            
-            <div class="ligne2">
-              <div class="bloc1">
-                <div class="s-ligne1">
-                  <p>Paris Gare du Nord</p>
-                  <p>Lille Europe</p>
-                </div>
-                <div class="s-ligne2">
-                  <div class="circle-l"></div>
-                  <div class="blue-bar"></div>
-                  <div class="circle-r"></div>
-                </div>
-                <div class="s-ligne3">
-                  <p class="bold">12:42</p>
-                  <div class="compagnie">
-                    <p class="bold">31 min</p>
-                    <img src="img/sncf.svg" alt="logo sncf">
-                    <p>Ouigo PL1256</p>
-                  </div>
-                  <p class="bold">13:13</p>
-                </div>
-              </div>
-              <div class="bloc2">
-                <p class="peche-fp small-p p1">Changement à Lille</p>
-                <p class="peche-fp p2">• • •</p>
-                <p class="peche-fp small-p p3">1 h 04 min</p>
-                <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
-              </div>
-              <div class="bloc3">
-                <div class="s-ligne1">
-                  <p>Lille Europe</p>
-                  <p>Londres St Pancras</p>
-                </div>
-                <div class="s-ligne2">
-                  <div class="circle-l"></div>
-                  <div class="blue-bar"></div>
-                  <div class="circle-r"></div>
-                </div>
-                <div class="s-ligne3">
-                  <p class="bold">14:17</p>
-                  <div class="compagnie">
-                    <p class="bold">48 min</p>
-                    <img src="img/eurostar.svg" alt="logo sncf">
-                    <p>Eurostar LL2203</p>
-                  </div>
-                  <p class="bold">15:05</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php
+          echo '<div class="recap-t border-fp">';
+          echo '<div class="ligne1">';
+          echo '<div class="col-l">';
+          echo '<h5 class="bold bleu-fp">Aller sélectionné</h5>';
+          echo '<img src="img/ico_train.png" alt="icone train">';
+          echo '</div>';
+          echo '<div class="col-r">';
+          echo '<p class="bold">Lun. 28 sept. 2020 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>';
+          echo '</div>';
+          echo '</div>';
+          echo '<div class="ligne2">';
+          echo '<div class="bloc1 bloc">';
+          echo '<div class="s-ligne1">';
+          echo '<p>' . $_SESSION['billet_gare_depart'] . '</p>';
+          echo '<p class="u1">' . $_SESSION['billet_gare_c'] . '</p>';
+          echo '</div>';
+          echo '<div class="s-ligne2">';
+          echo '<div class="circle-l"></div>';
+          echo '<div class="blue-bar"></div>';
+          echo '<div class="circle-r"></div>';
+          echo '</div>';
+          echo '<div class="s-ligne3">';
+          echo '<p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>';
+          echo '<div class="compagnie">';
+          echo '<p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>';
+          echo '<img src="img/sncf.svg" alt="logo sncf">'; //rendre image dynamique
+          echo '<p>' . $_SESSION['billet_num_transport1'] . '</p>';
+          echo '</div>';
+          echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>';
+          echo '</div>';
+          echo '</div>';
+          echo '<div class="bloc2 bloc">';
+          echo '<p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>';
+          echo '<p class="peche-fp p2">• • •</p>';
+          echo '<p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>';
+          echo '<p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>';
+          echo '</div>';
+          echo '<div class="bloc2-r">';
+          echo '<div class="ligne3-r">';
+          echo '<div class="flex-nw f1">';
+          echo '<p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>';
+          echo '<img src="img/CO2.svg" alt="icone CO2"> ';
+          echo '</div>';
+          echo '<br>';
+          echo '<div class="flex-nw f2">';
+          echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>';
+          echo '<img src="img/jaugeverte.svg" alt="icone jauge pollution">'; 
+          echo '</div> ';
+          echo '</div> ';
+          echo '</div> ';
+          echo '<div class="bloc3 bloc">';
+          echo '<div class="s-ligne1">';
+          echo '<p>' . $_SESSION['billet_gare_c'] . '</p>';
+          echo '<p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>';
+          echo '</div>';
+          echo '<div class="s-ligne2">';
+          echo '<div class="circle-l"></div>';
+          echo '<div class="blue-bar"></div>';
+          echo '<div class="circle-r"></div>';
+          echo '</div>';
+          echo '<div class="s-ligne3">';
+          echo '<p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>';
+          echo '<div class="compagnie">';
+          echo '<p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>';
+          echo '<img src="img/eurostar.svg" alt="logo eurostar">'; //rendre image dynamique
+          echo '<p>' . $_SESSION['billet_num_transport2'] . '</p>';
+          echo '</div>';
+          echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+
+
+          echo '<div class="impact-ecolo">';
+          echo '<div class="conteneur">';
+          echo '<h4 class="titre-ecolo bold">Impact Ecologique</h4>';
+          echo '<div class="row row-ecolo">';
+          echo '<div class="bloc bloc1">';
+          echo '<div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">';
+          echo '<p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>';
+          echo '</div>';
+          echo '<p class="text">CO2 émis / pers. pour un aller</p>';
+          echo '</div>';
+          echo '<div class="bloc bloc2">';
+          echo '<div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">';
+          echo '<img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">';
+          echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>';
+          echo '</div>';
+          echo '<p class="text">Du quota annuel pour limiter le réchauffement</p>';
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+          echo '<div class="separateur"></div>';
+          echo '</div>';
+        ?>
 
           <div class="row2" style="display: flex; flex-wrap: wrap;">
             <div class="code-promo border-fp">
@@ -227,26 +270,6 @@
           </div>
          
 
-
-
-          <div class="impact-ecolo">
-            <div class="conteneur">
-              <h4 class="titre-ecolo bold">Impact Ecologique</h4>
-              <div class="row row-ecolo">
-                <div class="bloc bloc1">
-                  <p class="bold">2,5 KG</p>
-                  <p class="text">CO2 émis / pers. pour un aller</p>
-                </div>
-                <div class="bloc bloc2">
-                  <p class="bold">0.1 %</p>
-                  <p class="text">Du quota annuel pour limiter le réchauffement</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="separateur"></div>
-          </div>
-
           <div class="recap-b">
             <h5 class="bold bleu-fp">Récapitulatif</h5>
             <div class="row row1">
@@ -277,7 +300,7 @@
               le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
             </p>
             </div>
-            <a class="valider bouton-peche" href="/flyingpapers/confirmation-paiement.html">Confirmer</a>
+            <a class="valider bouton-peche" href="/flyingpapers/confirmation-paiement.php">Confirmer</a>
           </div>
           
         </div>

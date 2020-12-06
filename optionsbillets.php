@@ -52,276 +52,295 @@
           <img src="img/left-chevron.svg" alt="étape précédente">
         </a>
         <h5 class="titre-r">Sélection des options</h5>
-        <a href="#" class="a1-o a"
-          ><p class="num-e">1</p>
-          <p class="text-recap-e">Sélection des options</p></a
-        >
+        <a href="#" class="a1-o a">
+          <p class="num-e">1</p>
+          <p class="text-recap-e">Sélection des options</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a2-o a"
-          ><p class="num-e">2</p>
-          <p class="text-recap-e">Porte-à-porte</p></a
-        >
+        <a href="#" class="a2-o a">
+          <p class="num-e">2</p>
+          <p class="text-recap-e">Porte-à-porte</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a3-o a"
-          ><p class="num-e">3</p>
-          <p class="text-recap-e">Informations personnelles</p></a
-        >
+        <a href="#" class="a3-o a">
+          <p class="num-e">3</p>
+          <p class="text-recap-e">Informations personnelles</p>
+        </a>
         <div class="next"></div>
-        <a href="#" class="a4-o a"
-          ><p class="num-e">4</p>
-          <p class="text-recap-e">Paiement</p></a
-        >
+        <a href="#" class="a4-o a">
+          <p class="num-e">4</p>
+          <p class="text-recap-e">Paiement</p>
+        </a>
       </div>
     </div>
 
     <section class="options-billets">
       <div class="container">
         <div class="wrapper">
-          <div class="recap-t border-fp">
-           
-            <div class="ligne1">
-              <div class="col-l">
-                <h5 class="bold bleu-fp">Aller sélectionné</h5>
-                <img src="img/ico_train.png" alt="icone train">
-              </div> 
-              <div class="col-r">
-                <p class="bold">Lun. 28 sept. 2020 • 12:42 - 15:05</p>
-              </div>
-            </div>
             <?php 
-            //echo '<h3>' . $_SESSION['lieu_depart'] . '</h3>';
-            //echo '<h3>' . $_SESSION['billet_depart'] . '</h3>';
+            $_SESSION['billet_id'] = $_SESSION['id'. $_GET['id_billet'] .''];
+            $_SESSION['billet_gare_depart'] = $_SESSION['gare_depart'. $_GET['id_billet'] .''];
+            $_SESSION['billet_gare_arrivee'] = $_SESSION['gare_arrivee'. $_GET['id_billet'] .''];
+            $_SESSION['billet_gare_c'] = $_SESSION['gare_c'. $_GET['id_billet'] .''];
+            $_SESSION['billet_duree'] = $_SESSION['duree'. $_GET['id_billet'] .''];
+            $_SESSION['billet_duree_c'] = $_SESSION['duree_c'. $_GET['id_billet'] .''];
+            $_SESSION['billet_duree_trajet1'] = $_SESSION['duree_trajet1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_duree_trajet2'] = $_SESSION['duree_trajet2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_heure_depart_g'] = $_SESSION['heure_depart_g'. $_GET['id_billet'] .''];
+            $_SESSION['billet_heure_arrivee_g'] = $_SESSION['heure_arrivee_g'. $_GET['id_billet'] .''];
+            $_SESSION['billet_heure_depart_c'] = $_SESSION['heure_depart_c'. $_GET['id_billet'] .''];
+            $_SESSION['billet_heure_arrivee_c'] = $_SESSION['heure_arrivee_c'. $_GET['id_billet'] .''];
+            $_SESSION['billet_ville_c'] = $_SESSION['ville_c'. $_GET['id_billet'] .''];
+            $_SESSION['billet_compagnie1'] = $_SESSION['compagnie1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_compagnie2'] = $_SESSION['compagnie2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_co2_emis'] = $_SESSION['co2_emis'. $_GET['id_billet'] .''];
+            $_SESSION['billet_pourcentage'] = $_SESSION['pourcentage'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_g'] = $_SESSION['prix_g'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt1_trajet1'] = $_SESSION['prix_opt1_trajet1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt2_trajet1'] = $_SESSION['prix_opt2_trajet1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt3_trajet1'] = $_SESSION['prix_opt3_trajet1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt1_trajet2'] = $_SESSION['prix_opt1_trajet2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt2_trajet2'] = $_SESSION['prix_opt2_trajet2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_prix_opt3_trajet2'] = $_SESSION['prix_opt3_trajet2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_num_transport1'] = $_SESSION['num_transport1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_num_transport2'] = $_SESSION['num_transport2'. $_GET['id_billet'] .''];
+
+            echo '<div class="recap-t border-fp">';
+            echo '<div class="ligne1">';
+            echo '<div class="col-l">';
+            echo '<h5 class="bold bleu-fp">Aller sélectionné</h5>';
+            echo '<img src="img/ico_train.png" alt="icone train">';
+            echo '</div>';
+            echo '<div class="col-r">';
+            echo '<p class="bold">Lun. 28 sept. 2020 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="ligne2">';
+            echo '<div class="bloc1 bloc">';
+            echo '<div class="s-ligne1">';
+            echo '<p>' . $_SESSION['billet_gare_depart'] . '</p>';
+            echo '<p class="u1">' . $_SESSION['billet_gare_c'] . '</p>';
+            echo '</div>';
+            echo '<div class="s-ligne2">';
+            echo '<div class="circle-l"></div>';
+            echo '<div class="blue-bar"></div>';
+            echo '<div class="circle-r"></div>';
+            echo '</div>';
+            echo '<div class="s-ligne3">';
+            echo '<p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>';
+            echo '<div class="compagnie">';
+            echo '<p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>';
+            echo '<img src="img/sncf.svg" alt="logo sncf">'; //rendre image dynamique
+            echo '<p>' . $_SESSION['billet_num_transport1'] . '</p>';
+            echo '</div>';
+            echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="bloc2 bloc">';
+            echo '<p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>';
+            echo '<p class="peche-fp p2">• • •</p>';
+            echo '<p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>';
+            echo '<p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>';
+            echo '</div>';
+            echo '<div class="bloc2-r">';
+            echo '<div class="ligne3-r">';
+            echo '<div class="flex-nw f1">';
+            echo '<p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>';
+            echo '<img src="img/CO2.svg" alt="icone CO2"> ';
+            echo '</div>';
+            echo '<br>';
+            echo '<div class="flex-nw f2">';
+            echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>';
+            echo '<img src="img/jaugeverte.svg" alt="icone jauge pollution">'; 
+            echo '</div> ';
+            echo '</div> ';
+            echo '</div> ';
+            echo '<div class="bloc3 bloc">';
+            echo '<div class="s-ligne1">';
+            echo '<p>' . $_SESSION['billet_gare_c'] . '</p>';
+            echo '<p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>';
+            echo '</div>';
+            echo '<div class="s-ligne2">';
+            echo '<div class="circle-l"></div>';
+            echo '<div class="blue-bar"></div>';
+            echo '<div class="circle-r"></div>';
+            echo '</div>';
+            echo '<div class="s-ligne3">';
+            echo '<p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>';
+            echo '<div class="compagnie">';
+            echo '<p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>';
+            echo '<img src="img/eurostar.svg" alt="logo eurostar">'; //rendre image dynamique
+            echo '<p>' . $_SESSION['billet_num_transport2'] . '</p>';
+            echo '</div>';
+            echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+
+
+            echo '<div class="tarifs billet1 border-fp">';
+            echo '<div class="row row1">';
+            echo '<div class="titre">';
+            echo '<h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>';
+            echo '</div>';
+            echo '<div class="row">';
+            echo '<img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" />'; //rendre image dynamique
+            echo '<p>' . $_SESSION['billet_compagnie1'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="flex-nw row1z">';
+            echo '<a href="#" class="a-standard">';
+            echo '<div class="bloc standard">';
+            echo '<p class="bold">Standard</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '<a href="#" class="a-prise">';
+            echo '<div class="bloc prise">';
+            echo '<p class="bold">Avec prise</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt2_trajet1'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '<a href="#" class="a-tranquille">';
+            echo '<div class="bloc tranquille">';
+            echo '<p class="bold">Tranquilité</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt3_trajet1'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '</div>';
+            echo '<div>';
+            echo '<p class="services">Services inclus :</p>';
+            echo '<p class="place">Place située à l’étage avec une prise électrique disponible.</p>';
+            echo '</div>';
+            echo '<div class="bagages">';
+            echo '<h5 class="bold bleu-fp">Bagages</h5>';
+            echo '<div>';
+            echo '<div class="conteneur">';
+            echo '<div>';
+            echo '<p>Inclus dans votre billet</p>';
+            echo '<div class="images-b">';
+            echo '<img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />';
+            echo '<img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />';
+            echo '</div>';
+            echo '</div>';
+            echo '<div>';
+            echo '<p>Rajouter un bagage supplémentaire ?</p>';
+            echo '<div class="flex row2a">';
+            echo '<img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />';
+            echo '<div class="ajout">';
+            echo '<div class="flex row2b">';
+            echo '<p>-</p>';
+            echo '<p>0</p>';
+            echo '<p>+</p>';
+            echo '</div>';
+            echo '<div class="row row3b">';
+            echo '<p style="margin-right: 15px">5€</p>';
+            echo '<p>Par bagage</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '<p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+
+            echo '<div class="impact-ecolo">';
+            echo '<div class="conteneur">';
+            echo '<h4 class="titre-ecolo bold">Impact Ecologique</h4>';
+            echo '<div class="row row-ecolo">';
+            echo '<div class="bloc bloc1">';
+            echo '<div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">';
+            echo '<p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>';
+            echo '</div>';
+            echo '<p class="text">CO2 émis / pers. pour un aller</p>';
+            echo '</div>';
+            echo '<div class="bloc bloc2">';
+            echo '<div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">';
+            echo '<img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">';
+            echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>';
+            echo '</div>';
+            echo '<p class="text">Du quota annuel pour limiter le réchauffement</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="separateur"></div>';
+            echo '</div>';
+    
+
+            echo '<div class="tarifs billet2 border-fp">';
+            echo '<div class="row row1">';
+            echo '<div class="titre">';
+            echo '<h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>';
+            echo '</div>';
+            echo '<div class="row">';
+            echo '<img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />';
+            echo '<p>' . $_SESSION['billet_compagnie2'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '<div class="flex-nw row1z">';
+            echo '<a href="#" class="a-standard">';
+            echo '<div class="bloc standard">';
+            echo '<p class="bold">Standard</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '<a href="#" class="a-premiere">';
+            echo '<div class="bloc premiere">';
+            echo '<p class="bold">Standard Première</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt2_trajet2'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '<a href="#" class="a-business">';
+            echo '<div class="bloc business">';
+            echo '<p class="bold">Business Première</p>';
+            echo '<p>' . $_SESSION['billet_prix_opt3_trajet2'] . '€</p>';
+            echo '</div>';
+            echo '</a>';
+            echo '</div>';
+            echo '<div>';
+            echo '<p class="services">Services inclus :</p>';
+            echo '<p class="place">Place située à l’étage avec une prise électrique disponible.</p>';
+            echo '</div>';
+            echo '<div class="bagages">';
+            echo '<h5 class="bold bleu-fp">Bagages</h5>';
+            echo '<div>';
+            echo '<div class="conteneur">';
+            echo '<div>';
+            echo '<p>Inclus dans votre billet</p>';
+            echo '<div class="images-b">';
+            echo '<img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />';
+            echo '<img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />';
+            echo '</div>';
+            echo '</div>';
+            echo '<div>';
+            echo '<p>Rajouter un bagage supplémentaire ?</p>';
+            echo '<div class="flex row2a">';
+            echo '<img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />';
+            echo '<div class="ajout">';
+            echo '<div class="flex row2b">';
+            echo '<p>-</p>';
+            echo '<p>0</p>';
+            echo '<p>+</p>';
+            echo '</div>';
+            echo '<div class="row row3b">';
+            echo '<p style="margin-right: 15px">5€</p>';
+            echo '<p>Par bagage</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '<p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
             ?>
 
-            <div class="ligne2">
-              <div class="bloc1 bloc">
-                <div class="s-ligne1">
-                  <p>Paris Gare du Nord</p>
-                  <p class="u1">Lille Europe</p>
-                </div>
-                <div class="s-ligne2">
-                  <div class="circle-l"></div>
-                  <div class="blue-bar"></div>
-                  <div class="circle-r"></div>
-                </div>
-                <div class="s-ligne3">
-                  <p class="bold">12:42</p>
-                  <div class="compagnie">
-                    <p class="bold">31 min</p>
-                    <img src="img/sncf.svg" alt="logo sncf">
-                    <p>Ouigo PL1256</p>
-                  </div>
-                  <p class="bold">13:13</p>
-                </div>
-              </div>
-              <div class="bloc2 bloc">
-                <p class="peche-fp small-p p1">Changement à Lille</p>
-                <p class="peche-fp p2">• • •</p>
-                <p class="peche-fp small-p p3">1 h 04</p>
-                <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
-              </div>
-              <div class="bloc2-r">
-                <div class="ligne3-r">
-                  <div class="flex-nw f1">
-                    <p class="bold">2,5 KG</p>
-                    <img src="img/CO2.svg" alt="icone CO2">
-                  
-                  </div>
-                  <br>
-                  <div class="flex-nw f2">
-                    <p class="bold">0.1%</p>
-                    <img src="img/jaugeverte.svg" alt="icone jauge pollution">
-                  
-                  </div>                 
-                </div>
-              </div>
-              <div class="bloc3 bloc">
-                <div class="s-ligne1">
-                  <p>Lille Europe</p>
-                  <p class="u2">Londres St Pancras</p>
-                </div>
-                <div class="s-ligne2">
-                  <div class="circle-l"></div>
-                  <div class="blue-bar"></div>
-                  <div class="circle-r"></div>
-                </div>
-                <div class="s-ligne3">
-                  <p class="bold">14:17</p>
-                  <div class="compagnie">
-                    <p class="bold">48 min</p>
-                    <img src="img/eurostar.svg" alt="logo sncf">
-                    <p>Eurostar LL2203</p>
-                  </div>
-                  <p class="bold">15:05</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tarifs billet1 border-fp">
-            <div class="row row1">
-              <div class="titre">
-                <h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>
-              </div>
-              <div class="row">
-                <img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" />
-                <p>SNCF OUIGO</p>
-                <p></p>
-              </div>
-            </div>
 
-            <div class="flex-nw row1z">
-              <a href="#" class="a-standard">
-                <div class="bloc standard">
-                  <p class="bold">Standard</p>
-                  <p>22€</p>
-                </div>
-              </a>
-              <a href="#" class="a-prise">
-                <div class="bloc prise">
-                  <p class="bold">Avec Prise</p>
-                  <p>25€</p>
-                </div>
-              </a>
-              <a href="#" class="a-tranquile">
-                <div class="bloc tranquile">
-                  <p class="bold">Tranquilité</p>
-                  <p>30€</p>
-                </div>
-              </a>
-            </div>
-            <div>
-              <p class="services">Services inclus :</p>
-              <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
-            </div>
-
-            <div class="bagages">
-              <h5 class="bold bleu-fp">Bagages</h5>
-              <div>
-                <div class="conteneur">
-                  <div>
-                    <p>Inclus dans votre billet</p>
-                    <div class="images-b">
-                      <img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />
-                      <img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />
-                    </div>
-                  </div>
-                  <div>
-                    <p>Rajouter un bagage supplémentaire ?</p>
-                    <div class="flex row2a">
-                      <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
-                      <div class="ajout">
-                        <div class="flex row2b">
-                          <p>-</p>
-                          <p>0</p>
-                          <p>+</p>
-                        </div>
-                        <div class="row row3b">
-                          <p style="margin-right: 15px">5€</p>
-                          <p>Par bagage</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="impact-ecolo">
-            <div class="conteneur">
-              <h4 class="titre-ecolo bold">Impact Ecologique</h4>
-              <div class="row row-ecolo">
-                <div class="bloc bloc1">
-                  <div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">
-                    <p class="bold">2,5 KG</p>
-                  </div>
-                  
-                  <p class="text">CO2 émis / pers. pour un aller</p>
-                </div>
-                <div class="bloc bloc2">
-                  <div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">
-                    <img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">
-                    <p class="bold">0.1 %</p>
-                  </div>
-                  <p class="text">Du quota annuel pour limiter le réchauffement</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="separateur"></div>
-          </div>
-
-          <div class="tarifs billet2 border-fp">
-            <div class="row row1">
-              <div class="titre">
-                <h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>
-              </div>
-              <div class="row">
-                <img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />
-                <p>EUROSTAR</p>
-                <p></p>
-              </div>
-            </div>
-
-            <div class="flex-nw row1z">
-              <a href="#" class="a-standard">
-                <div class="bloc standard">
-                  <p class="bold">Standard</p>
-                  <p>70€</p>
-                </div>
-              </a>
-              <a href="#" class="a-premiere">
-                <div class="bloc premiere">
-                  <p class="bold">Standard Première</p>
-                  <p>124€</p>
-                </div>
-              </a>
-              <a href="#" class="a-business">
-                <div class="bloc business">
-                  <p class="bold">Business Première</p>
-                  <p>226€</p>
-                </div>
-              </a>
-            </div>
-            <div>
-              <p class="services">Services inclus :</p>
-              <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
-            </div>
-
-            <div class="bagages">
-              <h5 class="bold bleu-fp">Bagages</h5>
-              <div>
-                <div class="conteneur">
-                  <div >
-                    <p>Inclus dans votre billet</p>
-                    <div class="images-b">
-                      <img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />
-                      <img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />
-                    </div>
-                  </div>
-                  <div>
-                    <p>Rajouter un bagage supplémentaire ?</p>
-                    <div class="flex row2a">
-                      <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
-                      <div class="ajout">
-                        <div class="flex row2b">
-                          <p>-</p>
-                          <p>0</p>
-                          <p>+</p>
-                        </div>
-                        <div class="row row3b">
-                          <p style="margin-right: 15px">5€</p>
-                          <p>Par bagage</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modalités modalités-r">
+            <div class="modalités modalités-r">
             <h5 class="bold bleu-fp">Modalités</h5>
             <p class="bold">Billet 1</p>
             <p>Billet échangeable sous conditions, non remboursable.</p>
@@ -361,9 +380,8 @@
                 le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
               </p>
             </div>
-            <a class="valider bouton-peche" href="/flyingpapers/porteaporte.html">Valider mes choix</a>
+            <a class="valider bouton-peche" href="/flyingpapers/porteaporte.php">Valider mes choix</a>
           </div>
-          
         </div>
       </div>
     </section>
