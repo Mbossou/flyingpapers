@@ -1,6 +1,4 @@
-<?php 
-            session_start();
-            ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -9,6 +7,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/script.js"></script>
         
@@ -47,25 +46,176 @@
             </div>
         </nav>
         <div class="recaps-trajet col-12">
-            <div class="conteneur">
-                <div class="recap">
-                    <a href=#><p class="text-recap depart">Paris, France</p></a>
-                </div>
-                <div class="recap">
-                    <a href=#><p class="text-recap arrivee">Londres, Royaume-Uni</p></a>
-                </div>
-                <div class="recap voyageurs">
-                    <a href=#> <p class="text-recap">1 adulte, v </p></a>
-                </div>
-                <div class="recap date">
-                    <a href=#><p class="text-recap">28 Sept 2020 |  + Ajouter un retour</p></a>
-                </div>
-                
-                <div class="recap modifier">
-                    <a href=#><p class="bouton-peche">Modifier le trajet</p></a>
+            <a class="recap-icon" href="/flyingpapers/"><i class="material-icons">keyboard_arrow_left</i></a>
+            <div class="recap">
+                <?php
+                setlocale(LC_TIME, "fr_FR");
+                echo '
+                    <p class="recap-text"><strong>'. $_GET["villeDepart"] .'</strong> > <strong>'. $_GET["villeArrivee"] .'</strong></p>
+                    ';
+                echo '
+                    <p class="recap-text">'. strftime("%a. %e %b. %Y",strtotime($_GET["dateDepart"])) .'</p>
+                ';
+                ?>
+            </div>
+            <a class="recap-icon" onclick="hideForm()"><i class="material-icons">search</i></a>
+        </div>
+
+        <script>
+            function hideForm() {
+                var x = document.getElementById("moteur-recherche-mobile");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+
+        <div id="moteur-recherche-resultat">
+            <div class="search-resultat col-12">
+                <div class="row">
+                    <?php
+                    session_start();
+                    $lieu_depart1 = "Paris, France";
+                    $lieu_depart2 = "Rome, Italie";
+                    $lieu_depart3 = "Londres, Angleterre";
+                    $lieu_arrivee1 = "Paris, France";
+                    $lieu_arrivee2 = "Rome, Italie";
+                    $lieu_arrivee3 = "Londres, Angleterre";
+                    
+                    echo '<form method="get" action="resultats.php" class="form-search">';
+                        echo '
+                        <div class="input-field dep">
+                            <i class="material-icons">gps_not_fixed</i>
+                            <input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" value="'. $_GET["villeDepart"] .'" required>
+                        </div>
+                        ';
+                            echo '<datalist id="villesDepart">';                 
+                                echo '<option value="'.$lieu_depart1.'">';                   
+                                echo '<option value="'.$lieu_depart2.'">';                   
+                                echo '<option value="'.$lieu_depart3.'">';                   
+                            echo '</datalist>';
+                        
+                        echo '
+                        <div class="input-field arr">
+                            <i class="material-icons">location_on</i>
+                            <input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" value="'. $_GET["villeArrivee"] .'" required>
+                        </div>
+                        ';
+                            echo '<datalist id="villesArrivee">';                   
+                                echo '<option value="'.$lieu_arrivee1.'">';                   
+                                echo '<option value="'.$lieu_arrivee2.'">';                   
+                                echo '<option value="'.$lieu_arrivee3.'">';
+                            echo '</datalist>';         
+                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
+
+                        echo '
+                        <div class="navbar fle">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownAdulte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    1 Adulte<i class="drop-arrow material-icons">expand_more</i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownAdulte" id="aller-dropdown">
+                                    <p>Nombre d\'adulte :</p>
+                                    <input label="Nombre d\'adulte" id="number" type="number" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                        
+                        echo '
+                            <div class="input-field-date dates">
+                                <i class="material-icons">date_range</i>
+                                <input class="input-text-date input-text-datedepart" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" value="'. $_GET["dateDepart"] .'" required>|
+                                <input class="input-text-date input-text-datearrivee" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour" value="'. $_GET["dateArrivee"] .'">
+                            </div>
+                        ';
+                        echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
+                        echo '<input class="btn-peche bouton" type="SUBMIT" value="Modifier le trajet">'; //ajouter un évènement sur submit&nbsp;: redirection vers page resultats.php
+                    echo '</form>';
+                    ?>
                 </div>
             </div>
         </div>
+        <div id="moteur-recherche-mobile" style="display: none;">
+            <div class="container search">
+                <div class="navbar">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownAller" aria-controls="aller-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aller Simple<i class="drop-arrow material-icons">expand_more</i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownAller" id="aller-dropdown">
+                            <a class="dropdown-item" href="#">Aller Simple</a>
+                            <a class="dropdown-item" href="#">Aller Retour</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownAdulte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            1 Adulte, Sans carte de réduction<i class="drop-arrow material-icons">expand_more</i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownAdulte" id="aller-dropdown">
+                            <p>Nombre d'adulte :</p>
+                            <input label="Nombre d'adulte" id="number" type="number" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <?php
+                    session_start();
+                    $lieu_depart1 = "Paris, France";
+                    $lieu_depart2 = "Rome, Italie";
+                    $lieu_depart3 = "Londres, Angleterre";
+                    $lieu_arrivee1 = "Paris, France";
+                    $lieu_arrivee2 = "Rome, Italie";
+                    $lieu_arrivee3 = "Londres, Angleterre";
+                    
+                    echo '<form method="get" action="resultats.php" class="form-search">';
+                        echo '
+                        <div class="input-field dep">
+                            <i class="material-icons">gps_not_fixed</i>
+                            <input class="input-text" list="villesDepart" name="villeDepart" id="ville-depart-choix" type="text" placeholder="Ville de départ" value="'. $_GET["villeDepart"] .'" required>
+                        </div>
+                        ';
+                            echo '<datalist id="villesDepart">';                 
+                                echo '<option value="'.$lieu_depart1.'">';                   
+                                echo '<option value="'.$lieu_depart2.'">';                   
+                                echo '<option value="'.$lieu_depart3.'">';                   
+                            echo '</datalist>';
+                        
+                        echo '
+                        <div class="input-field fle">
+                            <img src="img/fleches.svg" alt="double-fleches" class="double-fleches">
+                        </div>
+                        ';
+
+                        echo '
+                        <div class="input-field arr">
+                            <i class="material-icons">location_on</i>
+                            <input class="input-text" list="villesArrivee" name="villeArrivee" id="ville-arrivee-choix" type="text" placeholder="Ville d\'arrivée" value="'. $_GET["villeArrivee"] .'" required>
+                        </div>
+                        ';
+                            echo '<datalist id="villesArrivee">';                   
+                                echo '<option value="'.$lieu_arrivee1.'">';                   
+                                echo '<option value="'.$lieu_arrivee2.'">';                   
+                                echo '<option value="'.$lieu_arrivee3.'">';
+                            echo '</datalist>';         
+                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
+                        echo '
+                            <div class="input-field-date dates">
+                                <i class="material-icons">date_range</i>
+                                <input class="input-text-date input-text-datedepart" list="datesDepart"  name="dateDepart" id="dateDepart" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="Date de départ" value="'. $_GET["dateDepart"] .'" required>|
+                                <input class="input-text-date input-text-datearrivee" list="datesArrivee" name="dateArrivee" id="dateArrivee" type="text" onfocus="(this.type=\'date\')" onblur="(this.type=\'text\')" placeholder="+ Ajouter un retour" value="'. $_GET["dateArrivee"] .'">
+                            </div>
+                        ';
+                        echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
+                        echo '<input class="btn-peche bouton" type="SUBMIT" value="Rechercher" id="recherche">'; //ajouter un évènement sur submit&nbsp;: redirection vers page resultats.php
+                    echo '</form>';
+                    ?>
+                </div>
+            </div>
+        </div>
+
         <div class="indice-carbone">
             <div class="container">
                 <div class="indice positif">
@@ -83,8 +233,6 @@
             </div>
         </div>
 
-        
-        
         <section id="mode-transport">
             <div class=container>
                 <div class="row" >
