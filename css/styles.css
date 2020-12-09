@@ -49,6 +49,15 @@ body {
   width: 100%;
   margin: 0 auto;
   font-family: var(--font-text) !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.main-div {
+  flex: 1 0 auto;
 }
 
 p {
@@ -693,7 +702,6 @@ input::placeholder {
   background: linear-gradient(to bottom, var(--color-bleu) 70%, transparent 40%);
   padding: 1% 8%;
   position: relative;
-  margin: 0 auto;
 }
 
 .destinationsPopulaires h2 {
@@ -880,7 +888,6 @@ input::placeholder {
 .home-rect {
   padding: 4% 8% 4% 8%;
   position: relative;
-  margin: 0 auto;
 }
 
 .home-rect-w {
@@ -2179,7 +2186,8 @@ RECAP ETAPES*/
 /*PAGE 404
 --------------------------------------------------------------------------------------------------------------*/
 .erreur404 {
-  height: 90vh;
+  min-height: 70vh;
+  height: 100%;
   width: 100%;
 }
 
@@ -2190,10 +2198,7 @@ RECAP ETAPES*/
 }
 
 .erreur404 .conteneur {
-  padding-right: 10%;
-  padding-left: 10%;
-  margin-left: 0px;
-  margin-right: 0px;
+  padding: 0 8%;
 }
 
 .erreur404 .conteneur .contenu {
@@ -2219,6 +2224,14 @@ RECAP ETAPES*/
   position: absolute;
   bottom: -90px;
   width: 100%;
+}
+
+.background404 {
+  background-image: url("../img/illu_404.png");
+  background-position: 100% 75%;
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100%;
 }
 
 /*CLASSES COMMUNES POUR PAGES ETAPES RESERVATION (Options billets, infos persos, etc.) 
