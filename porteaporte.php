@@ -224,19 +224,27 @@
             <h5 class="bold bleu-fp">Récapitulatif</h5>
             <div class="row row1">
               <p class="small-p">Billet 1 (1 adulte)</p>
-              <p class="small-p">22,00€</p>
+              <?php
+              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
+              ?>
             </div>
             <div class="row row2">
-              <p class="text-tranquille small-p">Classe Tranquilité</p>
-              <p>+8,00€</p>
+              <p class="text-option small-p" id="output1b"></p>
+              <p id="output1"></p>
             </div>
             <div class="row row3">
               <p class="small-p">Billet 2 (1 adulte)</p>
-              <p class="small-p">70,00€</p>
+              <?php
+              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
+              ?>
+            </div>
+            <div class="row row2">
+              <p class="text-option small-p" id="output2b"></p>
+              <p id="output2"></p>
             </div>
             <div class="row row4">
               <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-              <p class="small-p bold">100,00€</p>
+              <p class="small-p bold" id="resultat_somme">100,00€</p>
             </div>
           </div>
           <div class="row3">
