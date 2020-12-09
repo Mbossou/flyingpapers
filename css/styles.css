@@ -321,6 +321,15 @@ p {
   }
 }
 
+.dropdown-toggle::after {
+  display: none;
+}
+
+.drop-arrow {
+  top: 12px;
+  position: absolute;
+}
+
 /* FOOTER */
 .footer {
   background-color: #f3f3f8;
@@ -415,9 +424,53 @@ p {
   background-size: cover;
 }
 
+#moteur-recherche .navbar,
+#moteur-recherche-mobile .navbar {
+  padding: 0 !important;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+
+.dropdown-toggle {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+  .dropdown-toggle {
+    font-size: 9px;
+  }
+
+  .drop-arrow {
+    top: 6px;
+    position: absolute;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   #moteur-recherche {
     padding: 10em 0 2em 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  #moteur-recherche-mobile {
+    display: none !important;
+  }
+  .page-2 .recaps-trajet {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #moteur-recherche-resultat {
+    display: none;
+  }
+  .search-resultat .form-search {
+    grid-template-columns: 1fr 1.5fr 1.5fr 2fr 1fr;
+    grid-template-areas: "dep arr fle dates dates bouton";
+    justify-items: center;
+  }
+  .page-2 .navbar-expand-lg {
+    display: none;
   }
 }
 
@@ -453,6 +506,50 @@ h4 {
   border-radius: 30px;
   background-color: white;
   display: table;
+}
+
+.search-resultat {
+  padding: 12px 2%;
+  background-color: var(--color-bleu);
+}
+
+.search-resultat .input-field-date {
+  color: white;
+}
+
+.search-resultat .input-text,
+.search-resultat .input-text-date {
+  color: white;
+  border-color: white;
+}
+
+.search-resultat .input-text-date {
+  max-width: 150px !important;
+}
+
+.search-resultat .input-field .material-icons,
+.search-resultat .input-field-date .material-icons {
+  color: white !important;
+}
+
+.search-resultat input::placeholder {
+  color: white;
+}
+
+.search-resultat .form-search {
+  grid-template-columns: 2fr 2fr 1fr 2fr 1fr;
+  grid-template-areas: "dep arr fle dates dates bouton";
+  justify-items: center;
+}
+
+.search-resultat .navbar {
+  background-color: transparent !important;
+  padding: 0;
+}
+
+.search-resultat .dropdown-toggle {
+  color: white;
+  font-weight: normal;
 }
 
 #moteur-recherche .row p {
@@ -495,7 +592,7 @@ h4 {
   }
 }
 
-@media screen and (max-width: 1199px) and (min-width: 1024px) {
+@media screen and (max-width: 1199px) and (min-width: 1025px) {
   .form-search .input-text {
     width: 170px !important;
   }
@@ -541,6 +638,7 @@ input::placeholder {
   border: 1px solid var(--color-bleu);
   padding: 7px 15px 7px 20px;
   border-radius: 30px;
+  background-color: transparent;
 }
 
 .form-search .input-text {
@@ -587,7 +685,7 @@ input::placeholder {
 .btn {
   margin: 10px !important;
   height: auto !important;
-  padding: 0px 12px 0px 12px !important;
+  padding: 0px 15px 0px 0px !important;
 }
 
 /* DESTINATIONS POPULAIRES */
@@ -989,65 +1087,31 @@ input::placeholder {
 RECAP RECHERCHE */
 .recaps-trajet {
   background-color: var(--color-bleu);
-}
-
-.recaps-trajet .conteneur {
   display: flex;
-  background-color: none;
-}
-
-.recaps-trajet .bouton-peche {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-  border-radius: 1.5rem !important;
-  margin-top: 1rem;
-}
-
-.recaps-trajet .bouton-peche:hover {
-  background-color: var(--color-bleu);
-  color: #ffffff;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .recap {
   flex-wrap: nowrap;
   flex-grow: 1;
   text-align: center;
+  margin: 5px 0;
+  padding-left: 20px;
 }
 
-.recaps-trajet .depart {
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: 1px;
-  border-style: solid;
-  border-width: thin;
-  border-radius: 1.5rem;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: left;
-  max-width: 250px;
-  margin-right: 40px;
-}
-
-.recaps-trajet .arrivee {
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: 1px;
-  border-style: solid;
-  border-width: thin;
-  border-radius: 1.5rem;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: left;
-  max-width: 250px;
-}
-
-.text-recap {
+.recap-text {
   color: #ffffff;
-  margin-top: 1rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 0;
+  padding: 0;
+}
+.recap-icon {
+  color: white;
+  cursor: pointer;
+  height: 25px;
+}
+.recap-icon:hover {
+  color: var(--color-peche) !important;
 }
 
 /* INDICE CARBONE */
@@ -1089,6 +1153,10 @@ RECAP RECHERCHE */
 
 .indice-carbone .negatif p {
   color: #ffffff;
+}
+
+.indice p {
+  font-size: 9px !important;
 }
 
 .indice-carbone p {
@@ -1246,20 +1314,20 @@ RECAP ETAPES*/
 
 .recap-etapes #container-infos .a4-i {
   opacity: 70%;
-  cursor : default;
+  cursor: default;
 }
 
 .recap-etapes #container-pap .a3-p,
 .a4-p {
   opacity: 70%;
-  cursor : default;
+  cursor: default;
 }
 
 .recap-etapes #container-options .a2-o,
 .a3-o,
 .a4-o {
   opacity: 70%;
-  cursor : default;
+  cursor: default;
 }
 
 .text-recap-e {
@@ -1412,24 +1480,23 @@ RECAP ETAPES*/
 }
 
 .options-billets .billet2 {
-  grid-column  : 1;
-  grid-row     : 4/7;
+  grid-column: 1;
+  grid-row: 4/7;
   margin-bottom: 40px;
-  padding      : 20px;
+  padding: 20px;
 }
 
-@media (min-width:1200px) {
-  
+@media (min-width: 1200px) {
   .bagages .conteneur img {
-    max-width : 200px!important;
-    max-height: 200px!important;
-}
-.options-billets .bagages {
-  margin-top: 70px!important;
-}
+    max-width: 200px !important;
+    max-height: 200px !important;
+  }
+  .options-billets .bagages {
+    margin-top: 70px !important;
+  }
 }
 
-@media (min-width: 768px) and (max-width:1199px) {
+@media (min-width: 768px) and (max-width: 1199px) {
   .options-billets .bagages .conteneur {
     flex-wrap: wrap;
   }
@@ -1450,7 +1517,7 @@ RECAP ETAPES*/
   }
 }
 
-@media (min-width: 768px) and (max-width:1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   p {
     font-size: 0.9em !important;
   }
@@ -1474,7 +1541,7 @@ RECAP ETAPES*/
   }
 }
 
-@media (min-width:430px) {
+@media (min-width: 430px) {
   .options-billets .bagages .conteneur .images-b {
     flex-wrap: nowrap;
   }
@@ -1865,11 +1932,11 @@ RECAP ETAPES*/
 }
 
 .paiement .formulaire2 .cols .col-r {
-  display      : flex;
-  flex-wrap    : wrap;
-  flex-grow    : 1;
-  margin-top   : 20px;
-  align-content:  first baseline;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  margin-top: 20px;
+  align-content: first baseline;
 }
 
 @media (min-width: 768px) {

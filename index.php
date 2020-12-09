@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
@@ -25,7 +25,7 @@
             <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    🇫🇷
+                    🇫🇷 <i class="drop-arrow material-icons">expand_more</i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Français 🇫🇷</a>
@@ -50,9 +50,25 @@
         <h4>Flying Papers vous accompagne pour faciliter</br> vos déplacements en France et en Europe tout en restant écolo&nbsp;!</h4>
         <div id="moteur-recherche">
             <div class="container search">
-                <div class="row">
-                    <p>Aller Simple</p>
-                    <p>1 Adulte, Sans carte de réduction</p>
+                <div class="navbar">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownAller" aria-controls="aller-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Aller Simple<i class="drop-arrow material-icons">expand_more</i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownAller" id="aller-dropdown">
+                            <a class="dropdown-item" href="#">Aller Simple</a>
+                            <a class="dropdown-item" href="#">Aller Retour</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownAdulte" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            1 Adulte, Sans carte de réduction<i class="drop-arrow material-icons">expand_more</i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownAdulte" id="aller-dropdown">
+                            <p>Nombre d'adulte :</p>
+                            <input label="Nombre d'adulte" id="number" type="number" value="1">
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <?php
