@@ -783,6 +783,51 @@ input::placeholder {
   padding: 3em 2em 0 3em;
 }
 
+.destinationsPopulaires #ico_transport_white {
+  fill: rgba(255, 255, 255, 1);
+}
+.destinationsPopulaires .ico_voile {
+  width: 26px;
+  height: 30px;
+}
+.destinationsPopulaires .ico_train {
+  width: 22px;
+  height: 30px;
+}
+.destinationsPopulaires .ico_bus {
+  width: 26px;
+  height: 30px;
+}
+.destinationsPopulaires #ico_velo {
+  fill: rgba(255, 255, 255, 1);
+  stroke: rgba(255, 255, 255, 1);
+  stroke-width: 0.5px;
+  stroke-linejoin: miter;
+  stroke-linecap: butt;
+  stroke-miterlimit: 4;
+  shape-rendering: auto;
+}
+.destinationsPopulaires .ico_velo {
+  width: 33px;
+  height: 30px;
+}
+
+.card-title {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: normal;
+  margin-bottom: 0.5rem;
+}
+
+.card-mob-title {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
 @media screen and (max-width: 1620px) {
   .destinationsPopulaires .card {
     width: 17em;
@@ -1167,33 +1212,101 @@ RECAP RECHERCHE */
 }
 
 /* FILTRES */
-#mode-transport .mode-transport {
-  font-family: "Avenir Black", Arial, Sans-serif;
-  color: #f0856b;
+
+.ico_transport {
+  fill: var(--color-peche);
 }
 
-#filtresTransport {
-  display: flex;
-  list-style: none;
-  width: 100%;
-  margin-top: 2rem;
+.filtres-transports {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  font-weight: bold;
+  padding: 15px 0 0 8px;
+}
+.barre-transports {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  border-bottom: 2px solid var(--color-peche-pale);
+}
+.barre-transport {
+  height: 6px;
+  width: 70%;
+  border-radius: 10px;
+}
+.filtre-transport {
+  max-width: 120px;
+  line-height: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+.filtre-transport a {
+  margin-left: 8px;
+}
+.filtre-transport span {
+  font-weight: 1 !important;
+}
+.filtre-transport .mode-transport {
+  color: var(--color-peche);
+  fill: var(--color-peche);
+}
+.filtre-transport .empty {
+  color: #b5b5b5;
+  fill: #b5b5b5;
+  pointer-events: none;
+}
+.filtre-transport .selection {
+  color: var(--color-bleu);
+  fill: var(--color-bleu);
+}
+.barre-transports .selection {
+  background-color: var(--color-bleu);
 }
 
-#filtresTransport .filtre-transport {
-  flex-grow: 1;
+.filtre-transport .ico_velo {
+  width: 31.001px;
+  height: 20.372px;
+}
+.filtre-transport .ico_voile {
+  width: 19.738px;
+  height: 23.028px;
+}
+.filtre-transport .ico_train {
+  width: 16.431px;
+  height: 23.004px;
+}
+.filtre-transport .ico_elecvoit {
+  width: 27.714px;
+  height: 22.76px;
+}
+.filtre-transport .ico_bus {
+  width: 20.204px;
+  height: 23.571px;
+}
+.filtre-transport .ico_covoit {
+  width: 20.204px;
+  height: 23.571px;
+}
+.filtre-transport .ico_avion {
+  width: 22.265px;
+  height: 22.265px;
 }
 
 /* BARRE SELECTION */
 .barre-selection {
-  width: 100%;
-  display: flex;
-  height: 5px;
+  display: grid;
+  height: 2px;
   background-color: #ffcda8;
 }
 
 .barre-selection .selection {
-  flex-grow: 1;
-  flex-wrap: nowrap;
+  width: 14%;
+  height: 6px;
+  background-color: var(--color-bleu);
 }
 
 /* RESULTATS */
