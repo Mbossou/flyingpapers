@@ -1529,16 +1529,16 @@ RECAP ETAPES*/
 }
 
 .options-billets .tarifs .flex-nw .bloc {
-  border-style : solid;
+  border-style: solid;
   border-radius: 20px;
-  border-color : var(--color-bleu);
-  border-width : 1px;
-  padding      : 10px 10px 10px 10px;
-  text-align   : center;
-  min-height   : 100px;
-  width        : 10px;
-  flex-grow    : 1;
-  position     : relative;
+  border-color: var(--color-bleu);
+  border-width: 1px;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  min-height: 100px;
+  width: 10px;
+  flex-grow: 1;
+  position: relative;
 }
 
 .options-billets .tarifs .flex-nw .bloc:hover {
@@ -1550,12 +1550,12 @@ RECAP ETAPES*/
 }*/
 
 .options-billets .tarifs .flex-nw .bloc input {
-  width           : 100%;
-  height          : 70%;
-  position        : absolute;
-  bottom          : 0;
-  left            : 0;
-  border-radius   : 25px;
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 25px;
   background-color: transparent;
   border-style: none;
 }
@@ -2104,7 +2104,7 @@ RECAP ETAPES*/
 }
 
 .confirmation-bouton-confirmer {
-  background-image: url(../img/illu_voiture.svg);
+  background-image: url(../img/illu_paiement_valide.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;

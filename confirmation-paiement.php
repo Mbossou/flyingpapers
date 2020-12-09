@@ -88,7 +88,7 @@
     </section>
     <section class="confirmation-bouton-confirmer">
       <div class="bouton col-sm-12">
-        <a href="http://localhost/flyingpapers/" class="retour-accueil-confirmation bouton-peche">Retour à l'accueil</a>
+        <a href="/flyingpapers/" class="retour-accueil-confirmation bouton-peche">Retour à l'accueil</a>
       </div>
     </section>
 
