@@ -1295,15 +1295,17 @@ RECAP ETAPES*/
   padding: 20px;
 }
 
+/*
 .options-billets .tarifs a {
   text-decoration: none;
   color: #140a0f;
-}
+}*/
 
+/*
 .options-billets .tarifs a:hover .bloc {
   text-decoration: none;
   background-color: #f3f3f8;
-}
+}*/
 
 .options-billets .tarifs .services {
   margin-top: 5px;
@@ -1346,18 +1348,35 @@ RECAP ETAPES*/
 }
 
 .options-billets .tarifs .flex-nw .bloc {
-  border-style: solid;
+  border-style : solid;
   border-radius: 20px;
-  border-color: var(--color-bleu);
-  border-width: 1px;
-  padding: 10px 10px 10px 10px;
-  text-align: center;
-  height: 100%;
-  width: 100%;
+  border-color : var(--color-bleu);
+  border-width : 1px;
+  padding      : 10px 10px 10px 10px;
+  text-align   : center;
+  min-height   : 100px;
+  width        : 10px;
+  flex-grow    : 1;
+  position     : relative;
 }
 
-.options-billets .tarifs .row .bloc:hover {
+.options-billets .tarifs .flex-nw .bloc:hover {
   background-color: #f3f3f8;
+}
+/*
+.options-billets .tarifs .flex-nw .bloc input:target {
+  background-color: red!important;
+}*/
+
+.options-billets .tarifs .flex-nw .bloc input {
+  width           : 100%;
+  height          : 70%;
+  position        : absolute;
+  bottom          : 0;
+  left            : 0;
+  border-radius   : 25px;
+  background-color: transparent;
+  border-style: none;
 }
 
 .options-billets .tarifs .row .bloc p {
@@ -1417,9 +1436,14 @@ RECAP ETAPES*/
 }
 
 @media (min-width: 768px) {
-  .options-billets .tarifs a {
-    flex-grow: 1;
-    margin: 15px;
+  .options-billets .tarifs .a-standard {
+    margin-right: 25px;
+  }
+  .options-billets .tarifs .a-prise {
+    margin-right: 25px;
+  }
+  .options-billets .tarifs .a-premiere {
+    margin-right: 25px;
   }
   .options-billets .bagages .conteneur {
     display: flex;
@@ -1433,29 +1457,20 @@ RECAP ETAPES*/
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
-  .bagages img {
-    /*transform: scale(0.75);*/
-  }
   .options-billets .billet1 {
     margin-bottom: 20px !important;
   }
   .options-billets .billet2 {
     margin-bottom: 20px !important;
   }
-  .options-billets .tarifs a {
-    min-width: 95px;
-  }
   .options-billets .tarifs .a-standard {
-    margin-right: 15px;
+    margin-right: 10px;
   }
   .options-billets .tarifs .a-prise {
-    margin-right: 15px;
-  }
-  .options-billets .tarifs .standard {
-    margin-right: 15px;
+    margin-right: 10px;
   }
   .options-billets .tarifs .a-premiere {
-    margin-right: 15px;
+    margin-right: 10px;
   }
 }
 
@@ -1468,7 +1483,7 @@ RECAP ETAPES*/
 @media (min-width: 0px) and (max-width: 430px) {
   .bagages img {
     max-width: 120px;
-}
+  }
 }
 
 /* PAGE - PORTE A PORTE 
@@ -2264,11 +2279,15 @@ RECAP ETAPES*/
   margin-bottom: 0px;
 }
 
+.recap-b .row3 p {
+  margin-bottom: 0px;
+}
+
 .recap-b .row4 p {
   margin-bottom: 0px;
 }
 
-.recap-b .row .text-tranquille {
+.recap-b .row .text-option {
   margin-left: 15px;
 }
 
@@ -2558,20 +2577,14 @@ RECAP ETAPES*/
     right: 20px;
   }
   .options-billets .tarifs .row1z {
-    justify-content: space-around;
+    /*justify-content: space-around;
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    margin: 0px;
+    margin: 0px;*/
     transform: scale(0.8);
   }
-  .options-billets .tarifs .flex-nw .standard,
-  .prise {
-    margin-right: 15px;
-  }
-  .options-billets .tarifs .flex-nw .premiere {
-    margin-right: 15px;
-  }
+
   .options-billets .tarifs .row .bloc {
     min-height: 80px;
     display: flex;

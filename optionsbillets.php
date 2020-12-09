@@ -190,24 +190,18 @@
             echo '</div>';
             echo '</div>';
             echo '<div class="flex-nw row1z">';
-            echo '<a href="#" class="a-standard">';
-            echo '<div class="bloc standard">';
+            echo '<div id="a-standard" class="bloc a-standard">';
             echo '<p class="bold">Standard</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
+            echo '<input id="button" class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet1'] . '€" onclick="ShowValue2A1(this); "/>';//changeColor(this)
             echo '</div>';
-            echo '</a>';
-            echo '<a href="#" class="a-prise">';
-            echo '<div class="bloc prise">';
-            echo '<p class="bold">Avec prise</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt2_trajet1'] . '€</p>';
+            echo '<div class="bloc a-prise">';
+            echo '<p id="title1A" class="bold">Avec prise</p>';
+            echo '<input id="button1A" class="premiere" type="button" value="' . $_SESSION['billet_prix_opt2_trajet1'] . '€" onclick="ShowValue2A(this);"/>';
             echo '</div>';
-            echo '</a>';
-            echo '<a href="#" class="a-tranquille">';
-            echo '<div class="bloc tranquille">';
-            echo '<p class="bold">Tranquilité</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt3_trajet1'] . '€</p>';
+            echo '<div class="bloc a-tranquille">';
+            echo '<p id="title1B" class="bold">Tranquilité</p>';
+            echo '<input id="button1B" class="tranquille" type="button" value="' . $_SESSION['billet_prix_opt3_trajet1'] . '€" onclick="ShowValue2B(this)"/>';
             echo '</div>';
-            echo '</a>';
             echo '</div>';
             echo '<div>';
             echo '<p class="services">Services inclus :</p>';
@@ -281,24 +275,19 @@
             echo '</div>';
             echo '</div>';
             echo '<div class="flex-nw row1z">';
-            echo '<a href="#" class="a-standard">';
-            echo '<div class="bloc standard">';
+            echo '<div class="bloc a-standard">';
             echo '<p class="bold">Standard</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
+            echo '<input id="buttonZ" class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet2'] . '€" onclick="ShowValue2A2(this)"/>';
             echo '</div>';
             echo '</a>';
-            echo '<a href="#" class="a-premiere">';
-            echo '<div class="bloc premiere">';
-            echo '<p class="bold">Standard Première</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt2_trajet2'] . '€</p>';
+            echo '<div class="bloc a-premiere">';
+            echo '<p id="title2A" class="bold">Standard Première</p>';
+            echo '<input id="button2A" class= "premiere" type="button" value="' . $_SESSION['billet_prix_opt2_trajet2'] . '€" onclick="ShowValue2C(this)"/>';
             echo '</div>';
-            echo '</a>';
-            echo '<a href="#" class="a-business">';
-            echo '<div class="bloc business">';
-            echo '<p class="bold">Business Première</p>';
-            echo '<p>' . $_SESSION['billet_prix_opt3_trajet2'] . '€</p>';
+            echo '<div class="bloc a-business">';
+            echo '<p id="title2B" class="bold">Business Première</p>';
+            echo '<input id="button2B" class="business" type="button" value="' . $_SESSION['billet_prix_opt3_trajet2'] . '€" onclick="ShowValue2D(this)"/>';
             echo '</div>';
-            echo '</a>';
             echo '</div>';
             echo '<div>';
             echo '<p class="services">Services inclus :</p>';
@@ -337,7 +326,16 @@
             echo '</div>';
             echo '</div>';
             echo '</div>';
+            $_SESSION['billet_prix_ajout_opt2_trajet1'] = $_SESSION['billet_prix_opt2_trajet1'] - $_SESSION['billet_prix_opt1_trajet1'];
+            $_SESSION['billet_prix_ajout_opt3_trajet1'] = $_SESSION['billet_prix_opt3_trajet1'] - $_SESSION['billet_prix_opt1_trajet1'];
+            $_SESSION['billet_prix_ajout_opt2_trajet2'] = $_SESSION['billet_prix_opt2_trajet2'] - $_SESSION['billet_prix_opt1_trajet2'];
+            $_SESSION['billet_prix_ajout_opt3_trajet2'] = $_SESSION['billet_prix_opt3_trajet2'] - $_SESSION['billet_prix_opt1_trajet2'];
+            echo '<div style="display:none;"><input type="button" id="valA" value="' . $_SESSION['billet_prix_ajout_opt2_trajet1'] . '"></div>';
+            echo '<div style="display:none;"><input type="button" id="valB" value="' . $_SESSION['billet_prix_ajout_opt3_trajet1'] . '"></div>';
+            echo '<div style="display:none;"><input type="button" id="valC" value="' . $_SESSION['billet_prix_ajout_opt2_trajet2'] . '"></div>';
+            echo '<div style="display:none;"><input type="button" id="valD" value="' . $_SESSION['billet_prix_ajout_opt3_trajet2'] . '"></div>';
             ?>
+
 
 
             <div class="modalités modalités-r">
@@ -354,19 +352,30 @@
             <h5 class="bold bleu-fp">Récapitulatif</h5>
             <div class="row row1">
               <p class="small-p">Billet 1 (1 adulte)</p>
-              <p class="small-p">22,00€</p>
+              <?php
+              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
+              ?>
             </div>
             <div class="row row2">
-              <p class="text-tranquille small-p">Classe Tranquilité</p>
-              <p>+8,00€</p>
+              <p class="text-option small-p" id="output1b"></p>
+              <?php
+              echo '<p id="output1"> </p>';
+              //echo'<input id>';
+              ?>
             </div>
             <div class="row row3">
               <p class="small-p">Billet 2 (1 adulte)</p>
-              <p class="small-p">70,00€</p>
+              <?php
+              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
+              ?>
+            </div>
+            <div class="row row2">
+              <p class="text-option small-p" id="output2b"></p>
+              <p id="output2"></p>
             </div>
             <div class="row row4">
               <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-              <p class="small-p bold">100,00€</p>
+              <p class="small-p bold" id="resultat_somme">100,00€</p>
             </div>
           </div>
           <div class="row3">
