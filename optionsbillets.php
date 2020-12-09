@@ -1,49 +1,47 @@
-<?php 
-            session_start();
-            ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/script.js"></script>
-
-    <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/script.js"></script>
+        
+        <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
   </head>
-  <body class="page-3">
-    <a href="#"></a>
-    <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav nav-pills navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#langue">FR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
-          </li>
-        </ul>
-      </div>
+  <body class="page-3">
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
+        <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    🇫🇷 <i class="drop-arrow material-icons">expand_more</i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                        <a class="dropdown-item" href="#">English 🇬🇧</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="recap-etapes col-sm-12">

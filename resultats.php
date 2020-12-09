@@ -11,11 +11,9 @@
         <link rel="stylesheet" href="css/styles.css">
         <script src="js/script.js"></script>
         
-        <title>
-        Flying Papers | Comparez plusieurs billets de transport et voyagez léger
-    </title>
-        
+        <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
     </head>
+    
     <body class="page-2">
         <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
             <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
