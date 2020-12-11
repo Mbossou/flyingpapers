@@ -105,7 +105,6 @@
                                 echo '<option value="'.$lieu_arrivee2.'">';                   
                                 echo '<option value="'.$lieu_arrivee3.'">';
                             echo '</datalist>';         
-                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
 
                         echo '
                         <div class="navbar fle">
@@ -196,7 +195,7 @@
                                 echo '<option value="'.$lieu_arrivee2.'">';                   
                                 echo '<option value="'.$lieu_arrivee3.'">';
                             echo '</datalist>';         
-                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
+        
                         echo '
                             <div class="input-field-date dates">
                                 <i class="material-icons">date_range</i>
@@ -344,9 +343,7 @@
                             WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"AND mode_transport = "' . $_GET['modeTransport'] . '"
                             ORDER BY billets.id ASC');
                            
-                            //$statement = $db->query('SELECT billets.id, billets.lieu_depart, billets.lieu_arrivee, billets.duree, billets.compagnie, billets.co2_emis, billets.pourcentage, billets.prix FROM billets WHERE ld_recherche = \'Paris, France\' ORDER BY billets.id ASC'); --> test
-                            //WHERE lieu depart et lieu arrivee = variables des champs sélectionnés pour la recherche + mode_transport = filtre.mode_transport --> test
-                            //echo print_r($statement);
+
                             while($billet = $statement->fetch(PDO::FETCH_ASSOC)) 
                             {
                                 $_SESSION['id'. $billet['id'] .''] = $billet["id"];
@@ -400,12 +397,6 @@
                                 echo '</div>';
                                 echo '</div>';
                                 echo '</a>';
-                    /*
-                        echo '<form method="get" action="optionsbilets.php">';
-                        
-                        echo '<input hidden class="input-text" list="modeTransport" name="modeTransport" id="modeTransport" type="text" value="3">';
-                        echo '<input class="btn-orange" type="SUBMIT" value="Rechercher" id="recherche">'; 
-                    echo '</form>';*/
                             }
                     ?>
                 </div>

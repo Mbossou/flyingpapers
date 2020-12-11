@@ -1,47 +1,49 @@
-<?php session_start(); ?>
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/script.js"></script>
-        
-        <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
-  </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    
 
+    <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
+  </head>
   <body class="page-3">
-    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
-        <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
-            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    🇫🇷 <i class="drop-arrow material-icons">expand_more</i>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Français 🇫🇷</a>
-                        <a class="dropdown-item" href="#">English 🇬🇧</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-style" href="#">S'inscrire</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
-                </li>
-            </ul>
-        </div>
+    <a href="#"></a>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav nav-pills navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#langue">FR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <div class="recap-etapes col-sm-12">
@@ -75,7 +77,8 @@
     <section class="options-billets">
       <div class="container">
         <div class="wrapper">
-            <?php 
+          <?php 
+            //enregistrement de toutes les données bdd et choix user dans variables SESSION
             $_SESSION['billet_id'] = $_SESSION['id'. $_GET['id_billet'] .''];
             $_SESSION['billet_gare_depart'] = $_SESSION['gare_depart'. $_GET['id_billet'] .''];
             $_SESSION['billet_gare_arrivee'] = $_SESSION['gare_arrivee'. $_GET['id_billet'] .''];
@@ -103,296 +106,334 @@
             $_SESSION['billet_num_transport1'] = $_SESSION['num_transport1'. $_GET['id_billet'] .''];
             $_SESSION['billet_num_transport2'] = $_SESSION['num_transport2'. $_GET['id_billet'] .''];
 
-            echo '<div class="recap-t border-fp">';
-            echo '<div class="ligne1">';
-            echo '<div class="col-l">';
-            echo '<h5 class="bold bleu-fp">Aller sélectionné</h5>';
-            echo '<img src="img/ico_train.png" alt="icone train">';
-            echo '</div>';
-            echo '<div class="col-r">';
-            echo '<p class="bold">Lun. 28 sept. 2020 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="ligne2">';
-            echo '<div class="bloc1 bloc">';
-            echo '<div class="s-ligne1">';
-            echo '<p>' . $_SESSION['billet_gare_depart'] . '</p>';
-            echo '<p class="u1">' . $_SESSION['billet_gare_c'] . '</p>';
-            echo '</div>';
-            echo '<div class="s-ligne2">';
-            echo '<div class="circle-l"></div>';
-            echo '<div class="blue-bar"></div>';
-            echo '<div class="circle-r"></div>';
-            echo '</div>';
-            echo '<div class="s-ligne3">';
-            echo '<p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>';
-            echo '<div class="compagnie">';
-            echo '<p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>';
-            echo '<img src="img/sncf.svg" alt="logo sncf">'; //rendre image dynamique
-            echo '<p>' . $_SESSION['billet_num_transport1'] . '</p>';
-            echo '</div>';
-            echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="bloc2 bloc">';
-            echo '<p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>';
-            echo '<p class="peche-fp p2">• • •</p>';
-            echo '<p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>';
-            echo '<p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>';
-            echo '</div>';
-            echo '<div class="bloc2-r">';
-            echo '<div class="ligne3-r">';
-            echo '<div class="flex-nw f1">';
-            echo '<p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>';
-            echo '<img src="img/CO2.svg" alt="icone CO2"> ';
-            echo '</div>';
-            echo '<br>';
-            echo '<div class="flex-nw f2">';
-            echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>';
-            echo '<img src="img/jaugeverte.svg" alt="icone jauge pollution">'; 
-            echo '</div> ';
-            echo '</div> ';
-            echo '</div> ';
-            echo '<div class="bloc3 bloc">';
-            echo '<div class="s-ligne1">';
-            echo '<p>' . $_SESSION['billet_gare_c'] . '</p>';
-            echo '<p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>';
-            echo '</div>';
-            echo '<div class="s-ligne2">';
-            echo '<div class="circle-l"></div>';
-            echo '<div class="blue-bar"></div>';
-            echo '<div class="circle-r"></div>';
-            echo '</div>';
-            echo '<div class="s-ligne3">';
-            echo '<p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>';
-            echo '<div class="compagnie">';
-            echo '<p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>';
-            echo '<img src="img/eurostar.svg" alt="logo eurostar">'; //rendre image dynamique
-            echo '<p>' . $_SESSION['billet_num_transport2'] . '</p>';
-            echo '</div>';
-            echo '<p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
+            echo '
+              <div class="recap-t border-fp">
+                <div class="ligne1">
+                  <div class="col-l">
+                    <h5 class="bold bleu-fp">Aller sélectionné</h5>
+                    <img src="img/ico_train.png" alt="icone train">
+                  </div>
+                  <div class="col-r">
+                    <p class="bold">Lun. 28 jan. 2021 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>
+                  </div>
+                </div>
+                <div class="ligne2">               
+                  <div class="bloc1 bloc">
+                    <div class="s-ligne1">
+                      <p>' . $_SESSION['billet_gare_depart'] . '</p>
+                      <p class="u1">' . $_SESSION['billet_gare_c'] . '</p>
+                    </div>
+                    <div class="s-ligne2">
+                      <div class="circle-l"></div>
+                      <div class="blue-bar"></div>
+                      <div class="circle-r"></div>
+                    </div>
+                    <div class="s-ligne3">
+                      <p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>
+                      <div class="compagnie">
+                        <p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>
+                        <img src="img/sncf.svg" alt="logo sncf"> <!--rendre image dynamique-->
+                        <p>' . $_SESSION['billet_num_transport1'] . '</p>
+                      </div>
+                      <p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>
+                    </div>
+                  </div>
+                  <div class="bloc2 bloc">
+                    <p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>
+                    <p class="peche-fp p2">• • •</p>
+                    <p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>
+                    <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
+                  </div>
+                  <div class="bloc2-r">
+                    <div class="ligne3-r">
+                      <div class="flex-nw f1">
+                        <p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>
+                        <img src="img/CO2.svg" alt="icone CO2">
+                      </div>
+                      <br>
+                      <div class="flex-nw f2">
+                        <p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>
+                        <img src="img/jaugeverte.svg" alt="icone jauge pollution">
+                      </div> 
+                    </div> 
+                  </div> 
+                  <div class="bloc3 bloc">
+                    <div class="s-ligne1">
+                      <p>' . $_SESSION['billet_gare_c'] . '</p>
+                      <p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>
+                    </div>
+                    <div class="s-ligne2">
+                      <div class="circle-l"></div>
+                      <div class="blue-bar"></div>
+                      <div class="circle-r"></div>
+                    </div>
+                    <div class="s-ligne3">
+                      <p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>
+                      <div class="compagnie">
+                        <p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>
+                        <img src="img/eurostar.svg" alt="logo eurostar"> <!--rendre image dynamique-->
+                        <p>' . $_SESSION['billet_num_transport2'] . '</p>
+                      </div>
+                      <p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
-            echo '<div class="tarifs billet1 border-fp">';
-            echo '<div class="row row1">';
-            echo '<div class="titre">';
-            echo '<h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>';
-            echo '</div>';
-            echo '<div class="row">';
-            echo '<img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" />'; //rendre image dynamique
-            echo '<p>' . $_SESSION['billet_compagnie1'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="flex-nw row1z">';
-            echo '<div id="a-standard" class="bloc a-standard">';
-            echo '<p class="bold">Standard</p>';
-            echo '<input id="button" class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet1'] . '€" onclick="ShowValue2A1(this); "/>';//changeColor(this)
-            echo '</div>';
-            echo '<div class="bloc a-prise">';
-            echo '<p id="title1A" class="bold">Avec prise</p>';
-            echo '<input id="button1A" class="premiere" type="button" value="' . $_SESSION['billet_prix_opt2_trajet1'] . '€" onclick="ShowValue2A(this);"/>';
-            echo '</div>';
-            echo '<div class="bloc a-tranquille">';
-            echo '<p id="title1B" class="bold">Tranquilité</p>';
-            echo '<input id="button1B" class="tranquille" type="button" value="' . $_SESSION['billet_prix_opt3_trajet1'] . '€" onclick="ShowValue2B(this)"/>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div>';
-            echo '<p class="services">Services inclus :</p>';
-            echo '<p class="place">Place située à l’étage avec une prise électrique disponible.</p>';
-            echo '</div>';
-            echo '<div class="bagages">';
-            echo '<h5 class="bold bleu-fp">Bagages</h5>';
-            echo '<div>';
-            echo '<div class="conteneur">';
-            echo '<div>';
-            echo '<p>Inclus dans votre billet</p>';
-            echo '<div class="images-b">';
-            echo '<img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />';
-            echo '<img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />';
-            echo '</div>';
-            echo '</div>';
-            echo '<div>';
-            echo '<p>Rajouter un bagage supplémentaire ?</p>';
-            echo '<div class="flex row2a">';
-            echo '<img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />';
-            echo '<div class="ajout">';
-            echo '<div class="flex row2b">';
-            echo '<p>-</p>';
-            echo '<p>0</p>';
-            echo '<p>+</p>';
-            echo '</div>';
-            echo '<div class="row row3b">';
-            echo '<p style="margin-right: 15px">5€</p>';
-            echo '<p>Par bagage</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '<p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
+              <div class="tarifs billet1 border-fp">
+                <div class="row row1">
+                  <div class="titre">
+                    <h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>
+                  </div>
+                  <div class="row">
+                    <img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" /> <!--rendre image dynamique-->
+                    <p>' . $_SESSION['billet_compagnie1'] . '</p>
+                  </div>
+                </div>
+                <div class="flex-nw row1z">
+                  <div id="a-standard" class="bloc a-standard">
+                    <p class="bold">Standard</p>
+                    <input id="button" class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet1'] . '€" onclick="ShowValue2A1(this); changeColor_o1_t1() "/>
+                  </div>
+                  <div id="a-prise" class="bloc a-prise">
+                    <p id="title1A" class="bold">Avec prise</p>
+                    <input id="button1A" class="prise" type="button" value="' . $_SESSION['billet_prix_opt2_trajet1'] . '€" onclick="ShowValue2A(this); changeColor_o2_t1()"/>
+                  </div>
+                  <div id="a-tranquille" class="bloc a-tranquille">
+                    <p id="title1B" class="bold">Tranquilité</p>
+                    <input id="button1B" class="tranquille" type="button" value="' . $_SESSION['billet_prix_opt3_trajet1'] . '€" onclick="ShowValue2B(this); changeColor_o3_t1()"/>
+                  </div>
+                </div>
+                <div>
+                  <p class="services">Services inclus :</p>
+                  <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
+                </div>
+                
+                <div class="bagages">
+                  <h5 class="bold bleu-fp">Bagages</h5>
+                  <div>
+                    <div class="conteneur">
+                      <div>
+                        <p>Inclus dans votre billet</p>
+                        <div class="images-b">
+                          <img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />
+                          <img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Rajouter un bagage supplémentaire ?</p>
+                        <div class="flex row2a">
+                          <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
+                          <div class="ajout">
+                            <div class="flex row2b">
+                              <p>-</p>
+                              <p>0</p>
+                              <p>+</p>
+                            </div>
+                            <div class="row row3b">
+                              <p style="margin-right: 15px">5€</p>
+                              <p>Par bagage</p>
+                            </div>
+                          </div>
+                        </div>
+                        <p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            echo '<div class="impact-ecolo">';
-            echo '<div class="conteneur">';
-            echo '<h4 class="titre-ecolo bold">Impact Ecologique</h4>';
-            echo '<div class="row row-ecolo">';
-            echo '<div class="bloc bloc1">';
-            echo '<div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">';
-            echo '<p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>';
-            echo '</div>';
-            echo '<p class="text">CO2 émis / pers. pour un aller</p>';
-            echo '</div>';
-            echo '<div class="bloc bloc2">';
-            echo '<div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">';
-            echo '<img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">';
-            echo '<p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>';
-            echo '</div>';
-            echo '<p class="text">Du quota annuel pour limiter le réchauffement</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="separateur"></div>';
-            echo '</div>';
-    
+              <div class="tarifs billet2 border-fp">
+                <div class="row row1">
+                  <div class="titre">
+                    <h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>
+                  </div>
+                  <div class="row">
+                    <img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />
+                    <p>' . $_SESSION['billet_compagnie2'] . '</p>
+                  </div>
+                </div>
+                <div class="flex-nw row1z">
+                  <div id="a-standard2" class="bloc a-standard">
+                    <p class="bold">Standard</p>
+                    <input class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet2'] . '€" onclick="ShowValue2A2(this) ; changeColor_o1_t2()"/>
+                  </div>
+                  <div id="a-premiere" class="bloc a-premiere">
+                    <p id="title2A" class="bold">Standard Première</p>
+                    <input class="premiere" type="button" value="' . $_SESSION['billet_prix_opt2_trajet2'] . '€" onclick="ShowValue2C(this); changeColor_o2_t2()"/>
+                  </div>
+                  <div id="business" class="bloc a-business">
+                    <p id="title2B" class="bold">Business Première</p>
+                    <input  class="business" type="button" value="' . $_SESSION['billet_prix_opt3_trajet2'] . '€" onclick="ShowValue2D(this); changeColor_o3_t2()"/>
+                  </div>
+                </div>
+                <div>
+                  <p class="services">Services inclus :</p>
+                  <p class="place">Place située à l’étage avec une prise électrique disponible.</p>
+                </div>
+                <div class="bagages">
+                  <h5 class="bold bleu-fp">Bagages</h5>
+                  <div>
+                    <div class="conteneur">
+                      <div>
+                        <p>Inclus dans votre billet</p>
+                        <div class="images-b">
+                          <img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />
+                          <img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />
+                        </div>
+                      </div>
+                      <div>
+                        <p>Rajouter un bagage supplémentaire ?</p>
+                        <div class="flex row2a">
+                          <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
+                          <div class="ajout">
+                            <div class="flex row2b">
+                              <p>-</p>
+                              <p>0</p>
+                              <p>+</p>
+                            </div>
+                            <div class="row row3b">
+                              <p style="margin-right: 15px">5€</p>
+                              <p>Par bagage</p>
+                            </div>
+                          </div>
+                        </div>
+                        <p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            echo '<div class="tarifs billet2 border-fp">';
-            echo '<div class="row row1">';
-            echo '<div class="titre">';
-            echo '<h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>';
-            echo '</div>';
-            echo '<div class="row">';
-            echo '<img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />';
-            echo '<p>' . $_SESSION['billet_compagnie2'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div class="flex-nw row1z">';
-            echo '<div class="bloc a-standard">';
-            echo '<p class="bold">Standard</p>';
-            echo '<input id="buttonZ" class="standard" type="button" value="' . $_SESSION['billet_prix_opt1_trajet2'] . '€" onclick="ShowValue2A2(this)"/>';
-            echo '</div>';
-            echo '</a>';
-            echo '<div class="bloc a-premiere">';
-            echo '<p id="title2A" class="bold">Standard Première</p>';
-            echo '<input id="button2A" class= "premiere" type="button" value="' . $_SESSION['billet_prix_opt2_trajet2'] . '€" onclick="ShowValue2C(this)"/>';
-            echo '</div>';
-            echo '<div class="bloc a-business">';
-            echo '<p id="title2B" class="bold">Business Première</p>';
-            echo '<input id="button2B" class="business" type="button" value="' . $_SESSION['billet_prix_opt3_trajet2'] . '€" onclick="ShowValue2D(this)"/>';
-            echo '</div>';
-            echo '</div>';
-            echo '<div>';
-            echo '<p class="services">Services inclus :</p>';
-            echo '<p class="place">Place située à l’étage avec une prise électrique disponible.</p>';
-            echo '</div>';
-            echo '<div class="bagages">';
-            echo '<h5 class="bold bleu-fp">Bagages</h5>';
-            echo '<div>';
-            echo '<div class="conteneur">';
-            echo '<div>';
-            echo '<p>Inclus dans votre billet</p>';
-            echo '<div class="images-b">';
-            echo '<img src="img/pic_bag_s.png" alt="dimensions sac à main 15x36x27cm" />';
-            echo '<img src="img/pic_bag_c.png" alt="dimensions bagage cabine 25x55x35cm" />';
-            echo '</div>';
-            echo '</div>';
-            echo '<div>';
-            echo '<p>Rajouter un bagage supplémentaire ?</p>';
-            echo '<div class="flex row2a">';
-            echo '<img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />';
-            echo '<div class="ajout">';
-            echo '<div class="flex row2b">';
-            echo '<p>-</p>';
-            echo '<p>0</p>';
-            echo '<p>+</p>';
-            echo '</div>';
-            echo '<div class="row row3b">';
-            echo '<p style="margin-right: 15px">5€</p>';
-            echo '<p>Par bagage</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '<p style="font-size: 0.8rem">Jusqu’à 30 kg, dans la limite de 2 par voyageur. Un contrôle a lieu avant l’accès au quai. Sur place le prix est de 20 € par bagage.</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
+
+              <div class="impact-ecolo">
+                <div class="conteneur">
+                  <h4 class="titre-ecolo bold">Impact Ecologique</h4>
+                  <div class="row row-ecolo">
+                    <div class="bloc bloc1">
+                      <div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">
+                        <p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>
+                      </div>
+                      <p class="text">CO2 émis / pers. pour un aller</p>
+                    </div>
+                    <div class="bloc bloc2">
+                      <div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">
+                        <img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">
+                        <p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>
+                      </div>
+                      <p class="text">Du quota annuel pour limiter le réchauffement</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="separateur"></div>
+              </div>
+            ';
+
+            //différence_prix_billet_option_avec_prise = billet_option_avec_prise - billet_prix_standard;
             $_SESSION['billet_prix_ajout_opt2_trajet1'] = $_SESSION['billet_prix_opt2_trajet1'] - $_SESSION['billet_prix_opt1_trajet1'];
             $_SESSION['billet_prix_ajout_opt3_trajet1'] = $_SESSION['billet_prix_opt3_trajet1'] - $_SESSION['billet_prix_opt1_trajet1'];
             $_SESSION['billet_prix_ajout_opt2_trajet2'] = $_SESSION['billet_prix_opt2_trajet2'] - $_SESSION['billet_prix_opt1_trajet2'];
             $_SESSION['billet_prix_ajout_opt3_trajet2'] = $_SESSION['billet_prix_opt3_trajet2'] - $_SESSION['billet_prix_opt1_trajet2'];
+            
+            //<> <input type button value = différence_prix_billet_option_avec_prise>
             echo '<div style="display:none;"><input type="button" id="valA" value="' . $_SESSION['billet_prix_ajout_opt2_trajet1'] . '"></div>';
             echo '<div style="display:none;"><input type="button" id="valB" value="' . $_SESSION['billet_prix_ajout_opt3_trajet1'] . '"></div>';
             echo '<div style="display:none;"><input type="button" id="valC" value="' . $_SESSION['billet_prix_ajout_opt2_trajet2'] . '"></div>';
             echo '<div style="display:none;"><input type="button" id="valD" value="' . $_SESSION['billet_prix_ajout_opt3_trajet2'] . '"></div>';
-            ?>
+            echo '<input style="display:none;" type="button" id="opt1_trajet1" value="' . $_SESSION['billet_prix_opt1_trajet1'] . '">';
+            echo '<input style="display:none;" type="button" id="opt2_trajet1" value="' . $_SESSION['billet_prix_opt2_trajet1'] . '">';
+            echo '<input style="display:none;" type="button" id="opt3_trajet1" value="' . $_SESSION['billet_prix_opt3_trajet1'] . '">';
+            echo '<input style="display:none;" type="button" id="opt1_trajet2" value="' . $_SESSION['billet_prix_opt1_trajet2'] . '">';
+            echo '<input style="display:none;" type="button" id="opt2_trajet2" value="' . $_SESSION['billet_prix_opt2_trajet2'] . '">';
+            echo '<input style="display:none;" type="button" id="opt3_trajet2" value="' . $_SESSION['billet_prix_opt3_trajet2'] . '">';
+
+            $_SESSION['billet_prix_total_sans_options'] = $_SESSION['billet_prix_opt1_trajet1']  + $_SESSION['billet_prix_opt1_trajet2'] ;
+          ?>
 
 
 
-            <div class="modalités modalités-r">
-            <h5 class="bold bleu-fp">Modalités</h5>
-            <p class="bold">Billet 1</p>
-            <p>Billet échangeable sous conditions, non remboursable.</p>
-            <p class="bold billet2-m">Billet 2</p>
-            <p>
-              Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
-              le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
-            </p>
-          </div>
-          <div class="recap-b">
-            <h5 class="bold bleu-fp">Récapitulatif</h5>
-            <div class="row row1">
-              <p class="small-p">Billet 1 (1 adulte)</p>
-              <?php
-              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
-              ?>
-            </div>
-            <div class="row row2">
-              <p class="text-option small-p" id="output1b"></p>
-              <?php
-              echo '<p id="output1"> </p>';
-              //echo'<input id>';
-              ?>
-            </div>
-            <div class="row row3">
-              <p class="small-p">Billet 2 (1 adulte)</p>
-              <?php
-              echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
-              ?>
-            </div>
-            <div class="row row2">
-              <p class="text-option small-p" id="output2b"></p>
-              <p id="output2"></p>
-            </div>
-            <div class="row row4">
-              <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-              <p class="small-p bold" id="resultat_somme">100,00€</p>
-            </div>
-          </div>
-          <div class="row3">
-            <div class="modalités">
-              <h5 class="bold bleu-fp">Modalités</h5>
-              <p class="bold">Billet 1</p>
-              <p>Billet échangeable sous conditions, non remboursable.</p>
+          <div class="modalités modalités-r">
+            <button class="accordion">
+                  <h5 class="bold bleu-fp">Modalités</h5>
+                  <img class="ico" src="img/down.svg" alt="flèche bas" />
+                  <img class="ico2" src="img/top.svg" alt="flèche haut" />
+            </button>
+            <div class="panel">
+              <p class="bold billet2-m">Billet 1</p>
+              <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
               <p class="bold billet2-m">Billet 2</p>
-              <p>
+              <p class="small-p">
                 Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
                 le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
               </p>
             </div>
-            <a class="valider bouton-peche" href="/flyingpapers/porteaporte.php">Valider mes choix</a>
+          </div>
+
+          <div class="grid-row2">
+            <div class="recap-b">
+              <h5 class="bold bleu-fp">Récapitulatif</h5>
+              <div class="row row1">
+                <p class="small-p">Billet 1 (1 adulte)</p>
+                <?php
+                  echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet1'] . '€</p>';
+                ?>
+              </div>
+              <div class="row row2">
+                <p class="text-option small-p" id="output1b"></p>
+                <?php
+                  echo '<p id="output1" class="small-p"></p>';
+                ?>
+              </div>
+              <div class="row row3">
+                <p class="small-p">Billet 2 (1 adulte)</p>
+                <?php
+                  echo '<p class="small-p">' . $_SESSION['billet_prix_opt1_trajet2'] . '€</p>';
+                ?>
+              </div>
+              <div class="row row2">
+                <p class="text-option small-p" id="output2b"></p>
+                <p id="output2" class="small-p"></p>
+              </div>
+              <div class="row row4">
+                <p class="small-p"><span class="bold">Total </span>(TTC)</p>
+                <?php
+                  echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION['billet_prix_total_sans_options']. '€</p>';
+                ?>
+              </div>
+            </div>
+            
+          
+            <div class="row3m modalités">
+              <button class="accordion">
+                <h5 class="bold bleu-fp">Modalités</h5>
+                <img class="ico" src="img/down.svg" alt="flèche bas" />
+                <img class="ico2" src="img/top.svg" alt="flèche haut" />
+              </button>
+              <div class="panel">
+                <p class="bold billet2-m">Billet 1</p>
+                <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
+                <p class="bold billet2-m">Billet 2</p>
+                <p class="small-p">
+                  Ce billet est uniquement valable pour le train sélectionné. Ce billet est échangeable avant le départ. Des frais fixes de 50 € par personne et par trajet vous seront demandés, ainsi que
+                  le montant de la différence si le nouveau billet est plus cher que l’original. Ce billet n’est pas remboursable.
+                </p>
+              </div>
+            </div>
+            <form class="recup-billet" style="" method="get" action="porteaporte.php">
+              <input style="display:none;" type="text" id="total" name="total">
+              <input style="display:none;" type="text" id="opt1" name="opt1">
+              <input style="display:none;" type="text" id="opt2" name="opt2">
+              <input style="display:none;" type="text" id="opt1_p" name="opt1_p">
+              <input style="display:none;" type="text" id="opt2_p" name="opt2_p">
+              <input style="border-style:none;" class="valider bouton-peche" type="submit" value="Valider mes choix">
+            </form>
+          </div>
+
           </div>
         </div>
       </div>
     </section>
-
     <section class="footer">
       <div class="container">
         <div class="row">
@@ -466,5 +507,6 @@
         </div>
       </div>
     </section>
+    <script src="js/script.js"></script>
   </body>
 </html>
