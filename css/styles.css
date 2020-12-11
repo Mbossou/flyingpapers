@@ -2086,11 +2086,11 @@ RECAP ETAPES*/
 }
 
 .confirmation-reservation .main img {
-  max-width: 65px;
+  max-width: 110px;
 }
 
-.confirmation-reservation .main h5 {
-  margin-top: 20px;
+.confirmation-reservation .main h2 {
+  margin: 25px auto 15px auto;
 }
 
 .confirmation-reservation .confirmation-grid {
@@ -2105,6 +2105,11 @@ RECAP ETAPES*/
   grid-row: 1;
 }
 
+.confirmation-reservation .confirmation-grid .confirmation-text {
+  color: var(--color-bleu);
+  font-weight: 700;
+}
+
 .confirmation-reservation .confirmation-grid .left .indicateurs {
   display: flex;
   flex-wrap: nowrap;
@@ -2113,8 +2118,9 @@ RECAP ETAPES*/
 .confirmation-bouton-confirmer {
   background-image: url(../img/illu_paiement_valide.png);
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  background-repeat: repeat;
+  background-size: 100% auto;
+  background-position: left 50% bottom -200px;
 }
 
 .confirmation-bouton-confirmer .bouton {
@@ -2125,14 +2131,9 @@ RECAP ETAPES*/
 }
 
 .confirmation-bouton-confirmer .retour-accueil-confirmation {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding: 12px 60px;
+  margin: 0 auto 60px auto;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 55px;
 }
 
 .confirmation-bouton-confirmer .retour-accueil-confirmation:hover {
@@ -2158,13 +2159,22 @@ RECAP ETAPES*/
   justify-self: end;
 }
 
+.confirmation-reservation .confirmation-grid .left .jauges-table {
+  margin: 15px 0;
+}
+.confirmation-reservation .confirmation-grid .left .jauges-table img {
+  vertical-align: text-bottom;
+  margin-right: 5px;
+}
+
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton {
   display: flex;
   flex-wrap: nowrap;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 10px 0;
   text-align: center;
   justify-content: center;
+  align-items: center;
+  margin: 30px 0 20px 0;
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton:hover {
