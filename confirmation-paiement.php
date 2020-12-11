@@ -42,46 +42,45 @@
       </div>
     </nav>
 
-    <section class="confirmation-reservation col-sm-12">
+    <section class="confirmation-reservation col-sm-12 main-div">
       <div class="container">
         <div class="main">
           <img src="img/ico_check.png" class="check" alt="Coche de validation" />
-          <h5 class="bleu-fp bold">Votre commande est enregistrée.</h5>
+          <h2 class="bleu-fp">Votre commande est enregistrée<span class="dot">.</span></span></h2>
           <p class="peche-fp">La confirmation de paiement ainsi que vos billets vous ont été envoyés sur votre adresse e-mail.</p>
         </div>
         <div class="confirmation-grid">
           <div class="left">
-            <p class="bleu-fp bold">Par rapport à un voyage en avion vous avez économisé&nbsp;:</p>
-            <div class="indicateurs">
-              <div class="bloc">
-                <div class="indic">
-                  <img src="img/CO2.png" class="indicateurs-ic" alt="Icone CO2" />
-                  <p class="bold bleu-fp">128 KG</p>
-                </div>
-                <div>
-                  <p>CO2 émis / pers. pour un aller</p>
-                </div>
-              </div>
-              <div class="bloc">
-                <div class="indic">
-                  <img src="img/Jauge.png" class="indicateurs-ic" alt="Icone thermomètre" />
-                  <p class="bold bleu-fp">20%</p>
-                </div>
-                <div>
-                  <p>Du quota annuel pour limiter le réchauffement</p>
-                </div>
-              </div>
-            </div>
+            <p class="confirmation-text">Vous avez économisé&nbsp;:</p>
+            <table class="jauges-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="img/co2-bleu.svg" alt="CO2" class="co2">
+                            <span class="jauges-label">3 </span><span class="jauges-label-kgpourcent">KG</span>
+                        </td>
+                        <td>
+                            <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
+                            <span class="jauges-label">0.1 </span><span class="jauges-label-kgpourcent">%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="jauges-text">CO2 émis pour un trajet aller retour</td>
+                        <td class="jauges-text">Du quota annuel pour limiter le réchauffement</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="confirmation-text">par rapport à un voyage en avion.</p>
           </div>
           <div class="right">
-            <p class="bleu-fp bold">
-              Vous pouvez télécharger vos billets <br />
-              en cliquant ici&nbsp;:
-            </p>
             <a href="#" class="confirmation-bouton bouton-peche">
               <img src="img/DDL.png" class="confirm-bouton" alt="Icone CO2" />
               <p>Votre e-billet</p>
             </a>
+            <p class="confirmation-text">
+              Vous pouvez télécharger vos billets <br/>
+              en cliquant ici&nbsp;:
+            </p>
           </div>
         </div>
       </div>
