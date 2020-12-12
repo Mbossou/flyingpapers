@@ -1667,18 +1667,6 @@ RECAP ETAPES*/
   padding: 20px;
 }
 
-/*
-.options-billets .tarifs a {
-  text-decoration: none;
-  color: #140a0f;
-}*/
-
-/*
-.options-billets .tarifs a:hover .bloc {
-  text-decoration: none;
-  background-color: #f3f3f8;
-}*/
-
 .options-billets .tarifs .services {
   margin-top: 5px;
   margin-bottom: 0px;
@@ -1735,6 +1723,11 @@ RECAP ETAPES*/
 .options-billets .tarifs .flex-nw .bloc:hover {
   background-color: #f3f3f8;
 }
+
+.selected {
+  background-color: #f3f3f8;
+}
+
 /*
 .options-billets .tarifs .flex-nw .bloc input:target {
   background-color: red!important;
@@ -1770,8 +1763,8 @@ RECAP ETAPES*/
 }
 
 .options-billets .bagages .row2a {
-  flex-wrap: nowrap;
-  display: flex;
+  flex-wrap      : nowrap;
+  display        : flex;
   justify-content: space-evenly;
 }
 
@@ -1784,15 +1777,19 @@ RECAP ETAPES*/
 }
 
 .options-billets .billet2 {
-  grid-column: 1;
-  grid-row: 4/7;
+  grid-column  : 1;
+  grid-row     : 4/7;
   margin-bottom: 40px;
-  padding: 20px;
+  padding      : 20px;
+}
+
+.options-billets .recup-billet {
+  width: 100%;
 }
 
 @media (min-width: 1200px) {
   .bagages .conteneur img {
-    max-width: 200px !important;
+    max-width : 200px !important;
     max-height: 200px !important;
   }
   .options-billets .bagages {
@@ -1866,30 +1863,47 @@ RECAP ETAPES*/
   border-radius: 20px;
   display: flex;
   flex-wrap: wrap;
+  height: max-content;
 }
 
-.porte-a-porte .choix-depart .flex a {
-  color: #140a0f;
+.porte-a-porte .choix-depart .flex-nw {
+  width: 100%;
 }
 
-.porte-a-porte .choix-depart .flex a:hover .bloc {
-  background-color: #f3f3f8;
-  text-decoration: none;
-}
-
-.porte-a-porte .choix-depart .flex a:hover {
-  text-decoration: none;
-}
-
-.porte-a-porte .choix-depart .flex p {
-  padding: 5px;
+.porte-a-porte .choix-depart .flex-nw .bloc {
+  border-style: solid;
+  border-radius: 20px;
+  border-color: var(--color-bleu);
+  border-width: 1px;
+  padding: 10px 10px 10px 10px;
   text-align: center;
-  margin-bottom: 0px !important;
+  min-height: 130px;
+  width: 10px;
+  flex-grow: 1;
+  position: relative;
 }
 
-.porte-a-porte .choix-depart .flex .bloc {
-  min-height: 100%;
-  align-self: center;
+.porte-a-porte .choix-depart .flex-nw .bloc:hover {
+  background-color: #f3f3f8;
+}
+
+.porte-a-porte .choix-depart .flex-nw .bloc input {
+  width: 100%;
+  height:50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 25px;
+  background-color: transparent;
+  border-style: none;
+}
+
+.porte-a-porte .choix-depart .flex-nw .bloc p {
+  text-align: center;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
 @media (min-width: 768px) {
@@ -1898,6 +1912,12 @@ RECAP ETAPES*/
   }
   .porte-a-porte {
     margin-top: 45px;
+  }
+  .porte-a-porte .choix-depart .a-standard {
+    margin-right: 25px;
+  }
+  .porte-a-porte .choix-depart .a-prise {
+    margin-right: 25px;
   }
 }
 
@@ -1912,16 +1932,27 @@ RECAP ETAPES*/
     border-radius: 0px !important;
     margin-top: 0px !important;
   }
-  .porte-a-porte .choix-depart .flex p {
-    font-size: 0.8em;
+
+  .porte-a-porte .choix-depart .a-standard {
+    margin-right: 10px;
+  }
+  .porte-a-porte .choix-depart .a-prise {
+    margin-right: 10px;
   }
 }
 
+/* a effacer
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  p {
+    font-size: 0.9em !important;
+  }
+}
+*/
 /* PAGE - INFOS PERSOS 
 --------------------------------------------------------------------------------------------------------------*/
 .infos-persos .creer-compte {
   grid-column: 1;
-  grid-row: 2/3;
   padding: 20px;
   border-radius: 20px;
   display: flex;
@@ -1957,7 +1988,6 @@ RECAP ETAPES*/
 
 .infos-persos .formulaire {
   grid-column: 1;
-  grid-row: 3/4;
   padding: 20px;
   border-radius: 20px;
   display: flex;
@@ -1987,7 +2017,7 @@ RECAP ETAPES*/
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  color: #b1b1b1;
+  color: #13090f;
 }
 
 .infos-persos .formulaire .cols {
@@ -2056,6 +2086,11 @@ RECAP ETAPES*/
   }
   .infos-persos .formulaire {
     margin-right: 25px;
+    margin-top:40px;
+  }
+  .i_p {
+    grid-column: 1;
+    grid-row:2;
   }
 }
 
@@ -2101,7 +2136,7 @@ RECAP ETAPES*/
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  color: #b1b1b1;
+  color: #13090f;
   margin-right: 10px;
 }
 
@@ -2121,7 +2156,7 @@ RECAP ETAPES*/
 .paiement .mode-paiement {
   padding: 20px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
   width: -webkit-fill-available;
 }
 
@@ -2186,7 +2221,7 @@ RECAP ETAPES*/
 .paiement .formulaire2 {
   padding: 20px;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -2214,7 +2249,7 @@ RECAP ETAPES*/
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 15px;
-  color: #b1b1b1;
+  color: #13090f;
 }
 
 .paiement .formulaire2 .cols {
@@ -2259,6 +2294,12 @@ RECAP ETAPES*/
   .paiement .valider {
     margin-top: 0px !important;
     border-radius: 0px !important;
+  }
+  .paiement .mode-paiement {
+    margin-top: 20px!important;
+  }
+  .paiement .formulaire2 {
+    margin-top: 20px!important;
   }
 }
 
@@ -2658,10 +2699,6 @@ RECAP ETAPES*/
   justify-content: space-between;
 }
 
-.recap-b p {
-  font-size: 0.9em;
-}
-
 .recap-b .row1 p {
   margin-bottom: 0px;
 }
@@ -2678,33 +2715,74 @@ RECAP ETAPES*/
   margin-left: 15px;
 }
 
-.row3 .modalités {
+.row3m {
   padding: 20px;
   background-color: #f3f3f8;
-  border-radius: 20px;
-  margin-bottom: 15px;
+  border-radius: 20px;  
+  height: max-content;
+
+}
+
+.accordion {
+  width: 100%;
+  border-style:hidden;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  background-color: #f3f3f8;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion h5 {
+  margin-bottom:0px;
+}
+
+.accordion .ico {
+  display: block;
+}
+.accordion .ico2 {
+  display: none;
+}
+
+.active, .accordion:hover {
+  background-color: #f3f3f8; 
+}
+
+.active .ico {
+  display: none!important;
+}
+.active .ico2 {
+  display: block!important;
+}
+
+.row3m .modalités .panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.2s ease-out;
 }
 
 .modalités-r {
   padding: 20px;
   background-color: #f3f3f8;
   border-radius: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.row3 .modalités p {
+.row3m p {
   color: #264abd;
   margin-bottom: 0px;
-  font-size: 0.9em;
 }
 
 .modalités-r p {
   color: #264abd;
   margin-bottom: 0px;
-  font-size: 0.9em;
 }
 
-.row3 .modalités .billet2-m {
+.row3m .billet2-m {
   margin-top: 15px;
 }
 
@@ -2727,6 +2805,10 @@ RECAP ETAPES*/
   text-decoration: none;
 }
 
+.selected {
+  background-color: #f3f3f8;
+}
+
 @media (min-width: 768px) {
   .wrapper {
     display: grid;
@@ -2744,23 +2826,22 @@ RECAP ETAPES*/
     margin-right: 25px;
   }
   .impact-ecolo {
-    grid-column: 2/2;
+    grid-column: 2;
     grid-row: 1;
   }
+  .grid-row2 {
+    grid-column: 2;
+    grid-row: 2;
+  }
   .recap-b {
-    grid-column: 2/2;
-    grid-row: 2/3;
     padding: 20px;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: #13090f;
   }
-  .row3 {
-    grid-column: 2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  .row3m {
+    margin-top: 20px;
   }
   .modalités-r {
     display: none;
@@ -2842,6 +2923,10 @@ RECAP ETAPES*/
   .impact-ecolo {
     display: none;
   }
+  .grid-row2 {
+    position: sticky;
+    bottom:0px;
+  }
   .recap-b {
     grid-column: 1;
     padding: 15px;
@@ -2849,7 +2934,6 @@ RECAP ETAPES*/
     border-style: solid;
     border-width: 1px;
     border-color: #13090f;
-    position: sticky;
     bottom: 45px;
     background-color: #ffffff;
     box-shadow: 0 -25px 10px white;
@@ -2858,13 +2942,16 @@ RECAP ETAPES*/
     font-size: 0.8em !important;
     margin-bottom: 0px !important;
   }
-  .row3 {
+  .row3m {
     grid-column: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     position: sticky;
     bottom: 0px;
+  }
+  .accordion h5 {
+    font-size: 0.8em!important;
   }
   .recap-etapes .container {
     display: flex;
@@ -2911,7 +2998,7 @@ RECAP ETAPES*/
   .recap-b h5 {
     display: none;
   }
-  .row3 .modalités {
+  .row3m {
     display: none;
   }
   .recap-t .ligne1 .col-l img {

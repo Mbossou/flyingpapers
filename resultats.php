@@ -107,7 +107,6 @@
                                 echo '<option value="'.$lieu_arrivee2.'">';                   
                                 echo '<option value="'.$lieu_arrivee3.'">';
                             echo '</datalist>';         
-                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
 
                         echo '
                         <div class="navbar fle">
@@ -198,7 +197,7 @@
                                 echo '<option value="'.$lieu_arrivee2.'">';                   
                                 echo '<option value="'.$lieu_arrivee3.'">';
                             echo '</datalist>';         
-                            //query pour comparer les variables avec donnees de billets.ld_recherche et billets.la_recherche -> affichage conditionnel
+        
                         echo '
                             <div class="input-field-date dates">
                                 <i class="material-icons">date_range</i>
