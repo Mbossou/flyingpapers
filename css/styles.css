@@ -136,7 +136,7 @@ p {
 
 @media screen and (max-width: 430px) {
   h1 {
-    font-size: 5vw;
+    font-size: 5.5vw !important;
   }
   h2 {
     font-size: 4.5vw;
@@ -146,16 +146,16 @@ p {
     font-size: 3.4vw;
   }
   h5 {
-    font-size: 3.2vw !important;
+    font-size: 3.3vw !important;
   }
   p {
-    font-size: 3vw;
+    font-size: 3.2vw;
   }
   .dot {
-    font-size: 25px;
+    font-size: 30px;
   }
   .dot1 {
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 
@@ -1174,9 +1174,13 @@ RECAP RECHERCHE */
 }
 
 .indice-carbone .indice {
-  flex-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-grow: 1;
-  height: 20px;
+}
+.indice-carbone .indice p {
+  line-height: 1.5em;
 }
 
 .indice-carbone .positif {
@@ -1231,7 +1235,7 @@ RECAP RECHERCHE */
   align-items: center;
   justify-items: center;
   font-weight: bold;
-  padding: 15px 0 0 8px;
+  padding-top: 15px;
 }
 .barre-transports {
   display: grid;
@@ -1246,16 +1250,24 @@ RECAP RECHERCHE */
   border-radius: 10px;
 }
 .filtre-transport {
-  max-width: 120px;
+  max-width: 125px;
   line-height: 18px;
   display: inline-flex;
   align-items: center;
 }
-.filtre-transport a {
-  margin-left: 8px;
-}
 .filtre-transport span {
+  margin-left: 7px;
+}
+.filtre-transport .mode-transport .elecvoit {
+  margin-left: 10px;
+}
+.filtre-transport .mode-transport .elecvoit span {
   font-weight: 1 !important;
+  margin-left: 0px;
+}
+.link_elecvoit {
+  display: inline-flex;
+  align-items: center;
 }
 .filtre-transport .mode-transport {
   color: var(--color-peche);
@@ -1287,7 +1299,7 @@ RECAP RECHERCHE */
   height: 23.004px;
 }
 .filtre-transport .ico_elecvoit {
-  width: 27.714px;
+  width: 25.714px;
   height: 22.76px;
 }
 .filtre-transport .ico_bus {
@@ -1301,6 +1313,13 @@ RECAP RECHERCHE */
 .filtre-transport .ico_avion {
   width: 22.265px;
   height: 22.265px;
+}
+
+@media (max-width: 800px) {
+  .filtre-transport span,
+  .filtre-transport .elecvoit {
+    display: none;
+  }
 }
 
 /* BARRE SELECTION */
@@ -1317,6 +1336,209 @@ RECAP RECHERCHE */
 }
 
 /* RESULTATS */
+.page-2 .container {
+  max-width: 1400px;
+}
+
+@media (max-width: 1200px) {
+  .page-2 .container {
+    max-width: 1140px;
+  }
+}
+@media (max-width: 992px) {
+  .page-2 .container {
+    max-width: 960px;
+  }
+}
+@media (max-width: 768px) {
+  .page-2 .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 576px) {
+  .page-2 .container {
+    max-width: 540px;
+  }
+}
+
+/* RESULTATS */
+.resultats-billets {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.resultats-billets h1 {
+  font-family: var(--font-titre);
+  font-size: 2em;
+  color: var(--color-bleu);
+  margin: 40px 0;
+}
+
+.resultats-billets .left {
+  width: 100%;
+}
+
+.resultats-billets .right #map {
+  width: 350px;
+  height: 550px;
+  margin-left: 50px;
+}
+
+.les-billets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
+.billet {
+  display: flex;
+  width: 100%;
+  border: 0.5px solid var(--color-bleu);
+  border-radius: 15px;
+  height: 120px;
+}
+
+.billet p {
+  margin: 0;
+}
+
+.rub {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  color: black;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rub5 {
+  border-left: 0.5px solid var(--color-bleu);
+  width: 160px;
+}
+
+.billet .horaires {
+  font-weight: 600;
+}
+.billet .duree {
+  font-weight: 600;
+  color: var(--color-peche);
+}
+.billet .horaires p {
+  font-weight: 600;
+}
+.billet .duree p {
+  font-weight: 600;
+  color: var(--color-peche);
+  font-size: 0.8em;
+}
+.billet .empreinteC {
+  display: inline-flex;
+  align-items: baseline;
+}
+.billet .empreinteC .co2 {
+  width: 1.6em;
+}
+.billet .empreinteC .jauge {
+  width: 1em;
+}
+.billet .empreinteC span {
+  color: var(--color-vert-recap);
+  padding-left: 7px;
+}
+.billet .infos p {
+  max-width: 130px;
+  line-height: 14px;
+}
+
+.billet .mobile {
+  display: none;
+  align-items: normal;
+  padding-left: 15px;
+}
+.billet #rub1 {
+  padding-left: 15px;
+}
+.billet .mobile .empreinteC {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.billet .mobile .empreinteC .co2 {
+  width: 1.4em;
+}
+.billet .mobile .empreinteC .jauge {
+  width: 1em;
+}
+.billet .mobile .empreinteC .jauges-label {
+  font-size: 1.2em;
+}
+.billet .mobile .empreinteC .jauges-label-kgpourcent {
+  font-size: 0.8em !important;
+}
+
+.billet .zone {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  color: var(--color-bleu);
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.billet .prix {
+  border-bottom: 0.5px solid var(--color-bleu);
+  font-family: var(--font-titre);
+  font-size: 1.5em !important;
+  font-weight: 600;
+  align-items: end;
+  height: 60%;
+  padding-bottom: 10px;
+}
+
+.billet .plusdedetails {
+  align-items: center;
+  font-size: medium;
+  height: 40%;
+}
+.billet .material-icons {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .resultats-billets .right #map {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .billet .infos {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .rub5 {
+    width: 110px;
+  }
+}
+@media (max-width: 470px) {
+  .billet {
+    height: 200px;
+  }
+  .billet .desktop {
+    display: none;
+  }
+  .billet .mobile {
+    display: flex;
+  }
+}
+
 #resultats-billets {
   margin-top: 40px;
 }
@@ -1363,44 +1585,6 @@ RECAP RECHERCHE */
   max-height: 350px;
   max-width: 100%;
   margin-top: -100px;
-}
-
-.billet {
-  display: flex;
-  width: 100%;
-  background-color: white;
-  border: 0.5px solid var(--color-bleu);
-  margin-left: 50px;
-  margin-bottom: 30px;
-  border-radius: 15px;
-  grid-column: 1;
-}
-
-.rub {
-  flex-grow: 1;
-  min-width: fit-content;
-  padding: 10px;
-}
-
-.rub5 {
-  border-left: 0.5px solid var(--color-bleu);
-}
-
-.billet .p {
-  padding: 10px;
-  font-family: "Avenir Medium", Arial, Sans-serif;
-  font-size: 0.8em;
-}
-
-.billet .p9 {
-  font-family: "Avenir Black", Arial, Sans-serif !important;
-  font-size: 1.1em;
-  color: var(--color-bleu);
-  text-align: center;
-}
-
-.billet .p10 {
-  border-top: 0.5px solid var(--color-bleu);
 }
 
 /* PAGE SELECTION BILLETS 
