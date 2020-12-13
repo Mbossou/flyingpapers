@@ -170,7 +170,6 @@ p {
   margin: 0;
   background-color: var(--color-bleu);
   min-height: 60px;
-  max-width: 2200px;
 }
 
 .lblcookies {
@@ -267,7 +266,7 @@ p {
 }
 
 .bold {
-  font-family: "Avenir Black", Arial, Sans-serif !important;
+  font-weight: bold;
 }
 
 .row {
@@ -342,7 +341,7 @@ p {
 /* FOOTER */
 .footer {
   background-color: #f3f3f8;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   position: relative;
   left: 0;
   bottom: 0;
@@ -359,6 +358,9 @@ p {
 
 .footer .row {
   display: flex;
+  width: 100%;
+  padding: 0 70px;
+  flex-wrap: wrap;
 }
 
 .footer .bloc {
@@ -408,6 +410,9 @@ p {
   position: absolute;
   right: 30px;
   bottom: 40px;
+}
+.page-1 .footer .footer-brand {
+  bottom: 70px;
 }
 
 /* PAGE ACCUEIL 
@@ -1115,7 +1120,7 @@ input::placeholder {
     width: 200px;
   }
   .newsletter-right {
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
   }
@@ -1124,6 +1129,10 @@ input::placeholder {
 @media screen and (max-width: 400px) {
   .newsletter-right {
     flex-shrink: 1;
+    justify-content: right;
+  }
+  .newsletter-right input {
+    margin-bottom: 10px;
   }
 }
 
@@ -1207,18 +1216,33 @@ RECAP RECHERCHE */
   border-bottom-right-radius: 2rem;
 }
 
-.indice-carbone .negatif p {
-  color: #ffffff;
+@media (max-width: 600px) {
+  .indice-carbone .container {
+    padding: 0;
+    max-width: 600px !important;
+    margin: 10px 0 0 0;
+  }
+  .indice-carbone .positif {
+    border-radius: 0;
+  }
+  .indice-carbone .negatif {
+    border-radius: 0;
+  }
+  .nav-transports {
+    padding: 0 !important;
+    max-width: 600px !important;
+    margin: 0 !important;
+  }
 }
 
-.indice p {
-  font-size: 9px !important;
+.indice-carbone .negatif p {
+  color: #ffffff;
 }
 
 .indice-carbone p {
   margin-bottom: 0px;
   font-family: "Avenir Medium", Arial, Sans-serif;
-  font-size: 0.6rem;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -1363,7 +1387,7 @@ RECAP RECHERCHE */
 
 /* RESULTATS */
 .resultats-billets {
-  margin-top: 30px;
+  margin: 30px auto;
   display: inline-flex;
   align-items: start;
   justify-content: space-between;
@@ -1381,9 +1405,9 @@ RECAP RECHERCHE */
 }
 
 .resultats-billets .right #map {
-  width: 350px;
+  width: 325px;
   height: 550px;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
 .les-billets {
@@ -1497,7 +1521,7 @@ RECAP RECHERCHE */
   font-family: var(--font-titre);
   font-size: 1.5em !important;
   font-weight: 600;
-  align-items: end;
+  align-items: flex-end;
   height: 60%;
   padding-bottom: 10px;
 }
@@ -1509,6 +1533,12 @@ RECAP RECHERCHE */
 }
 .billet .material-icons {
   position: relative;
+}
+
+@media (max-width: 1100px) {
+  .resultats-billets .right #map {
+    width: 280px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1763,8 +1793,8 @@ RECAP ETAPES*/
 }
 
 .options-billets .bagages .row2a {
-  flex-wrap      : nowrap;
-  display        : flex;
+  flex-wrap: nowrap;
+  display: flex;
   justify-content: space-evenly;
 }
 
@@ -1777,10 +1807,10 @@ RECAP ETAPES*/
 }
 
 .options-billets .billet2 {
-  grid-column  : 1;
-  grid-row     : 4/7;
+  grid-column: 1;
+  grid-row: 4/7;
   margin-bottom: 40px;
-  padding      : 20px;
+  padding: 20px;
 }
 
 .options-billets .recup-billet {
@@ -1789,7 +1819,7 @@ RECAP ETAPES*/
 
 @media (min-width: 1200px) {
   .bagages .conteneur img {
-    max-width : 200px !important;
+    max-width: 200px !important;
     max-height: 200px !important;
   }
   .options-billets .bagages {
@@ -1889,7 +1919,7 @@ RECAP ETAPES*/
 
 .porte-a-porte .choix-depart .flex-nw .bloc input {
   width: 100%;
-  height:50%;
+  height: 50%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -2086,11 +2116,11 @@ RECAP ETAPES*/
   }
   .infos-persos .formulaire {
     margin-right: 25px;
-    margin-top:40px;
+    margin-top: 40px;
   }
   .i_p {
     grid-column: 1;
-    grid-row:2;
+    grid-row: 2;
   }
 }
 
@@ -2296,10 +2326,10 @@ RECAP ETAPES*/
     border-radius: 0px !important;
   }
   .paiement .mode-paiement {
-    margin-top: 20px!important;
+    margin-top: 20px !important;
   }
   .paiement .formulaire2 {
-    margin-top: 20px!important;
+    margin-top: 20px !important;
   }
 }
 
@@ -2418,10 +2448,29 @@ RECAP ETAPES*/
   margin-bottom: 0px;
 }
 
+@media screen and (max-width: 600px) {
+  .confirmation-reservation .confirmation-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+  }
+  .confirmation-reservation .confirmation-grid .left {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+  }
+  .confirmation-reservation .confirmation-grid .right {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+  }
+}
+
 /*PAGE 404
 --------------------------------------------------------------------------------------------------------------*/
 .erreur404 {
-  min-height: 70vh;
+  min-height: 80vh;
   height: 100%;
   width: 100%;
 }
@@ -2442,8 +2491,8 @@ RECAP ETAPES*/
 }
 
 .erreur404 .conteneur .contenu .img404 {
-  margin-top: 50px;
-  max-height: 100px;
+  margin-top: 40px;
+  max-height: 10vh;
 }
 
 .erreur404 .conteneur .contenu p {
@@ -2463,10 +2512,10 @@ RECAP ETAPES*/
 
 .background404 {
   background-image: url("../img/illu_404.png");
-  background-position: 100% 75%;
+  background-position: 100% 65%;
   background-repeat: repeat;
   background-size: cover;
-  height: 100%;
+  height: 80%;
 }
 
 /*CLASSES COMMUNES POUR PAGES ETAPES RESERVATION (Options billets, infos persos, etc.) 
@@ -2718,14 +2767,13 @@ RECAP ETAPES*/
 .row3m {
   padding: 20px;
   background-color: #f3f3f8;
-  border-radius: 20px;  
+  border-radius: 20px;
   height: max-content;
-
 }
 
 .accordion {
   width: 100%;
-  border-style:hidden;
+  border-style: hidden;
   text-align: left;
   outline: none;
   transition: 0.4s;
@@ -2736,7 +2784,7 @@ RECAP ETAPES*/
 }
 
 .accordion h5 {
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
 
 .accordion .ico {
@@ -2746,15 +2794,16 @@ RECAP ETAPES*/
   display: none;
 }
 
-.active, .accordion:hover {
-  background-color: #f3f3f8; 
+.active,
+.accordion:hover {
+  background-color: #f3f3f8;
 }
 
 .active .ico {
-  display: none!important;
+  display: none !important;
 }
 .active .ico2 {
-  display: block!important;
+  display: block !important;
 }
 
 .row3m .modalités .panel {
@@ -2925,7 +2974,7 @@ RECAP ETAPES*/
   }
   .grid-row2 {
     position: sticky;
-    bottom:0px;
+    bottom: 0px;
   }
   .recap-b {
     grid-column: 1;
@@ -2936,7 +2985,7 @@ RECAP ETAPES*/
     border-color: #13090f;
     bottom: 45px;
     background-color: #ffffff;
-    box-shadow: 0 -25px 10px white;
+    box-shadow: 0 -25px 0 white;
   }
   .recap-b p {
     font-size: 0.8em !important;
@@ -2951,7 +3000,7 @@ RECAP ETAPES*/
     bottom: 0px;
   }
   .accordion h5 {
-    font-size: 0.8em!important;
+    font-size: 0.8em !important;
   }
   .recap-etapes .container {
     display: flex;

@@ -354,12 +354,12 @@
 
 
           <div class="modalités modalités-r">
-            <button class="accordion">
+            <button class="accordion active">
                   <h5 class="bold bleu-fp">Modalités</h5>
                   <img class="ico" src="img/down.svg" alt="flèche bas" />
                   <img class="ico2" src="img/top.svg" alt="flèche haut" />
             </button>
-            <div class="panel">
+            <div class="panel" style="display: block;">
               <p class="bold billet2-m">Billet 1</p>
               <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
               <p class="bold billet2-m">Billet 2</p>
@@ -405,12 +405,12 @@
             
           
             <div class="row3m modalités">
-              <button class="accordion">
+              <button class="accordion active">
                 <h5 class="bold bleu-fp">Modalités</h5>
                 <img class="ico" src="img/down.svg" alt="flèche bas" />
                 <img class="ico2" src="img/top.svg" alt="flèche haut" />
               </button>
-              <div class="panel">
+              <div class="panel" style="display: block;">
                 <p class="bold billet2-m">Billet 1</p>
                 <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
                 <p class="bold billet2-m">Billet 2</p>
@@ -435,7 +435,7 @@
       </div>
     </section>
     <section class="footer">
-      <div class="container">
+      <div class="">
         <div class="row">
           <div id="entreprise" class="bloc">
             <h5>L'entreprise</h5>

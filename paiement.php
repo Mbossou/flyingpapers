@@ -282,7 +282,7 @@
                   <img class="ico" src="img/down.svg" alt="flèche bas" />
                   <img class="ico2" src="img/top.svg" alt="flèche haut" />
             </button>
-            <div class="panel">
+            <div class="panel" style="display: none;">
               <p class="bold billet2-m">Billet 1</p>
               <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
               <p class="bold billet2-m">Billet 2</p>
@@ -329,7 +329,7 @@
                 <img class="ico" src="img/down.svg" alt="flèche bas" />
                 <img class="ico2" src="img/top.svg" alt="flèche haut" />
               </button>
-              <div class="panel">
+              <div class="panel" style="display: none;">
                 <p class="bold billet2-m">Billet 1</p>
                 <p class="small-p">Billet échangeable sous conditions, non remboursable.</p>
                 <p class="bold billet2-m">Billet 2</p>
@@ -348,7 +348,7 @@
     </section>
 
     <section class="footer">
-      <div class="container">
+      <div class="">
         <div class="row">
           <div id="entreprise" class="bloc">
             <h5>L'entreprise</h5>

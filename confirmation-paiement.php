@@ -92,7 +92,7 @@
     </section>
 
     <section class="footer">
-      <div class="container">
+      <div class="">
         <div class="row">
           <div id="entreprise" class="bloc">
             <h5>L'entreprise</h5>
