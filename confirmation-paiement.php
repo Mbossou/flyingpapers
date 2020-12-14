@@ -45,6 +45,34 @@
       </div>
     </nav>
 
+    <?php
+      function jaugeimg() {
+        switch ($_GET["TRANSPORT"]) {
+            case 1:
+                echo "vide";
+                break;
+            case 2:
+                echo "vide";
+                break;
+            case 3:
+                echo "moy1";
+                break;
+            case 4:
+                echo "moy1";
+                break;
+            case 5:
+                echo "moy2";
+                break;
+            case 6:
+                echo "moy2";
+                break;
+            case 7:
+                echo "pleine";
+                break;
+          }
+        }
+      ?>
+
     <section class="confirmation-reservation col-sm-12 main-div">
       <div class="container">
         <div class="main">
@@ -59,12 +87,12 @@
                 <tbody>
                     <tr>
                         <td>
-                            <img src="img/co2-bleu.svg" alt="CO2" class="co2">
-                            <span class="jauges-label"><?php $_SESSION['billet_co2_emis'] ?> </span><span class="jauges-label-kgpourcent">KG</span>
+                            <img src="img/co2-noir.svg" alt="CO2" class="co2">
+                            <span class="jauges-label"> <?php echo $_GET["CARBONE"]; ?> </span><span class="jauges-label-kgpourcent">KG</span>
                         </td>
                         <td>
-                            <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
-                            <span class="jauges-label">0.1 </span><span class="jauges-label-kgpourcent">%</span>
+                            <img src="img/jauge-<?php jaugeimg(); ?>-noir.svg" alt="Jauge" class="jauge">
+                            <span class="jauges-label"> <?php echo $_GET["POURCENT"]; ?> </span><span class="jauges-label-kgpourcent">%</span>
                         </td>
                     </tr>
                     <tr>

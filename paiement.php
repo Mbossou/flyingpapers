@@ -372,7 +372,7 @@
               </div>
             </div>
             <?php echo '
-              <a class="valider bouton-peche" href="/flyingpapers/confirmation-paiement.php?id_billet='.$_SESSION['billet_id'].'">Confirmer</a>'
+              <a class="valider bouton-peche" href="/flyingpapers/confirmation-paiement.php?CARBONE='.$_SESSION['billet_co2_emis'].'&POURCENT='.$_SESSION['billet_pourcentage'].'&TRANSPORT='.$_SESSION['billet_mode_transport'].'">Confirmer</a>'
             ?>
           </div>  
 
