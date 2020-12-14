@@ -285,6 +285,7 @@ p {
 
 .flex {
   display: flex;
+  justify-content: space-around;
 }
 
 /* MENU */
@@ -1843,7 +1844,59 @@ RECAP ETAPES*/
 .options-billets .bagages .row2a {
   flex-wrap: nowrap;
   display: flex;
+}
+
+.options-billets .bagages .row2a .ajout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.options-billets .bagages .row2a .ajout .row2b {
+  width: 100%;
+  align-self: center;
   justify-content: space-evenly;
+}
+
+.options-billets .bagages .row2a .ajout .row3b {
+  flex-wrap: nowrap;
+  align-self: flex-end;
+  margin: 0px auto 10px auto;
+}
+
+.options-billets .bagages .row2a .ajout .row2b .plus {
+  border-radius : 2em;
+  border-width  : 1px;
+  border-color  : var(--color-bleu);
+  color  : var(--color-bleu);
+  background-color: transparent;
+  padding-top   : 7px;
+  padding-bottom: 7px;
+  padding-left  : 13px;
+  padding-right : 13px;
+  border-style  : solid;
+  margin-bottom: 0px;
+}
+
+.options-billets .bagages .row2a .ajout .row2b .moins {
+  border-radius : 2em;
+  border-width  : 1px;
+  border-color  : #E3E3E3;
+  color  : #E3E3E3;
+  padding-top   : 7px;
+  padding-bottom: 7px;
+  padding-left  : 15px;
+  padding-right : 15px;
+  border-style  : solid;
+  margin-bottom: 0px;
+}
+
+.options-billets .bagages .row2a .ajout .row2b .nombre-b {
+  color: var(--color-bleu);
+  font-size: 1.7em!important;
+  font-weight: 500;
+  margin-bottom: 0px;
+  align-self: center;
 }
 
 .options-billets .bagages .row3b {

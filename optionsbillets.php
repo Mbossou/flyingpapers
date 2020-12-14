@@ -96,6 +96,8 @@
             $_SESSION['billet_ville_c'] = $_SESSION['ville_c'. $_GET['id_billet'] .''];
             $_SESSION['billet_compagnie1'] = $_SESSION['compagnie1'. $_GET['id_billet'] .''];
             $_SESSION['billet_compagnie2'] = $_SESSION['compagnie2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_logo_compagnie1'] = $_SESSION['logo_compagnie1'. $_GET['id_billet'] .''];
+            $_SESSION['billet_logo_compagnie2'] = $_SESSION['logo_compagnie2'. $_GET['id_billet'] .''];
             $_SESSION['billet_co2_emis'] = $_SESSION['co2_emis'. $_GET['id_billet'] .''];
             $_SESSION['billet_pourcentage'] = $_SESSION['pourcentage'. $_GET['id_billet'] .''];
             $_SESSION['billet_prix_g'] = $_SESSION['prix_g'. $_GET['id_billet'] .''];
@@ -161,7 +163,7 @@
                       <p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>
                       <div class="compagnie">
                         <p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>
-                        <img src="img/sncf.svg" alt="logo sncf"> <!--rendre image dynamique-->
+                        <img src="img/' . $_SESSION['billet_logo_compagnie1'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
                         <p>' . $_SESSION['billet_num_transport1'] . '</p>
                       </div>
                       <p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>
@@ -200,7 +202,7 @@
                       <p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>
                       <div class="compagnie">
                         <p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>
-                        <img src="img/eurostar.svg" alt="logo eurostar"> <!--rendre image dynamique-->
+                        <img src="img/' . $_SESSION['billet_logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
                         <p>' . $_SESSION['billet_num_transport2'] . '</p>
                       </div>
                       <p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>
@@ -216,7 +218,7 @@
                     <h5 class="bold bleu-fp">Tarifs : Billet Aller 1</h5>
                   </div>
                   <div class="row">
-                    <img class="SNCF" src="img/Logo-sncf.PNG" alt="logo SNCF noir et blanc" /> <!--rendre image dynamique-->
+                    <img src="img/' . $_SESSION['billet_logo_compagnie1'] . '" alt="logo compagnie" style="max-height:30px; margin-right:10px;">
                     <p>' . $_SESSION['billet_compagnie1'] . '</p>
                   </div>
                 </div>
@@ -256,13 +258,13 @@
                           <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
                           <div class="ajout">
                             <div class="flex row2b">
-                              <p>-</p>
-                              <p>0</p>
-                              <p>+</p>
+                              <p class="moins">-</p>
+                              <p class="nombre-b">0</p>
+                              <button class="plus">+</button>
                             </div>
                             <div class="row row3b">
-                              <p style="margin-right: 15px">5€</p>
-                              <p>Par bagage</p>
+                              <p class="bold" style="margin-right: 15px">5€</p>
+                              <p style="color: #B1B1B1; font-weight: 500;">Par bagage</p>
                             </div>
                           </div>
                         </div>
@@ -279,7 +281,7 @@
                     <h5 class="bold bleu-fp">Tarifs : Billet Aller 2</h5>
                   </div>
                   <div class="row">
-                    <img class="Eurostar" src="img/Logo-eurostar.PNG" alt="logo Eurostar" />
+                    <img src="img/' . $_SESSION['billet_logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px; margin-right:10px;">
                     <p>' . $_SESSION['billet_compagnie2'] . '</p>
                   </div>
                 </div>
@@ -318,13 +320,13 @@
                           <img src="img/pic_bag_supp.PNG" alt="dimensions valise 2mx2m" />
                           <div class="ajout">
                             <div class="flex row2b">
-                              <p>-</p>
-                              <p>0</p>
-                              <p>+</p>
+                              <p class="moins">-</p>
+                              <p class="nombre-b">0</p>
+                              <button class="plus">+</button>
                             </div>
                             <div class="row row3b">
-                              <p style="margin-right: 15px">5€</p>
-                              <p>Par bagage</p>
+                              <p class="bold" style="margin-right: 15px">5€</p>
+                              <p style="color: #B1B1B1; font-weight: 500;">Par bagage</p>
                             </div>
                           </div>
                         </div>

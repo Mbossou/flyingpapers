@@ -218,15 +218,21 @@
             <div class="flex-nw">
               <div id="a-standard" class="bloc a-standard">
                 <p>J'ai déjà prévu un moyen de déplacement</p>
-                <input id="button" class="standard" type="button" value="" onclick="changeColor_o1_t1() "/>
+                <input id="button" class="standard" type="button" value="" onclick="changeColor_o1_t1(); ShowValue1(this) "/>
+                <div style="display:none;"><input type="button" id="val0" value="Pas de pap"></div>
+                <div style="display:none;"><input type="button" id="val0b" value="0"></div>
               </div>
               <div id="a-prise" class="bloc a-prise">
                 <p>Louer un vélo à déposer devant la gare</p>
-                <input class="prise bold" type="button" value="15 ct / min" onclick="changeColor_o2_t1() "/>
+                <input id="velo" class="prise bold" type="button" value="5 €" onclick="changeColor_o2_t1(); ShowValue2() "/>
+                <div style="display:none;"><input type="button" id="val1" value="Location de vélo"></div>
+                <div style="display:none;"><input type="button" id="val1b" value="5"></div>
               </div>
               <div id="a-tranquille" class="bloc a-tranquille">
                 <p>Réserver un Taxi Green (Voiture électrique)</p>
-                <input class="tranquille bold" type="button" value="30 €" onclick="changeColor_o3_t1() "/>
+                <input id="taxi" class="tranquille bold" type="button" value="30 €" onclick="changeColor_o3_t1(); ShowValue3(this) "/>
+                <div style="display:none;"><input type="button" id="val2" value="Réservation taxi"></div>
+                <div style="display:none;"><input type="button" id="val2b" value="30"></div>
               </div>
             </div>
           </div>
@@ -278,9 +284,14 @@
                     <p class="text-option small-p" id="output2b">' . $_SESSION["opt2_p"] . '</p>
                     <p id="output2" class="small-p">' . $_SESSION["opt2"] . '</p>
                   </div>
+                  <div class="row rowx">
+                    <p id="opt-pap1" class="small-p"></p>
+                    <p id="opt-pap2" class="small-p"></p>
+                  </div>
                   <div class="row row4">
                     <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '</p>
+                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>
+                    <input style="display:none" type="text" id="ancien_resultat_somme" value="' . $_SESSION["total"] . '">
                   </div>
                 </div>
               ';
@@ -303,7 +314,12 @@
               </div>
             </div>
             
-            <a class="valider bouton-peche" href="/flyingpapers/infospersos.php">Valider mes choix</a>
+            <form class="recup-billet" style="" method="get" action="infospersos.php">
+              <input style="display:none;" type="text" id="total" name="total">
+              <input style="display:none;" type="text" id="opt_pap" name="opt-pap">
+              <input style="display:none;" type="text" id="opt_papb" name="opt-papb">
+              <input style="border-style:none;" class="valider bouton-peche" type="submit" value="Valider mes choix">
+            </form>
           </div>
             
           </div>

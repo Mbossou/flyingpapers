@@ -283,6 +283,12 @@
 
           <div class="grid-row2">
             <?php
+            // récupération des options pap billet et total du prix dans variables SESSION
+            $_SESSION["total"]= $_GET["total"];
+            $_SESSION["opt_pap"]= $_GET["opt-pap"];
+            $_SESSION["optb_pap"]= $_GET["opt-papb"];
+            //verification : 
+            //echo '<p>'.$_SESSION['total'].'</p>';
               echo '
                 <div class="recap-b">
                   <h5 class="bold bleu-fp">Récapitulatif</h5>
@@ -302,9 +308,13 @@
                     <p class="text-option small-p" id="output2b">' . $_SESSION["opt2_p"] . '</p>
                     <p id="output2" class="small-p">' . $_SESSION["opt2"] . '</p>
                   </div>
+                  <div class="row rowx">
+                    <p id="opt-pap1" class="small-p">' . $_SESSION["opt_pap"] . '</p>
+                    <p id="opt-pap2" class="small-p">' . $_SESSION["optb_pap"] . '</p>
+                  </div>
                   <div class="row row4">
                     <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '</p>
+                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>
                   </div>
                 </div>
               ';

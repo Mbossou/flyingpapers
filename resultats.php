@@ -386,7 +386,7 @@
                         $_SESSION['ville_arrivee'] = $_GET["villeArrivee"];
                         require_once 'admin/database.php';
                         $db = Database::connect();
-                        $statement = $db->query('SELECT billets.id, billets.gare_depart, billets.gare_arrivee, billets.gare_c, billets.duree, billets.duree_c, billets.duree_trajet1, billets.duree_trajet2, billets.heure_depart_g, billets.heure_arrivee_g, billets.heure_depart_c, billets.heure_arrivee_c, billets.ville_c, billets.compagnie1, billets.compagnie2, billets.co2_emis, billets.pourcentage, billets.prix_g, billets.prix_opt1_trajet1, billets.prix_opt2_trajet1, billets.prix_opt3_trajet1, billets.prix_opt1_trajet2, billets.prix_opt2_trajet2, billets.prix_opt3_trajet2,  billets.ld_recherche, billets.mode_transport, billets.num_transport1, billets.num_transport2  
+                        $statement = $db->query('SELECT billets.id, billets.gare_depart, billets.gare_arrivee, billets.gare_c, billets.duree, billets.duree_c, billets.duree_trajet1, billets.duree_trajet2, billets.heure_depart_g, billets.heure_arrivee_g, billets.heure_depart_c, billets.heure_arrivee_c, billets.ville_c, billets.compagnie1, billets.compagnie2, billets.logo_compagnie1, billets.logo_compagnie2, billets.co2_emis, billets.pourcentage, billets.prix_g, billets.prix_opt1_trajet1, billets.prix_opt2_trajet1, billets.prix_opt3_trajet1, billets.prix_opt1_trajet2, billets.prix_opt2_trajet2, billets.prix_opt3_trajet2,  billets.ld_recherche, billets.mode_transport, billets.num_transport1, billets.num_transport2  
                         FROM billets 
                         WHERE ld_recherche = "' . $_GET['villeDepart'] . '" AND la_recherche = "' . $_GET['villeArrivee'] . '"AND mode_transport = "' . $_GET['modeTransport'] . '"
                         ORDER BY billets.id ASC');
@@ -411,6 +411,8 @@
                             $_SESSION['ville_c'. $billet['id'] .''] = $billet["ville_c"];
                             $_SESSION['compagnie1'. $billet['id'] .''] = $billet["compagnie1"];
                             $_SESSION['compagnie2'. $billet['id'] .''] = $billet["compagnie2"];
+                            $_SESSION['logo_compagnie1'. $billet['id'] .''] = $billet["logo_compagnie1"];
+                            $_SESSION['logo_compagnie2'. $billet['id'] .''] = $billet["logo_compagnie2"];
                             $_SESSION['co2_emis'. $billet['id'] .''] = $billet["co2_emis"];
                             $_SESSION['pourcentage'. $billet['id'] .''] = $billet["pourcentage"];
                             $_SESSION['prix_g'. $billet['id'] .''] = $billet["prix_g"];
@@ -429,7 +431,7 @@
                             echo '<div class="mobile rub" id="rub1">';
                             echo '<p class="horaires">'. $billet['heure_depart_g'] . '</p>';
                             echo '<p class="horaires">'. $billet['heure_arrivee_c'] . '</p>';
-                            echo '<p>'. $billet['compagnie2'] . '</p>';
+                            echo '<img src="img/'. $billet['logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px; max-width:85%; align-self: flex-start;">';
                             echo '<div class="empreinteC">
                                     <img src="img/co2-noir.svg" alt="CO2" class="co2">
                                     <span class="jauges-label ';
@@ -465,7 +467,7 @@
                             echo '</div>';
                             echo '<div class="duree desktop rub">';
                             echo '<p>'. $billet['duree'] . '</p>';
-                            echo '<p>'. $billet['compagnie2'] . '</p>';
+                            echo '<img src="img/' . $billet['logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px;">';
                             echo '</div>';
                             echo '<div class="rub desktop">';
                             echo '<div class="empreinteC">
