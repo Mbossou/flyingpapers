@@ -3,46 +3,48 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/styles.css" />
-    
-
-    <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+      <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="js/script.js"></script>
+      
+      <title>Flying Papers | Comparez plusieurs billets de transport et voyagez léger</title>
   </head>
-  <body class="page-3">
-    <a href="#"></a>
-    <nav class="navbar navbar-expand-md navbar-dark">
-      <a href="#"><img class="navbar-brand" src="img/logo.PNG" alt="logo Flying Papers" /></a>
 
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="nav nav-pills navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#langue">FR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#reservations">Vos réservations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-style" href="#inscription">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link bouton-peche" href="#connexion">Se connecter</a>
-          </li>
-        </ul>
+  <body class="page-3">
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded">
+      <a href="/flyingpapers/" class="navbar-brand"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse w-100" id="collapsingNavbar">
+          <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  🇫🇷 <i class="drop-arrow material-icons">expand_more</i>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Français 🇫🇷</a>
+                      <a class="dropdown-item" href="#">English 🇬🇧</a>
+                  </div>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" style="width:132px;" href="#">Vos réservations</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link nav-link-style" href="#">S'inscrire</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link btn-peche" href="#">Se connecter</a>
+              </li>
+          </ul>
       </div>
     </nav>
 
@@ -105,6 +107,33 @@
             $_SESSION['billet_prix_opt3_trajet2'] = $_SESSION['prix_opt3_trajet2'. $_GET['id_billet'] .''];
             $_SESSION['billet_num_transport1'] = $_SESSION['num_transport1'. $_GET['id_billet'] .''];
             $_SESSION['billet_num_transport2'] = $_SESSION['num_transport2'. $_GET['id_billet'] .''];
+            $_SESSION['billet_mode_transport'] = $_SESSION['mode_transport'. $_GET['id_billet'] .''];
+
+          function jaugeimg() {
+              switch ($_SESSION['billet_mode_transport']) {
+                  case 1:
+                      echo "vide";
+                      break;
+                  case 2:
+                      echo "vide";
+                      break;
+                  case 3:
+                      echo "moy1";
+                      break;
+                  case 4:
+                      echo "moy1";
+                      break;
+                  case 5:
+                      echo "moy2";
+                      break;
+                  case 6:
+                      echo "moy2";
+                      break;
+                  case 7:
+                      echo "pleine";
+                      break;
+              }
+          }
 
             echo '
               <div class="recap-t border-fp">
@@ -306,23 +335,25 @@
                 </div>
               </div>
 
-
               <div class="impact-ecolo">
                 <div class="conteneur">
                   <h4 class="titre-ecolo bold">Impact Ecologique</h4>
-                  <div class="row row-ecolo">
-                    <div class="bloc bloc1">
-                      <div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">
-                        <p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>
+                  <div class="columns-ecolo">
+                    <div class="column-ecolo">
+                      <div class="empreinteC">
+                        <img src="img/co2-noir.svg" alt="CO2" class="co2">
+                        <span class="jauges-label">' . $_SESSION['billet_co2_emis'] . '<span class="jauges-label-kgpourcent">KG</span></span>
                       </div>
-                      <p class="text">CO2 émis / pers. pour un aller</p>
+                      <p>CO2 émis / pers. pour un aller</p>
                     </div>
-                    <div class="bloc bloc2">
-                      <div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">
-                        <img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">
-                        <p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>
+                    <div class="column-ecolo">
+                      <div class="empreinteC">
+                        <img src="img/jauge-';
+                        jaugeimg();
+                        echo '-noir.svg" alt="Jauge" class="jauge">
+                        <span class="jauges-label">' . $_SESSION['billet_pourcentage'] . '<span class="jauges-label-kgpourcent">%</span></span>
                       </div>
-                      <p class="text">Du quota annuel pour limiter le réchauffement</p>
+                      <p>Du quota annuel pour limiter le réchauffement</p>
                     </div>
                   </div>
                 </div>
@@ -484,7 +515,7 @@
                   />
                 </svg>
               </a>
-              <a>
+              <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <title>Youtube</title>
                   <path

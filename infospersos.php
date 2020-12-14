@@ -16,8 +16,8 @@
   </head>
   
   <body class="page-5">
-    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
-      <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded">
+      <a href="/flyingpapers/" class="navbar-brand"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -39,7 +39,7 @@
                   <a class="nav-link nav-link-style" href="#">S'inscrire</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+                  <a class="nav-link btn-peche" href="#">Se connecter</a>
               </li>
           </ul>
       </div>
@@ -81,6 +81,31 @@
       <div class="container">
         <div class="wrapper">
           <?php
+          function jaugeimg() {
+            switch ($_SESSION['billet_mode_transport']) {
+                case 1:
+                    echo "vide";
+                    break;
+                case 2:
+                    echo "vide";
+                    break;
+                case 3:
+                    echo "moy1";
+                    break;
+                case 4:
+                    echo "moy1";
+                    break;
+                case 5:
+                    echo "moy2";
+                    break;
+                case 6:
+                    echo "moy2";
+                    break;
+                case 7:
+                    echo "pleine";
+                    break;
+            }
+        }
             echo '
               <div class="recap-t border-fp">
                 <div class="ligne1">
@@ -159,19 +184,22 @@
               <div class="impact-ecolo">
                 <div class="conteneur">
                   <h4 class="titre-ecolo bold">Impact Ecologique</h4>
-                  <div class="row row-ecolo">
-                    <div class="bloc bloc1">
-                      <div class="flex-nw" style="justify-content: center; align-items: center; min-height:40px;">
-                        <p class="bold"> ' . $_SESSION['billet_co2_emis'] . ' KG</p>
+                  <div class="columns-ecolo">
+                    <div class="column-ecolo">
+                      <div class="empreinteC">
+                        <img src="img/co2-noir.svg" alt="CO2" class="co2">
+                        <span class="jauges-label">' . $_SESSION['billet_co2_emis'] . '<span class="jauges-label-kgpourcent">KG</span></span>
                       </div>
-                      <p class="text">CO2 émis / pers. pour un aller</p>
+                      <p>CO2 émis / pers. pour un aller</p>
                     </div>
-                    <div class="bloc bloc2">
-                      <div class="flex-nw" style="justify-content: center; align-items: center; max-height:40px;">
-                        <img src="img/jaugenoire.svg" alt="icone jauge pollution" style="transform:scale(0.6);">
-                        <p class="bold">' . $_SESSION['billet_pourcentage'] . ' %</p>
+                    <div class="column-ecolo">
+                      <div class="empreinteC">
+                        <img src="img/jauge-';
+                        jaugeimg();
+                        echo '-noir.svg" alt="Jauge" class="jauge">
+                        <span class="jauges-label">' . $_SESSION['billet_pourcentage'] . '<span class="jauges-label-kgpourcent">%</span></span>
                       </div>
-                      <p class="text">Du quota annuel pour limiter le réchauffement</p>
+                      <p>Du quota annuel pour limiter le réchauffement</p>
                     </div>
                   </div>
                 </div>
@@ -356,7 +384,7 @@
                   />
                 </svg>
               </a>
-              <a>
+              <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <title>Youtube</title>
                   <path

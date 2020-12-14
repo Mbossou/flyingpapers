@@ -38,6 +38,10 @@ vert recap : #25E8BC;
   --color-bleu-pale: #3a8bff;
   --color-vert-recap: #25e8bc;
 
+  --color-ind-pos: #c8ff54;
+  --color-ind-moy: #26e8bd;
+  --color-ind-neg: #140a0f;
+
   --size-border-radius: 15px;
 }
 
@@ -285,12 +289,31 @@ p {
 
 /* MENU */
 .navbar .navbar-brand img {
-  max-width: 200px;
+  max-width: 195px;
+}
+.navbar .navbar-brand {
+  margin: 0;
+}
+.nav-item .btn-peche {
+  padding: 10px 40px !important;
+  width: 175px;
 }
 
 .navbar {
   padding: 20px 8%;
   background-color: white;
+}
+@media (max-width: 991px) {
+  .navbar {
+    flex-direction: row-reverse;
+    border-bottom: #d4d2dc solid 1px;
+  }
+  .nav-item .btn-peche {
+    padding: 0 !important;
+    width: 175px;
+    color: var(--color-peche) !important;
+    background-color: transparent;
+  }
 }
 
 .nav {
@@ -341,7 +364,7 @@ p {
 /* FOOTER */
 .footer {
   background-color: #f3f3f8;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   position: relative;
   left: 0;
   bottom: 0;
@@ -349,7 +372,7 @@ p {
 }
 
 .footer a {
-  color: #140a0f;
+  color: var(--color-ind-neg);
 }
 
 .footer p {
@@ -411,6 +434,9 @@ p {
   right: 30px;
   bottom: 40px;
 }
+.page-1 .footer {
+  padding-bottom: 100px;
+}
 .page-1 .footer .footer-brand {
   bottom: 70px;
 }
@@ -440,6 +466,8 @@ p {
 
 #moteur-recherche .navbar,
 #moteur-recherche-mobile .navbar {
+  background-color: transparent;
+  border: 0;
   padding: 0 !important;
   flex-wrap: nowrap;
   justify-content: start;
@@ -482,9 +510,6 @@ p {
     grid-template-columns: 1fr 1.5fr 1.5fr 2fr 1fr;
     grid-template-areas: "dep arr fle dates dates bouton";
     justify-items: center;
-  }
-  .page-2 .navbar-expand-lg {
-    display: none;
   }
 }
 
@@ -841,7 +866,7 @@ input::placeholder {
   margin-bottom: 2px;
 }
 
-@media screen and (max-width: 1620px) {
+@media screen and (max-width: 1620px) and (min-width: 1324px) {
   .destinationsPopulaires .card {
     width: 17em;
     height: 19em;
@@ -853,13 +878,18 @@ input::placeholder {
   }
 }
 
-@media screen and (max-width: 1324px) and (min-width: 993px) {
-  .card-img-4 {
-    display: none;
+@media screen and (max-width: 1324px) and (min-width: 1010px) {
+  .destinationsPopulaires .card {
+    width: 26em;
+    height: 20em;
+    margin: 20px 3px;
+  }
+  .destinationsPopulaires {
+    background: linear-gradient(to bottom, var(--color-bleu) 80%, transparent 20%);
   }
 }
 
-@media screen and (max-width: 993px) {
+@media screen and (max-width: 1010px) {
   .cards {
     display: none !important;
   }
@@ -891,7 +921,7 @@ input::placeholder {
 
 /* NOS VALEURS */
 .home-rect {
-  padding: 4% 8% 4% 8%;
+  padding: 30px 8% 30px 8%;
   position: relative;
 }
 
@@ -923,9 +953,19 @@ input::placeholder {
 }
 
 .ensavoirplus {
-  float: right;
-  margin-right: 30px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.ensavoirplus .btn-bleu {
+  max-width: 220px;
+}
+
+@media screen and (max-width: 1150px) {
+  .ensavoirplus {
+    align-items: center;
+  }
 }
 
 .jauges {
@@ -1173,59 +1213,65 @@ RECAP RECHERCHE */
 }
 .recap-icon:hover {
   color: var(--color-peche) !important;
+  transform: scale(1.5);
 }
 
 /* INDICE CARBONE */
-.indice-carbone .container {
-  display: flex;
-  margin-top: 1rem;
-  border-radius: 1.5rem;
+.indices-carbone {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr) 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  gap: 0;
+  margin: 10px auto;
 }
-
-.indice-carbone .indice {
+.ind-carbone {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-grow: 1;
-}
-.indice-carbone .indice p {
-  line-height: 1.5em;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px 0;
 }
 
-.indice-carbone .positif {
-  background-color: #c8ff54;
+.indices-carbone .pos {
+  background-color: var(--color-ind-pos);
   border-top-left-radius: 1.5rem;
   border-bottom-left-radius: 1.5rem;
 }
 
-.indice-carbone .moyen1 {
-  background-color: #26e8bd;
+.indices-carbone .moy1 {
+  background-color: var(--color-ind-moy);
 }
 
-.indice-carbone .moyen2 {
-  background-color: #f0856b;
+.indices-carbone .moy2 {
+  background-color: var(--color-peche);
+  color: white;
 }
 
-.indice-carbone .moyen2 p {
-  color: #ffffff;
-}
-
-.indice-carbone .negatif {
-  background-color: #140a0f;
+.indices-carbone .neg {
+  background-color: var(--color-ind-neg);
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
+  color: white;
 }
 
+@media (max-width: 830px) {
+  .indices-carbone span {
+    display: none;
+  }
+}
 @media (max-width: 600px) {
-  .indice-carbone .container {
+  .indices-carbone {
     padding: 0;
     max-width: 600px !important;
-    margin: 10px 0 0 0;
+    margin: 10px 0;
   }
-  .indice-carbone .positif {
+  .indices-carbone .pos {
     border-radius: 0;
   }
-  .indice-carbone .negatif {
+  .indices-carbone .neg {
     border-radius: 0;
   }
   .nav-transports {
@@ -1233,17 +1279,6 @@ RECAP RECHERCHE */
     max-width: 600px !important;
     margin: 0 !important;
   }
-}
-
-.indice-carbone .negatif p {
-  color: #ffffff;
-}
-
-.indice-carbone p {
-  margin-bottom: 0px;
-  font-family: "Avenir Medium", Arial, Sans-serif;
-  font-size: 12px;
-  text-align: center;
 }
 
 /* FILTRES */
@@ -1339,7 +1374,7 @@ RECAP RECHERCHE */
   height: 22.265px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .filtre-transport span,
   .filtre-transport .elecvoit {
     display: none;
@@ -1426,6 +1461,7 @@ RECAP RECHERCHE */
 
 .billet p {
   margin: 0;
+  line-height: 13px;
 }
 
 .rub {
@@ -1469,12 +1505,24 @@ RECAP RECHERCHE */
   width: 1em;
 }
 .billet .empreinteC span {
-  color: var(--color-vert-recap);
   padding-left: 7px;
 }
 .billet .infos p {
   max-width: 130px;
   line-height: 14px;
+}
+
+.veloVoile {
+  color: var(--color-ind-pos);
+}
+.trainElecVoit {
+  color: var(--color-ind-moy);
+}
+.busCoVoit {
+  color: var(--color-peche);
+}
+.vol {
+  color: var(--color-ind-neg);
 }
 
 .billet .mobile {
@@ -2708,30 +2756,40 @@ RECAP ETAPES*/
 
 .impact-ecolo h4 {
   color: #13090f;
+  font-size: 1.3rem;
 }
 
 .impact-ecolo .conteneur {
-  background-color: #26e8bd;
+  background-color: var(--color-ind-moy);
   padding: 20px;
   border-radius: 20px;
 }
 
-.impact-ecolo .row-ecolo {
-  flex-wrap: nowrap;
-  text-align: center;
+.impact-ecolo .columns-ecolo {
+  display: flex;
+  flex-direction: row;
   margin-top: 25px;
 }
-
-.impact-ecolo .row-ecolo .bloc1 {
-  margin-right: 10px;
+.impact-ecolo .columns-ecolo .column-ecolo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
-
-.impact-ecolo .row-ecolo .bold {
-  margin-bottom: 0px;
+.impact-ecolo .columns-ecolo .column-ecolo p {
+  font-size: 0.7em !important;
+  text-align: center;
+  min-width: 0;
 }
-
-.impact-ecolo .row-ecolo .text {
-  font-size: 0.8em;
+.impact-ecolo .columns-ecolo .column-ecolo .empreinteC {
+  display: inline-flex;
+  flex-direction: row;
+  height: 35px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.impact-ecolo .columns-ecolo .column-ecolo .empreinteC span {
+  padding: 0 5px;
 }
 
 .impact-ecolo .separateur {
@@ -2935,22 +2993,17 @@ RECAP ETAPES*/
   .recap-t .ligne2 .bloc2 p {
     width: 100%;
   }
-  .impact-ecolo .row-ecolo {
-    flex-wrap: wrap !important;
-    margin-top: 0px !important;
+  .impact-ecolo .columns-ecolo {
+    flex-direction: column;
+    margin-top: 0;
   }
-  .impact-ecolo .row-ecolo .bloc1,
-  .bloc2 {
-    margin-right: 0px !important;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+  .impact-ecolo .columns-ecolo .column-ecolo {
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
   }
-  .impact-ecolo .row-ecolo .bloc1 {
-    margin-bottom: 10px;
-  }
-  .impact-ecolo .row-ecolo .text {
-    margin-bottom: 0px !important;
+  .impact-ecolo .columns-ecolo .column-ecolo p {
+    margin-bottom: 0;
   }
 }
 

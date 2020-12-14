@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -13,8 +16,8 @@
     <title>Flying Papers | Confirmation paiement</title>
   </head>
   <body class="page-7">
-    <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
-      <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+    <nav class="navbar navbar-light navbar-expand-lg bg-faded">
+      <a href="/flyingpapers/" class="navbar-brand"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,7 +39,7 @@
                   <a class="nav-link nav-link-style" href="#">S'inscrire</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+                  <a class="nav-link btn-peche" href="#">Se connecter</a>
               </li>
           </ul>
       </div>
@@ -57,7 +60,7 @@
                     <tr>
                         <td>
                             <img src="img/co2-bleu.svg" alt="CO2" class="co2">
-                            <span class="jauges-label">3 </span><span class="jauges-label-kgpourcent">KG</span>
+                            <span class="jauges-label"><?php $_SESSION['billet_co2_emis'] ?> </span><span class="jauges-label-kgpourcent">KG</span>
                         </td>
                         <td>
                             <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
@@ -141,7 +144,7 @@
                   />
                 </svg>
               </a>
-              <a>
+              <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <title>Youtube</title>
                   <path

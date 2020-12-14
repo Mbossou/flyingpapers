@@ -17,8 +17,8 @@
     </head>
     
     <body class="page-2">
-        <nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center">
-            <a href="/flyingpapers/" class="navbar-brand d-flex w-50 mr-auto"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
+        <nav class="navbar navbar-light navbar-expand-lg bg-faded">
+            <a href="/flyingpapers/" class="navbar-brand"><img src="img/logo.PNG" alt="logo Flying Papers"/></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,7 +40,7 @@
                         <a class="nav-link nav-link-style" href="#">S'inscrire</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn-peche" href="#" style="padding: 10px 40px;width: 175px;">Se connecter</a>
+                        <a class="nav-link btn-peche" href="#">Se connecter</a>
                     </li>
                 </ul>
             </div>
@@ -213,21 +213,11 @@
             </div>
         </div>
 
-        <div class="indice-carbone">
-            <div class="container">
-                <div class="indice positif">
-                    <p>Moins d’1 KG / pers. de CO2 émis</p>
-                </div>
-                <div class="indice moyen1">
-                    <p>Entre 2 KG et 25 KG / pers. de CO2 émis</p>
-                </div>
-                <div class="indice moyen2">
-                    <p>Entre 25 KG et 50 KG / pers. de CO2 émis</p>
-                </div>
-                <div class="indice negatif">
-                    <p>+ de 130 KG / pers.</p>
-                </div>
-            </div>
+        <div class="indices-carbone container">
+            <div class="ind-carbone pos">– d’1 KG<span> / pers. de CO2 émis</span></div>
+            <div class="ind-carbone moy1">Entre 2 KG et 25 KG<span> / pers. de CO2 émis</span></div>
+            <div class="ind-carbone moy2">Entre 25 KG et 50 KG<span> / pers. de CO2 émis</span></div>
+            <div class="ind-carbone neg">+ de 130 KG<span> / pers.</span></div>
         </div>
 
         <div class="nav-transports container">
@@ -251,6 +241,56 @@
                 
                 if (count($result) == 0) {
                     echo ' empty';
+                }
+            }
+            function indcarbone() {
+                switch ($_GET['modeTransport']) {
+                    case 1:
+                        echo "veloVoile";
+                        break;
+                    case 2:
+                        echo "veloVoile";
+                        break;
+                    case 3:
+                        echo "trainElecVoit";
+                        break;
+                    case 4:
+                        echo "trainElecVoit";
+                        break;
+                    case 5:
+                        echo "busCoVoit";
+                        break;
+                    case 6:
+                        echo "busCoVoit";
+                        break;
+                    case 7:
+                        echo "vol";
+                        break;
+                }
+            }
+            function jaugeimg() {
+                switch ($_GET['modeTransport']) {
+                    case 1:
+                        echo "vide";
+                        break;
+                    case 2:
+                        echo "vide";
+                        break;
+                    case 3:
+                        echo "moy1";
+                        break;
+                    case 4:
+                        echo "moy1";
+                        break;
+                    case 5:
+                        echo "moy2";
+                        break;
+                    case 6:
+                        echo "moy2";
+                        break;
+                    case 7:
+                        echo "pleine";
+                        break;
                 }
             }
         ?>
@@ -337,7 +377,7 @@
             </div>
         </div>
 
-        <section class="resultats-billets container">
+        <section class="resultats-billets container main-div">
             <div class="left">
                 <h1>Trajets proposés<span class="dot">.</span></h1>
                 <div class="les-billets">                   
@@ -382,6 +422,7 @@
                             $_SESSION['prix_opt3_trajet2'. $billet['id'] .''] = $billet["prix_opt3_trajet2"];
                             $_SESSION['num_transport1'. $billet['id'] .''] = $billet["num_transport1"];
                             $_SESSION['num_transport2'. $billet['id'] .''] = $billet["num_transport2"];
+                            $_SESSION['mode_transport'. $billet['id'] .''] = $billet["mode_transport"];
 
                             echo '<a style="text-decoration: none;" href="/flyingpapers/optionsbillets.php?id_billet='.$billet['id'].'">';
                             echo '<div class="billet">';
@@ -390,8 +431,12 @@
                             echo '<p class="horaires">'. $billet['heure_arrivee_c'] . '</p>';
                             echo '<p>'. $billet['compagnie2'] . '</p>';
                             echo '<div class="empreinteC">
-                                    <img src="img/co2-bleu.svg" alt="CO2" class="co2">
-                                    <span class="jauges-label">' . $billet['co2_emis'] . '<span class="jauges-label-kgpourcent">KG</span></span>
+                                    <img src="img/co2-noir.svg" alt="CO2" class="co2">
+                                    <span class="jauges-label ';
+                            indcarbone();
+                            echo '">' . $billet['co2_emis'] . '<span class="jauges-label-kgpourcent ';
+                            indcarbone();
+                            echo '">KG</span></span>
                                 </div>';
                             echo '</div>';
                             echo '<div class="mobile rub">';
@@ -399,8 +444,14 @@
                             echo '<p>'. $billet['gare_arrivee'] . '</p>';
                             echo '<p class="duree">'. $billet['duree'] . '</p>';
                             echo '<div class="empreinteC">
-                                    <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
-                                    <span class="jauges-label">' . $billet['co2_emis'] . '<span class="jauges-label-kgpourcent">%</span></span>
+                                    <img src="img/jauge-';
+                                    jaugeimg();
+                                    echo '-noir.svg" alt="Jauge" class="jauge">
+                                    <span class="jauges-label ';
+                            indcarbone();
+                            echo '">' . $billet['pourcentage'] . '<span class="jauges-label-kgpourcent ';
+                            indcarbone();
+                            echo '">%</span></span>
                                 </div>';
                             echo '</div>';
 
@@ -418,12 +469,22 @@
                             echo '</div>';
                             echo '<div class="rub desktop">';
                             echo '<div class="empreinteC">
-                                    <img src="img/co2-bleu.svg" alt="CO2" class="co2">
-                                    <span class="jauges-label">' . $billet['co2_emis'] . '</span><span class="jauges-label-kgpourcent">KG</span>
+                                    <img src="img/co2-noir.svg" alt="CO2" class="co2">
+                                    <span class="jauges-label ';
+                            indcarbone();
+                            echo '">' . $billet['co2_emis'] . '</span><span class="jauges-label-kgpourcent ';
+                            indcarbone();
+                            echo '">KG</span>
                                 </div>';
                             echo '<div class="empreinteC">
-                                    <img src="img/jauge-vide.svg" alt="Jauge vide" class="jauge">
-                                    <span class="jauges-label">' . $billet['co2_emis'] . '</span><span class="jauges-label-kgpourcent">%</span>
+                                    <img src="img/jauge-';
+                                    jaugeimg();
+                                    echo '-noir.svg" alt="Jauge" class="jauge">
+                                    <span class="jauges-label ';
+                            indcarbone();
+                            echo '">' . $billet['pourcentage'] . '</span><span class="jauges-label-kgpourcent ';
+                            indcarbone();
+                            echo '">%</span>
                                 </div>';
                             echo '</div>';
                             echo '<div class="jauges-text infos rub">';
@@ -511,7 +572,7 @@
                                     <path d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"/>
                                 </svg>
                             </a>
-                            <a>
+                            <a href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                     <title>Youtube</title>
                                     <path d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"/>
