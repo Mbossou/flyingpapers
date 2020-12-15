@@ -445,11 +445,12 @@
                 <p class="small-p"><span class="bold">Total </span>(TTC)</p>
               ';
               if(isset($_SESSION["total"])) {
-                echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';
+                $_SESSION["total"] = $_SESSION['billet_prix_total_sans_options'];
+
               }
-              else {
+             
                 echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION['billet_prix_total_sans_options']. '€</p>';  
-              }
+              
                 ?>
               </div>
             </div>
