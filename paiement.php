@@ -49,7 +49,7 @@
       <div class="container" id="container-pay">
         <?php
           echo '
-            <a href="http://localhost/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="a1-p a">
+            <a href="/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="a1-p a">
                 <p class="num-e">1</p>
                 <p class="text-recap-e">Sélection des options</p>
               </a>
@@ -58,26 +58,28 @@
         <div class="next"></div>
         <?php
           echo '
-            <a href=""http://localhost/flyingpapers/porteaporte.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '"" class="a2-p a">
+            <a href="/flyingpapers/porteaporte.php?id_billet=' . $_SESSION['billet_id'] .'&total2=' . $_SESSION["total2"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '&opt_pap=' . $_SESSION["opt_pap"] . '&optb_pap=' . $_SESSION["optb_pap"] . '" class="a2-p a">
               <p class="num-e">2</p>
               <p class="text-recap-e">Porte-à-porte</p>
             </a>
-          ';
-        ?>
+                  
         <div class="next"></div>
-        <a href="http://localhost/flyingpapers/infospersos.php" class="a3-p a">
+        <a href="/flyingpapers/infospersos.php?id_billet=' . $_SESSION['billet_id'] .'&total2=' . $_SESSION["total2"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '&opt_pap=' . $_SESSION["opt_pap"] . '&optb_pap=' . $_SESSION["optb_pap"] . '" class="a3-p a">
           <p class="num-e">3</p>
           <p class="text-recap-e">Informations personnelles</p>
         </a>
+        
         <div class="next"></div>
-        <a href="javascript:history.back()" class="previous">
+        <a href="/flyingpapers/infospersos.php?id_billet=' . $_SESSION['billet_id'] .'&total2=' . $_SESSION["total2"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '&opt_pap=' . $_SESSION["opt_pap"] . '&optb_pap=' . $_SESSION["optb_pap"] . '" class="previous">
           <img src="img/left-chevron.svg" alt="étape précédente">
-        </a>
+        </a>';
+        ?>
         <h5 class="titre-r">Paiement</h5>
         <a href="#" class="a4-p a">
           <p class="num-e">4</p>
           <p class="text-recap-e">Paiement</p>
         </a>
+        
       </div>
     </div>
 
@@ -347,8 +349,14 @@
                     <p id="opt-pap2" class="small-p">' . $_SESSION["optb_pap"] . '</p>
                   </div>
                   <div class="row row4">
-                    <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>
+                    <p class="small-p"><span class="bold">Total </span>(TTC)</p>';
+                    if(isset($_SESSION["total2"])) {
+                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total2"] . '€</p>';
+                    }
+                    else {
+                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';  
+                    }
+                    echo'
                   </div>
                 </div>
             ';

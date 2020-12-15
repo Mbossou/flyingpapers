@@ -49,32 +49,55 @@
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-pap">
         <?php
+          // récupération des options billet et total du prix dans variables SESSION
+          if(isset($_GET["total"])) {
+            $_SESSION["total"]= $_GET["total"];
+          }
+          if(isset($_GET["opt1"])) {
+            $_SESSION["opt1"]= $_GET["opt1"];
+          }
+          if(isset($_GET["opt2"])) {
+            $_SESSION["opt2"]= $_GET["opt2"];
+          }
+          if(isset($_GET["opt1_p"])) {
+            $_SESSION["opt1_p"]= $_GET["opt1_p"];
+          }
+          if(isset($_GET["opt2_p"])) {
+            $_SESSION["opt2_p"]= $_GET["opt2_p"];
+          } 
+          if(isset($_GET["opt_pap"])) {
+            $_SESSION["opt_pap"]= "";
+          } 
+          if(isset($_GET["optb_pap"])) {
+            $_SESSION["optb_pap"]= "";
+          } 
+          //verification : 
+          //echo '<p>'.$_SESSION['total'].'</p>';
           echo '
-            <a href="http://localhost/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="a1-p a">
+            <a href="/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="a1-p a">
                 <p class="num-e">1</p>
                 <p class="text-recap-e">Sélection des options</p>
-              </a>
-          ';
+            </a>
+            <div class="next"></div>
+            <a href="/flyingpapers/optionsbillets.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="previous">
+              <img src="img/left-chevron.svg" alt="étape précédente">
+            </a>';
         ?>
-        <div class="next"></div>
-        <a href="javascript:history.back()" class="previous">
-          <img src="img/left-chevron.svg" alt="étape précédente">
-        </a>
         <h5 class="titre-r">Porte-à-porte</h5>
         <a href="#" class="a2-p a">
           <p class="num-e">2</p>
           <p class="text-recap-e">Porte-à-porte</p>
-          </a>
+        </a>
         <div class="next"></div>
         <a href="#" class="a3-p a">
           <p class="num-e">3</p>
           <p class="text-recap-e">Informations personnelles</p>
-          </a>
+        </a>
         <div class="next"></div>
         <a href="#" class="a4-p a">
           <p class="num-e">4</p>
           <p class="text-recap-e">Paiement</p>
-          </a>
+        </a>
       </div>
     </div>
 
@@ -257,14 +280,7 @@
 
           <div class="grid-row2">
             <?php 
-              // récupération des options billet et total du prix dans variables SESSION
-              $_SESSION["total"]= $_GET["total"];
-              $_SESSION["opt1"]= $_GET["opt1"];
-              $_SESSION["opt2"]= $_GET["opt2"];
-              $_SESSION["opt1_p"]= $_GET["opt1_p"];
-              $_SESSION["opt2_p"]= $_GET["opt2_p"];
-              //verification : 
-              //echo '<p>'.$_SESSION['total'].'</p>';
+              
               echo '
                 <div class="recap-b">
                   <h5 class="bold bleu-fp">Récapitulatif</h5>
@@ -285,12 +301,15 @@
                     <p id="output2" class="small-p">' . $_SESSION["opt2"] . '</p>
                   </div>
                   <div class="row rowx">
-                    <p id="opt-pap1" class="small-p"></p>
-                    <p id="opt-pap2" class="small-p"></p>
+              ';
+              echo '<p id="opt-pap1" class="small-p"></p>';
+              echo'<p id="opt-pap2" class="small-p"></p>';
+              echo'
                   </div>
                   <div class="row row4">
-                    <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-                    <p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>
+                    <p class="small-p"><span class="bold">Total </span>(TTC)</p>';
+                    echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';  
+                    echo'
                     <input style="display:none" type="text" id="ancien_resultat_somme" value="' . $_SESSION["total"] . '">
                   </div>
                 </div>

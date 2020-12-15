@@ -50,7 +50,7 @@
 
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-options">
-        <a href="#" class="previous">
+        <a href="javascript:history.back()" class="previous">
           <img src="img/left-chevron.svg" alt="étape précédente">
         </a>
         <h5 class="titre-r">Sélection des options</h5>
@@ -413,9 +413,20 @@
                 ?>
               </div>
               <div class="row row2">
-                <p class="text-option small-p" id="output1b"></p>
                 <?php
-                  echo '<p id="output1" class="small-p"></p>';
+                  if(isset($_SESSION["opt1_p"])){
+                  echo '<p class="text-option small-p" id="output1b">' . $_SESSION["opt1_p"] . '</p>';
+                  }
+                  else {
+                    echo '<p class="text-option small-p" id="output1b"></p>';  
+                  }
+                  if(isset($_SESSION["opt1"])) {
+                    echo'
+                      <p id="output1" class="small-p">' . $_SESSION["opt1"] . '</p>';
+                  }
+                  else {
+                    echo'<p id="output1" class="small-p"></p>';
+                  }
                 ?>
               </div>
               <div class="row row3">
@@ -425,13 +436,31 @@
                 ?>
               </div>
               <div class="row row2">
-                <p class="text-option small-p" id="output2b"></p>
-                <p id="output2" class="small-p"></p>
+              <?php
+                  if(isset($_SESSION["opt2_p"])) {
+                    echo '<p class="text-option small-p" id="output2b">' . $_SESSION["opt2_p"] . '</p>';
+                    }
+                    else {
+                      echo '<p class="text-option small-p" id="output2b"></p>';  
+                    }
+                    if(isset($_SESSION["opt2"])) {
+                      echo'
+                        <p id="output2" class="small-p">' . $_SESSION["opt2"] . '</p>';
+                    }
+                    else {
+                      echo'<p id="output2" class="small-p"></p>';
+                    }
+              echo'
               </div>
               <div class="row row4">
                 <p class="small-p"><span class="bold">Total </span>(TTC)</p>
-                <?php
-                  echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION['billet_prix_total_sans_options']. '€</p>';
+              ';
+              if(isset($_SESSION["total"])) {
+                echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';
+              }
+              else {
+                echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION['billet_prix_total_sans_options']. '€</p>';  
+              }
                 ?>
               </div>
             </div>
