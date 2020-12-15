@@ -413,19 +413,14 @@
               </div>
               <div class="row row2">
                 <?php
-                  if(isset($_SESSION["opt1_p"])){
-                  echo '<p class="text-option small-p" id="output1b">' . $_SESSION["opt1_p"] . '</p>';
-                  }
-                  else {
+                if(isset($_SESSION["opt1_p"])) {
+                  $_SESSION["opt1_p"] = "";
+                }
+                if(isset($_SESSION["opt1"])) {
+                  $_SESSION["opt1"] = "";
+                }
                     echo '<p class="text-option small-p" id="output1b"></p>';  
-                  }
-                  if(isset($_SESSION["opt1"])) {
-                    echo'
-                      <p id="output1" class="small-p">' . $_SESSION["opt1"] . '</p>';
-                  }
-                  else {
                     echo'<p id="output1" class="small-p"></p>';
-                  }
                 ?>
               </div>
               <div class="row row3">
@@ -436,19 +431,14 @@
               </div>
               <div class="row row2">
               <?php
-                  if(isset($_SESSION["opt2_p"])) {
-                    echo '<p class="text-option small-p" id="output2b">' . $_SESSION["opt2_p"] . '</p>';
-                    }
-                    else {
-                      echo '<p class="text-option small-p" id="output2b"></p>';  
-                    }
-                    if(isset($_SESSION["opt2"])) {
-                      echo'
-                        <p id="output2" class="small-p">' . $_SESSION["opt2"] . '</p>';
-                    }
-                    else {
-                      echo'<p id="output2" class="small-p"></p>';
-                    }
+              if(isset($_SESSION["opt2_p"])) {
+                $_SESSION["opt2_p"] = "";
+              }
+              if(isset($_SESSION["opt2"])) {
+                $_SESSION["opt2"] = "";
+              }
+              echo '<p class="text-option small-p" id="output2b"></p>';  
+              echo'<p id="output2" class="small-p"></p>';
               echo'
               </div>
               <div class="row row4">

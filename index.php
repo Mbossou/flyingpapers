@@ -1,3 +1,4 @@
+<?php session_reset(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
