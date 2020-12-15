@@ -384,6 +384,9 @@
                     <?php
                         $_SESSION['ville_depart'] = $_GET["villeDepart"];
                         $_SESSION['ville_arrivee'] = $_GET["villeArrivee"];
+                        $_SESSION['date_depart'] = $_GET["dateDepart"];
+                        $_SESSION['date_arrivee'] = $_GET["dateArrivee"];
+                        $_SESSION['mode_transport'] = $_GET["modeTransport"];
                         require_once 'admin/database.php';
                         $db = Database::connect();
                         $statement = $db->query('SELECT billets.id, billets.gare_depart, billets.gare_arrivee, billets.gare_c, billets.duree, billets.duree_c, billets.duree_trajet1, billets.duree_trajet2, billets.heure_depart_g, billets.heure_arrivee_g, billets.heure_depart_c, billets.heure_arrivee_c, billets.ville_c, billets.compagnie1, billets.compagnie2, billets.logo_compagnie1, billets.logo_compagnie2, billets.co2_emis, billets.pourcentage, billets.prix_g, billets.prix_opt1_trajet1, billets.prix_opt2_trajet1, billets.prix_opt3_trajet1, billets.prix_opt1_trajet2, billets.prix_opt2_trajet2, billets.prix_opt3_trajet2,  billets.ld_recherche, billets.mode_transport, billets.num_transport1, billets.num_transport2  

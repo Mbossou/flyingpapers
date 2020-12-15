@@ -126,7 +126,7 @@ async function ShowValue1(btn){  //  billet_prix_opt_pap0
   var s = await calculerSomme2();
   var resultat_somme = s + '€';
   document.getElementById("resultat_somme").innerHTML = resultat_somme;
-  document.getElementById("total").value = s;
+  document.getElementById("totalb").value = s;
   document.getElementById("opt_pap").value = input;
   document.getElementById("opt_papb").value = input1;
 }
@@ -142,9 +142,10 @@ async function ShowValue2(btn){   // billet_prix_opt_pap1
     document.getElementById("opt-pap2").innerHTML = input1;
     option_pap = 2;
     var s = await calculerSomme2();
+    console.log(s);
     var resultat_somme = s + '€';
     document.getElementById("resultat_somme").innerHTML = resultat_somme;
-    document.getElementById("total").value = s;
+    document.getElementById("totalb").value = s;
     document.getElementById("opt_pap").value = input;
     document.getElementById("opt_papb").value = input1;
 }
@@ -160,7 +161,7 @@ async function ShowValue3(btn){   // billet_prix_opt_pap2
     var s = await calculerSomme2();
     var resultat_somme = s + '€';
     document.getElementById("resultat_somme").innerHTML = resultat_somme;
-    document.getElementById("total").value = s;
+    document.getElementById("totalb").value  = s;
     document.getElementById("opt_pap").value = input;
     document.getElementById("opt_papb").value = input1;
 }

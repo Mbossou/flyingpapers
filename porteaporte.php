@@ -50,12 +50,11 @@
       <div class="container" id="container-pap">
         <?php
           // récupération des options billet et total du prix dans variables SESSION
-          if(isset($_GET["total"])) {
-            $_SESSION["total"]= $_GET["total"];
-          }
+          
+          if(isset($_GET["total"])) {$_SESSION["total"] = $_GET["total"];}
           if(isset($_GET["opt1"])) {
             $_SESSION["opt1"]= $_GET["opt1"];
-          }
+          } 
           if(isset($_GET["opt2"])) {
             $_SESSION["opt2"]= $_GET["opt2"];
           }
@@ -64,13 +63,7 @@
           }
           if(isset($_GET["opt2_p"])) {
             $_SESSION["opt2_p"]= $_GET["opt2_p"];
-          } 
-          if(isset($_GET["opt_pap"])) {
-            $_SESSION["opt_pap"]= "";
-          } 
-          if(isset($_GET["optb_pap"])) {
-            $_SESSION["optb_pap"]= "";
-          } 
+          }
           //verification : 
           //echo '<p>'.$_SESSION['total'].'</p>';
           echo '
@@ -144,7 +137,7 @@
                     <p class="bold">Lun. 28 jan. 2021 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>
                   </div>
                 </div>
-                <div class="ligne2">
+                <div class="ligne2">               
                   <div class="bloc1 bloc">
                     <div class="s-ligne1">
                       <p>' . $_SESSION['billet_gare_depart'] . '</p>
@@ -159,7 +152,7 @@
                       <p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>
                       <div class="compagnie">
                         <p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>
-                        <img src="img/sncf.svg" alt="logo sncf"> <!--rendre image dynamique-->
+                        <img src="img/' . $_SESSION['billet_logo_compagnie1'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
                         <p>' . $_SESSION['billet_num_transport1'] . '</p>
                       </div>
                       <p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>
@@ -175,7 +168,7 @@
                     <div class="ligne3-r">
                       <div class="flex-nw f1">
                         <p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>
-                        <img src="img/CO2.svg" alt="icone CO2"> 
+                        <img src="img/CO2.svg" alt="icone CO2">
                       </div>
                       <br>
                       <div class="flex-nw f2">
@@ -183,7 +176,7 @@
                         <img src="img/jaugeverte.svg" alt="icone jauge pollution">
                       </div> 
                     </div> 
-                  </div>  
+                  </div> 
                   <div class="bloc3 bloc">
                     <div class="s-ligne1">
                       <p>' . $_SESSION['billet_gare_c'] . '</p>
@@ -198,7 +191,7 @@
                       <p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>
                       <div class="compagnie">
                         <p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>
-                        <img src="img/eurostar.svg" alt="logo eurostar"> <!--rendre image dynamique-->
+                        <img src="img/' . $_SESSION['billet_logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
                         <p>' . $_SESSION['billet_num_transport2'] . '</p>
                       </div>
                       <p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>
@@ -308,9 +301,19 @@
                   </div>
                   <div class="row row4">
                     <p class="small-p"><span class="bold">Total </span>(TTC)</p>';
-                    echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';  
+                    if($_SESSION["total"] !== null && $_SESSION["total"] !== '') {
+                    echo '<p class="small-p bold" id="resultat_somme"> ' .  $_SESSION['total'] . '€</p>';  }
+                    else {
+                      echo '<p class="small-p bold" id="resultat_somme">' .  $_SESSION['billet_prix_total_sans_options'] . '€</p>';
+                    }
+                    if($_SESSION["total"] !== null && $_SESSION["total"] !== '') {
                     echo'
-                    <input style="display:none" type="text" id="ancien_resultat_somme" value="' . $_SESSION["total"] . '">
+                    <input style="display:none" type="text" id="ancien_resultat_somme" value="' . $_SESSION["total"] . '">';
+                    }
+                    else {
+                      echo '<input style="display:none" type="text" id="ancien_resultat_somme" value="' . $_SESSION['billet_prix_total_sans_options'] . '">';
+                    }
+                    echo'
                   </div>
                 </div>
               ';
@@ -334,7 +337,7 @@
             </div>
             
             <form class="recup-billet" style="" method="get" action="infospersos.php">
-              <input style="display:none;" type="text" id="total" name="total">
+              <input style="display:none;" type="text" id="totalb" name="totalb">
               <input style="display:none;" type="text" id="opt_pap" name="opt-pap">
               <input style="display:none;" type="text" id="opt_papb" name="opt-papb">
               <input style="border-style:none;" class="valider bouton-peche" type="submit" value="Valider mes choix">

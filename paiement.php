@@ -58,7 +58,7 @@
         <div class="next"></div>
         <?php
           echo '
-            <a href="/flyingpapers/porteaporte.php?id_billet=' . $_SESSION['billet_id'] .'&total2=' . $_SESSION["total2"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '&opt_pap=' . $_SESSION["opt_pap"] . '&optb_pap=' . $_SESSION["optb_pap"] . '" class="a2-p a">
+            <a href="/flyingpapers/porteaporte.php?id_billet=' . $_SESSION['billet_id'] .'&total=' . $_SESSION["total"] . '&opt1_p=' . $_SESSION["opt1_p"] . '&opt1=' . $_SESSION["opt1"] . '&opt2_p=' . $_SESSION["opt2_p"] . '&opt2=' . $_SESSION["opt2"] . '" class="a2-p a">
               <p class="num-e">2</p>
               <p class="text-recap-e">Porte-à-porte</p>
             </a>
@@ -113,79 +113,78 @@
               }
             }
             echo '
-              <div class="recap-t border-fp">
-                <div class="ligne1">
-                  <div class="col-l">
-                    <h5 class="bold bleu-fp">Aller sélectionné</h5>
-                    <img src="img/ico_train.png" alt="icone train">
-                  </div>
-                  <div class="col-r">
-                    <p class="bold">Lun. 28 jan. 2021 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>
-                  </div>
+            <div class="recap-t border-fp">
+            <div class="ligne1">
+              <div class="col-l">
+                <h5 class="bold bleu-fp">Aller sélectionné</h5>
+                <img src="img/ico_train.png" alt="icone train">
+              </div>
+              <div class="col-r">
+                <p class="bold">Lun. 28 jan. 2021 • '. $_SESSION['billet_heure_depart_g'] .' - ' . $_SESSION['billet_heure_arrivee_g'] . ' </p>
+              </div>
+            </div>
+            <div class="ligne2">               
+              <div class="bloc1 bloc">
+                <div class="s-ligne1">
+                  <p>' . $_SESSION['billet_gare_depart'] . '</p>
+                  <p class="u1">' . $_SESSION['billet_gare_c'] . '</p>
                 </div>
-                <div class="ligne2">
-                  <div class="bloc1 bloc">
-                    <div class="s-ligne1">
-                      <p>' . $_SESSION['billet_gare_depart'] . '</p>
-                      <p class="u1">' . $_SESSION['billet_gare_c'] . '</p>
-                    </div>
-                    <div class="s-ligne2">
-                      <div class="circle-l"></div>
-                      <div class="blue-bar"></div>
-                      <div class="circle-r"></div>
-                    </div>
-                    <div class="s-ligne3">
-                      <p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>
-                      <div class="compagnie">
-                        <p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>
-                        <img src="img/sncf.svg" alt="logo sncf"> <!--rendre image dynamique-->
-                        <p>' . $_SESSION['billet_num_transport1'] . '</p>
-                      </div>
-                      <p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>
-                    </div>
+                <div class="s-ligne2">
+                  <div class="circle-l"></div>
+                  <div class="blue-bar"></div>
+                  <div class="circle-r"></div>
+                </div>
+                <div class="s-ligne3">
+                  <p class="bold">' . $_SESSION['billet_heure_depart_g'] . '</p>
+                  <div class="compagnie">
+                    <p class="bold">' . $_SESSION['billet_duree_trajet1'] . '</p>
+                    <img src="img/' . $_SESSION['billet_logo_compagnie1'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
+                    <p>' . $_SESSION['billet_num_transport1'] . '</p>
                   </div>
-                  <div class="bloc2 bloc">
-                    <p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>
-                    <p class="peche-fp p2">• • •</p>
-                    <p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>
-                    <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
-                  </div>
-                  <div class="bloc2-r">
-                    <div class="ligne3-r">
-                      <div class="flex-nw f1">
-                        <p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>
-                        <img src="img/CO2.svg" alt="icone CO2"> 
-                      </div>
-                      <br>
-                      <div class="flex-nw f2">
-                        <p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>
-                        <img src="img/jaugeverte.svg" alt="icone jauge pollution">
-                      </div> 
-                    </div> 
-                  </div>  
-                  <div class="bloc3 bloc">
-                    <div class="s-ligne1">
-                      <p>' . $_SESSION['billet_gare_c'] . '</p>
-                      <p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>
-                    </div>
-                    <div class="s-ligne2">
-                      <div class="circle-l"></div>
-                      <div class="blue-bar"></div>
-                      <div class="circle-r"></div>
-                    </div>
-                    <div class="s-ligne3">
-                      <p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>
-                      <div class="compagnie">
-                        <p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>
-                        <img src="img/eurostar.svg" alt="logo eurostar"> <!--rendre image dynamique-->
-                        <p>' . $_SESSION['billet_num_transport2'] . '</p>
-                      </div>
-                      <p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>
-                    </div>
-                  </div>
+                  <p class="bold">' . $_SESSION['billet_heure_arrivee_c'] . '</p>
                 </div>
               </div>
-
+              <div class="bloc2 bloc">
+                <p class="peche-fp small-p p1">Changement à ' . $_SESSION['billet_ville_c'] . '</p>
+                <p class="peche-fp p2">• • •</p>
+                <p class="peche-fp small-p p3">' . $_SESSION['billet_duree_c'] . '</p>
+                <p class="peche-fp small-p p4">Correspondance <br>à la même localisation</p>
+              </div>
+              <div class="bloc2-r">
+                <div class="ligne3-r">
+                  <div class="flex-nw f1">
+                    <p class="bold">' . $_SESSION['billet_co2_emis'] . '</p>
+                    <img src="img/CO2.svg" alt="icone CO2">
+                  </div>
+                  <br>
+                  <div class="flex-nw f2">
+                    <p class="bold">' . $_SESSION['billet_pourcentage'] . '</p>
+                    <img src="img/jaugeverte.svg" alt="icone jauge pollution">
+                  </div> 
+                </div> 
+              </div> 
+              <div class="bloc3 bloc">
+                <div class="s-ligne1">
+                  <p>' . $_SESSION['billet_gare_c'] . '</p>
+                  <p class="u2">' . $_SESSION['billet_gare_arrivee'] . '</p>
+                </div>
+                <div class="s-ligne2">
+                  <div class="circle-l"></div>
+                  <div class="blue-bar"></div>
+                  <div class="circle-r"></div>
+                </div>
+                <div class="s-ligne3">
+                  <p class="bold">' . $_SESSION['billet_heure_depart_c'] . '</p>
+                  <div class="compagnie">
+                    <p class="bold">' . $_SESSION['billet_duree_trajet2'] . '</p>
+                    <img src="img/' . $_SESSION['billet_logo_compagnie2'] . '" alt="logo compagnie" style="max-height:30px; margin-top:5px; margin-bottom:5px;">
+                    <p>' . $_SESSION['billet_num_transport2'] . '</p>
+                  </div>
+                  <p class="bold">' . $_SESSION['billet_heure_arrivee_g'] . '</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
               <div class="impact-ecolo">
                 <div class="conteneur">
@@ -353,11 +352,14 @@
                   </div>
                   <div class="row row4">
                     <p class="small-p"><span class="bold">Total </span>(TTC)</p>';
-                    if(isset($_SESSION["total2"])) {
-                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total2"] . '€</p>';
+                    if($_SESSION["totalb"] !== null && $_SESSION["totalb"] !== '') {
+                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["totalb"] . '€</p>';
+                    }
+                    else if ($_SESSION["total"] !== null && $_SESSION["total"] !== ''){
+                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';  
                     }
                     else {
-                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION["total"] . '€</p>';  
+                      echo '<p class="small-p bold" id="resultat_somme">' . $_SESSION['billet_prix_total_sans_options'] . '€</p>';  
                     }
                     echo'
                   </div>

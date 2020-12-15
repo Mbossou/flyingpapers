@@ -49,7 +49,9 @@
 
     <div class="recap-etapes col-sm-12">
       <div class="container" id="container-options">
-        <a href="javascript:history.back()" class="previous">
+      <?php
+        echo '<a href="/flyingpapers/resultats.php?villeDepart=' . $_SESSION['ville_depart'] . '&villeArrivee=' . $_SESSION['ville_arrivee'] . '&dateDepart=' . $_SESSION['date_depart'] . '&dateArrivee=' . $_SESSION['date_arrivee'] . '&modeTransport=' . $_SESSION['mode_transport'] . '" class="previous">';
+        ?>
           <img src="img/left-chevron.svg" alt="étape précédente">
         </a>
         <h5 class="titre-r">Sélection des options</h5>
@@ -413,10 +415,10 @@
               </div>
               <div class="row row2">
                 <?php
-                if(isset($_SESSION["opt1_p"])) {
+                if($_SESSION["opt1_p"] !== null && $_SESSION["opt1_p"] !== '') {
                   $_SESSION["opt1_p"] = "";
                 }
-                if(isset($_SESSION["opt1"])) {
+                if($_SESSION["opt1"] !== null && $_SESSION["opt1"] !== '') {
                   $_SESSION["opt1"] = "";
                 }
                     echo '<p class="text-option small-p" id="output1b"></p>';  
@@ -431,10 +433,10 @@
               </div>
               <div class="row row2">
               <?php
-              if(isset($_SESSION["opt2_p"])) {
+              if($_SESSION["opt2_p"] !== null && $_SESSION["opt2_p"] !== '') {
                 $_SESSION["opt2_p"] = "";
               }
-              if(isset($_SESSION["opt2"])) {
+              if($_SESSION["opt2"] !== null && $_SESSION["opt2"] !== '') {
                 $_SESSION["opt2"] = "";
               }
               echo '<p class="text-option small-p" id="output2b"></p>';  
