@@ -110,7 +110,7 @@
             </a>
             <p class="confirmation-text">
               Vous pouvez télécharger vos billets <br/>
-              en cliquant ici&nbsp;:
+              en cliquant ci-dessus.
             </p>
           </div>
         </div>

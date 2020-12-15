@@ -222,6 +222,9 @@
               </div>
             </div>
             <div class="mode-paiement border-fp">
+            <?php echo '
+              <form method="get" id="myForm" action="/flyingpapers/confirmation-paiement.php?CARBONE='.$_SESSION['billet_co2_emis'].'&POURCENT='.$_SESSION['billet_pourcentage'].'&TRANSPORT='.$_SESSION['billet_mode_transport'].'">'
+            ?>
               <h5 class="question bleu-fp bold">Moyen de paiement</h5>
               <div class="flex1">
                 <div class="moyen_1 moyen">
@@ -265,7 +268,7 @@
               </div>
             </div>
             <div class="formulaire2 border-fp">
-              <form action="">
+            
                 <div class="ligne1">
                   <h5 class="bleu-fp bold">Adresse de facturation</h5>
                 </div>
@@ -275,7 +278,7 @@
                     <input type="text" id="name-c" placeholder="Nom complet" name="name-c" autocomplete="name" required />
                   </div>
                   <div class="col-r">
-                    <label for="family-name">Entreprise</label>
+                    <label for="family-name">Entreprise (Facultatif)</label>
                     <input type="text" id="family-name" name="family-name" placeholder="Entreprise" autocomplete="organization" />
                   </div>
                 </div>
@@ -371,9 +374,7 @@
                 </p>
               </div>
             </div>
-            <?php echo '
-              <a class="valider bouton-peche" href="/flyingpapers/confirmation-paiement.php?CARBONE='.$_SESSION['billet_co2_emis'].'&POURCENT='.$_SESSION['billet_pourcentage'].'&TRANSPORT='.$_SESSION['billet_mode_transport'].'">Confirmer</a>'
-            ?>
+            <button class="valider btn-peche" type="submit" form="myForm">Confirmer</button>
           </div>  
 
           </div>
