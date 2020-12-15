@@ -225,7 +225,7 @@
             </div>
             <div class="mode-paiement border-fp">
             <?php echo '
-              <form method="get" id="myForm" action="/flyingpapers/confirmation-paiement.php?CARBONE='.$_SESSION['billet_co2_emis'].'&POURCENT='.$_SESSION['billet_pourcentage'].'&TRANSPORT='.$_SESSION['billet_mode_transport'].'">'
+              <form method="post" id="myForm" action="/flyingpapers/confirmation-paiement.php?CARBONE='.$_SESSION['billet_co2_emis'].'&POURCENT='.$_SESSION['billet_pourcentage'].'&TRANSPORT='.$_SESSION['billet_mode_transport'].'">'
             ?>
               <h5 class="question bleu-fp bold">Moyen de paiement</h5>
               <div class="flex1">

@@ -231,7 +231,7 @@
 
 
             <div class="formulaire border-fp">
-              <form method="get" id="myForm" action="/flyingpapers/paiement.php">
+              <form method="post" id="myForm" action="/flyingpapers/paiement.php">
                 <div class="ligne1">
                   <h5 class="bleu-fp bold">Passager 1</h5>
                   <p class="bold">Adulte</p>
