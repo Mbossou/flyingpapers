@@ -1851,7 +1851,6 @@ RECAP ETAPES*/
   flex-wrap: wrap;
 }
 
-
 .options-billets .bagages .row2a .ajout .row2b {
   width: 100%;
   align-self: center;
@@ -1865,35 +1864,35 @@ RECAP ETAPES*/
 }
 
 .options-billets .bagages .row2a .ajout .row2b .plus {
-  border-radius : 2em;
-  border-width  : 1px;
-  border-color  : var(--color-bleu);
-  color  : var(--color-bleu);
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: var(--color-bleu);
+  color: var(--color-bleu);
   background-color: transparent;
-  padding-top   : 7px;
+  padding-top: 7px;
   padding-bottom: 7px;
-  padding-left  : 13px;
-  padding-right : 13px;
-  border-style  : solid;
+  padding-left: 13px;
+  padding-right: 13px;
+  border-style: solid;
   margin-bottom: 0px;
 }
 
 .options-billets .bagages .row2a .ajout .row2b .moins {
-  border-radius : 2em;
-  border-width  : 1px;
-  border-color  : #E3E3E3;
-  color  : #E3E3E3;
-  padding-top   : 7px;
+  border-radius: 2em;
+  border-width: 1px;
+  border-color: #e3e3e3;
+  color: #e3e3e3;
+  padding-top: 7px;
   padding-bottom: 7px;
-  padding-left  : 15px;
-  padding-right : 15px;
-  border-style  : solid;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-style: solid;
   margin-bottom: 0px;
 }
 
 .options-billets .bagages .row2a .ajout .row2b .nombre-b {
   color: var(--color-bleu);
-  font-size: 1.7em!important;
+  font-size: 1.7em !important;
   font-weight: 500;
   margin-bottom: 0px;
   align-self: center;
@@ -2472,15 +2471,15 @@ RECAP ETAPES*/
 }
 
 .confirmation-bouton-confirmer {
-  background-image: url(../img/illu_paiement_valide.png);
+  background-image: url(../img/illu_van.svg);
   background-size: cover;
-  background-repeat: repeat;
-  background-size: 100% auto;
-  background-position: left 50% bottom -200px;
+  background-repeat: repeat-x;
+  background-position: left 50% bottom -50px;
+  margin-top: -55px;
 }
 
 .confirmation-bouton-confirmer .bouton {
-  height: 280px;
+  height: 400px;
   display: flex;
   align-items: flex-end;
   width: 100%;
@@ -2534,7 +2533,7 @@ RECAP ETAPES*/
 }
 
 .confirmation-reservation .confirmation-grid .right .confirmation-bouton:hover {
-  background-color: var(--color-bleu);
+  background-color: var(--color-ind-moy);
   color: #ffffff !important;
   text-decoration: none;
 }
@@ -2565,6 +2564,19 @@ RECAP ETAPES*/
     grid-column: 1;
     grid-row: 2;
     justify-self: center;
+  }
+  .confirmation-bouton-confirmer {
+    background-position: left 55% bottom -70px;
+  }
+  .confirmation-bouton-confirmer .bouton {
+    height: 250px;
+    align-items: center;
+  }
+  .confirmation-reservation .main img {
+    max-width: 70px;
+  }
+  .confirmation-reservation .main h2 {
+    margin: 20px auto 15px auto;
   }
 }
 

@@ -231,30 +231,30 @@
 
 
             <div class="formulaire border-fp">
-              <form action="">
+              <form method="get" id="myForm" action="/flyingpapers/paiement.php">
                 <div class="ligne1">
                   <h5 class="bleu-fp bold">Passager 1</h5>
                   <p class="bold">Adulte</p>
                 </div>
                 <div class="ligne2">
                   <label for="email">Adresse e-mail</label>
-                  <input type="email" id="email" name="email" placeholder="Votre billet sera envoyé à&nbsp;:" autocomplete="email" />
+                  <input type="email" id="email" name="email" placeholder="Votre billet sera envoyé à&nbsp;:" autocomplete="email" required />
                 </div>
                 <div class="cols">
                   <div class="col-l">
                     <div class="ligne">
                       <label for="family-name">Nom</label>
-                      <input type="text" id="family-name" name="family-name" autocomplete="family-name" />
+                      <input type="text" id="family-name" name="family-name" autocomplete="family-name" required/>
                     </div>
                     <div class="ligne">
                       <label for="pays">Pays de résidence</label>
-                      <input type="text" id="pays" name="pays" autocomplete="country-name" />
+                      <input type="text" id="pays" name="pays" autocomplete="country-name" required/>
                     </div>
                   </div>
                   <div class="col-r">
                     <div class="ligne">
                       <label for="firstname">Prénom</label>
-                      <input type="text" id="firstname" name="firstname" autocomplete="given-name" />
+                      <input type="text" id="firstname" name="firstname" autocomplete="given-name" required/>
                     </div>
                     <div class="ligne">
                       <label for="reduction">Carte de réduction (Facultatif)</label>
@@ -353,7 +353,7 @@
                 </p>
               </div>
             </div>
-            <a class="valider bouton-peche" href="/flyingpapers/paiement.php">Confirmer</a>
+            <button class="valider btn-peche" type="submit" form="myForm">Confirmer</button>
           </div>
 
           </div>
